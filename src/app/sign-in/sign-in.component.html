@@ -1,0 +1,17 @@
+<form #loginForm="ngForm" class="col s12 white">
+  <div class="row">
+    <div class="input-field col s12">
+      <input type="text" #UserName ngModel name="UserName" placeholder="Nom d'utilisateur" required>
+    </div>
+  </div>
+  <div class="row">
+    <div class="input-field col s12">
+      <input type="password" #Password ngModel name="Password" placeholder="Mot de passe" required>
+    </div>
+  </div>
+  <div class="row">
+    <div class="input-field col s12">
+      <button [disabled]="!loginForm.valid" class="btn-large btn-submit" type="submit">S'identifier</button>
+    </div>
+  </div>
+</form>
