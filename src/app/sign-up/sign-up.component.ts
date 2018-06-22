@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from '../shared/user.model';
+import {Administrateur} from '../shared/administrateur.model';
 import { NgForm } from '@angular/forms';
-import { UserService } from '../shared/user.service';
+import { AdministrateurService } from '../shared/administrateur.service';
 import { ToastrService } from 'ngx-toastr';
 
 @Component({
@@ -10,10 +10,10 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./sign-up.component.css']
 })
 export class SignUpComponent implements OnInit {
-  user: User;
-  emailPattern = '^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$';
+  administrateur: Administrateur;
+  paternDuCourriel = '^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$';
 
-  constructor(private userService: UserService, private toastr: ToastrService) { }
+  constructor(private administrateurService: AdministrateurService, private toastr: ToastrService) { }
 
   ngOnInit() {
     this.resetForm();
@@ -23,20 +23,20 @@ export class SignUpComponent implements OnInit {
     if (form != null) {
         form.reset();
     }
-    this.user = {
-      UserName: '',
-      Password: '',
-      Email: '',
-      FirstName: '',
-      LastName: '',
-      Address: '',
-      ConfirmPassword: '',
-      City: ''
+    this.administrateur = {
+      NomUtilisateur: '',
+      MotDePasse: '',
+      ConfirmationMotDePasse: '',
+      Courriel: '',
+      Nom: '',
+      Prenom: '',
+      Adress: '',
+      Ville: ''
     };
   }
 
   OnSubmit (form: NgForm) {
-    this.userService.registerUser(form.value).subscribe((data: any) => {
+    this.administrateurService.enregistrerAdministrateur(form.value).subscribe((data: any) => {
       if (data.Succeeded === true) {
         this.resetForm(form);
         this.toastr.success('Enregistrement réussit');

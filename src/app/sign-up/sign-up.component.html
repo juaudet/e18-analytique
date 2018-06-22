@@ -1,64 +1,64 @@
 <div class="row" xmlns="">
   <div class="col s8 offset-s2">
     <div class="card">
-      <form class="col s12 white" #userRegistrationForm="ngForm" (ngSubmit)="OnSubmit(userRegistrationForm)">
+      <form class="col s12 white" #enregistrement="ngForm" (ngSubmit)="OnSubmit(enregistrement)">
         <div class="row">
           <div class="input-field col s12">
-            <input class="validate" type="text" name="UserName"  #UserName="ngModel" [(ngModel)]="user.UserName" required>
+            <input class="validate" type="text" name="NomUtilisateur"  #NomUtilisateur="ngModel" [(ngModel)]="administrateur.NomUtilisateur" required>
             <label data-error="Champ requis!">Nom d'utilisateur</label>
           </div>
         </div>
         <div class="row">
           <div class="input-field col s12">
-            <input class="validate" type="password" name="Password" #Password="ngModel" [(ngModel)]="user.Password" required  minlength="3">
-            <label [attr.data-error]="Password.errors!=null?(!Password.errors.required?'Minimum 3 charactères requis':'Champ requis!'):''">Mot de passe</label>
+            <input class="validate" type="password" name="MotDePasse" #MotDePasse="ngModel" [(ngModel)]="administrateur.MotDePasse" required  minlength="3">
+            <label [attr.data-error]="MotDePasse.errors!=null?(!MotDePasse.errors.required?'Minimum 3 charactères requis':'Champ requis!'):''">Mot de passe</label>
           </div>
         </div>
         <div class="row">
           <div class="input-field col s12">
-            <input class="validate" type="password" name="ConfirmPassword" #Password="ngModel" [(ngModel)]="user.ConfirmPassword" required  minlength="3" oninput="check(this)" />
-            <label [attr.data-error]="Password.errors!=null?(!Password.errors.required?'Minimum 3 charactères requis':'Champ requis!'):''">Confirmer le mot de passe</label>
+            <input class="validate" type="password" name="ConfirmationMotDePasse" #ConfirmationMotDePasse="ngModel" [(ngModel)]="administrateur.ConfirmationMotDePasse" required  minlength="3">
+            <label [attr.data-error]="ConfirmationMotDePasse.errors!=null?(!ConfirmationMotDePasse.errors.required?'Minimum 3 charactères requis':'Champ requis!'):''">Confirmer le mot de passe</label>
           </div>
     </div>
         <div class="row">
           <div class="input-field col s12">
-            <input class="validate" type="text" name="Email" #Email="ngModel" [(ngModel)]="user.Email" [pattern]="emailPattern">
+            <input class="validate" type="text" name="Courriel" #Courriel="ngModel" [(ngModel)]="administrateur.Courriel" [pattern]="paternDuCourriel">
             <label data-error="Courriel invalide!">Courriel</label>
           </div>
         </div>
         <div class="row">
           <div class="input-field col s6">
-            <input type="text" name="FirstName" #FirstName="ngModel" [(ngModel)]="user.FirstName">
+            <input type="text" name="Prenom" #Prenom="ngModel" [(ngModel)]="administrateur.Prenom">
             <label data-error="Champ requis!">Prénom</label>
           </div>
           <div class="input-field col s6">
-            <input type="text" name="LastName" #LastName="ngModel" [(ngModel)]="user.LastName">
+            <input type="text" name="Nom" #Nom="ngModel" [(ngModel)]="administrateur.Nom">
             <label data-error="Champ requis!">Nom</label>
           </div>
         </div>
         <div class="row">
           <div class="input-field col s6">
-            <input type="text" name="Address" #Address="ngModel" [(ngModel)]="user.Address">
+            <input type="text" name="Adress" #Adress="ngModel" [(ngModel)]="administrateur.Adress">
             <label data-error="Champ requis!">Adresse Civique</label>
           </div>
           <div class="input-field col s6">
-            <input type="text" name="City" #City="ngModel" [(ngModel)]="user.City">
+            <input type="text" name="Ville" #Ville="ngModel" [(ngModel)]="administrateur.Ville">
             <label data-error="Champ requis!">Ville</label>
           </div>
         </div>
         <div class="row">
           <div class="col s6">
-            <input type="radio" name="AdminSite" id="AdminSite">
+            <input type="radio" name="Admin" id="AdminSite">
             <label for="AdminSite">Admin site</label>
           </div>
           <div class="col s6">
-            <input type="radio" name="AdminPub"id="AdminPub">
+            <input type="radio" name="Admin"id="AdminPub">
             <label for="AdminPub">Admin Pub</label>
           </div>
         </div>
          <div class="row">
           <div class="input-field col s12">
-            <button [disabled]="!userRegistrationForm.valid" class="btn-large btn-submit" type="submit">S'enregistrer</button>
+            <button [disabled]="!enregistrement.valid" class="btn-large btn-submit" type="submit">S'enregistrer</button>
           </div>
         </div>
       </form>

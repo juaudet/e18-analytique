@@ -1,20 +1,20 @@
 
 <div class="col s8 offset-s2">
-<form #loginForm="ngForm" class="col s12 white">
+<form #identification="ngForm" class="col s12 white">
 
   <div class="row">
     <div class="input-field col s6">
-      <input type="text" #UserName ngModel name="UserName" placeholder="Nom d'utilisateur" required>
+      <input type="text" #Courriel ngModel name="Courriel" placeholder="Courriel" required>
     </div>
   </div>
   <div class="row">
     <div class="input-field col s6">
-      <input type="password" #Password ngModel name="Password" placeholder="Mot de passe" required>
+      <input type="password" #MotDePasse ngModel name="MotDePasse" placeholder="Mot de passe" required>
     </div>
   </div>
   <div class="row">
     <div class="input-field col s12">
-      <button [disabled]="!loginForm.valid" class="btn-large btn-submit" type="submit">S'identifier</button>
+      <button [disabled]="!identification.valid" class="btn-large btn-submit" type="submit">S'identifier</button>
     </div>
   </div>
 </form>

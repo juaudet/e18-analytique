@@ -8,7 +8,7 @@ import { HomeComponent } from './home/home.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { UserService } from './shared/user.service';
+import { AdministrateurService } from './shared/administrateur.service';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { UserComponent } from './user/user.component';
 import { RouterModule } from '@angular/router';
@@ -30,7 +30,7 @@ import { appRoutes } from './routes';
     BrowserAnimationsModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [UserService],
+  providers: [AdministrateurService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
