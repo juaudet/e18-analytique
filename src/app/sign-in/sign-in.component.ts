@@ -29,15 +29,15 @@ export class SignInComponent implements OnInit {
   }
 
   OnSubmit (form: NgForm) {
-    this.administrateurService.identifierAdministrateur(form.value).subscribe((data: any) => {
-      if (data.Succeeded === true) {
-        this.resetForm(form);
-        this.toastr.success('Enregistrement réussit');
-      } else {
-        //this.toastr.error(data.Errors[0]);
+    this.administrateurService.identifierAdministrateur(form.value).subscribe(
+      (data: any) => {
+        this.toastr.success('Connexion effectuée avec succès.');
         console.log(data);
+      },
+      (error: any) => {
+        this.toastr.error("Courriel ou mot de passe invalide.");
       }
-    });
+    );
   }
 
 }
