@@ -7,7 +7,7 @@ import { Administrateur, Identification } from './administrateur.model';
 
 @Injectable()
   export class AdministrateurService {
-    readonly rootUrl = 'http://localhost:35257';
+    readonly rootUrl = 'http://127.0.0.1:8000';
     constructor(private http: HttpClient) { }
 
     enregistrerAdministrateur(administrateur: Administrateur) {
@@ -26,9 +26,9 @@ import { Administrateur, Identification } from './administrateur.model';
 
     identifierAdministrateur(identification: Identification) {
     const body: Identification = {
-        Courriel: identification.Courriel,
-        MotDePasse: identification.MotDePasse,
+        email: identification.Courriel,
+        password: identification.MotDePasse,
       }
-    return this.http.post(this.rootUrl + '/api/Administrateur/Identification', body);
+    return this.http.post(this.rootUrl + '/api/auth/login', body);
     }
   }
