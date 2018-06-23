@@ -3,6 +3,7 @@ import { HomeComponent } from './home/home.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 
+
 export const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
   {

@@ -10,6 +10,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AdministrateurService } from './shared/administrateur.service';
 import { SignInComponent } from './sign-in/sign-in.component';
+import { UserProfilFormComponent } from './user-profil-form/user-profil-form.component';
 import { RouterModule } from '@angular/router';
 import { appRoutes } from './routes';
 
@@ -19,6 +20,7 @@ import { appRoutes } from './routes';
     HomeComponent,
     SignUpComponent,
     SignInComponent,
+    UserProfilFormComponent,
   ],
   imports: [
     BrowserModule,
