@@ -12,7 +12,10 @@ import { ToastrService } from 'ngx-toastr';
 export class SignInComponent implements OnInit {
   identification: Identification;
 
-  constructor(private administrateurService: AdministrateurService, private toastr: ToastrService) { }
+  constructor(
+    private administrateurService: AdministrateurService, 
+    private toastr: ToastrService
+  ) { }
 
   ngOnInit() {
     this.resetForm();
