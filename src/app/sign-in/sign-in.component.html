@@ -1,6 +1,6 @@
 
 <div class="col s8 offset-s2">
-<form #identification="ngForm" class="col s12 white">
+<form #identification="ngForm" class="col s12 white" (ngSubmit)="OnSubmit(identification)">
 
   <div class="row">
     <div class="input-field col s6">
