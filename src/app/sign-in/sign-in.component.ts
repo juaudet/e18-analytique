@@ -34,7 +34,8 @@ export class SignInComponent implements OnInit {
         this.resetForm(form);
         this.toastr.success('Enregistrement réussit');
       } else {
-        this.toastr.error(data.Errors[0]);
+        //this.toastr.error(data.Errors[0]);
+        console.log(data);
       }
     });
   }
