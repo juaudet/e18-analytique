@@ -25,9 +25,9 @@ import { Administrateur, Identification } from './administrateur.model';
     }
 
     identifierAdministrateur(identification: Identification) {
-    const body: Identification = {
-        email: identification.Courriel,
-        password: identification.MotDePasse,
+    const body = {
+        email: identification.email,
+        password: identification.password,
       }
     return this.http.post(this.rootUrl + '/api/auth/login', body);
     }

@@ -12,6 +12,6 @@ export class Administrateur {
   // adminSite: boolean;
 }
 export class Identification {
-  Courriel: string;
-  MotDePasse: string;
+  email: string;
+  password: string;
 }

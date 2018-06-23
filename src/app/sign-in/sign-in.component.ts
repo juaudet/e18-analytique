@@ -23,8 +23,8 @@ export class SignInComponent implements OnInit {
       form.reset();
     }
     this.identification = {
-      Courriel: '',
-      MotDePasse: '',
+      email: '',
+      password: '',
     };
   }
 
