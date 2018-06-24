@@ -3,6 +3,7 @@ import {NgForm} from '@angular/forms';
 import {Identification} from '../shared/administrateur.model';
 import { AdministrateurService } from '../shared/administrateur.service';
 import { ToastrService } from 'ngx-toastr';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sign-in',
@@ -14,7 +15,8 @@ export class SignInComponent implements OnInit {
 
   constructor(
     private administrateurService: AdministrateurService, 
-    private toastr: ToastrService
+    private toastr: ToastrService,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -37,6 +39,7 @@ export class SignInComponent implements OnInit {
         this.toastr.success('Connexion effectuée avec succès.');
         console.log(data.access_token);
         localStorage.setItem('token', data.access_token);
+        this.router.navigate(["admin"]);
       },
       (error: any) => {
         this.toastr.error("Courriel ou mot de passe invalide.");
