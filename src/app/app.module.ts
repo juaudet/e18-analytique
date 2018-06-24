@@ -13,6 +13,9 @@ import { SignInComponent } from './sign-in/sign-in.component';
 import { UserProfilFormComponent } from './user-profil-form/user-profil-form.component';
 import { RouterModule } from '@angular/router';
 import { appRoutes } from './routes';
+import { ProfilsCibleComponent } from './profils-cible/profils-cible.component';
+import { ProfilCibleService } from './profil-cible.service';
+import { AdminComponent } from './admin/admin.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +24,8 @@ import { appRoutes } from './routes';
     SignUpComponent,
     SignInComponent,
     UserProfilFormComponent,
+    ProfilsCibleComponent,
+    AdminComponent,
   ],
   imports: [
     BrowserModule,
@@ -30,7 +35,7 @@ import { appRoutes } from './routes';
     BrowserAnimationsModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [AdministrateurService],
+  providers: [AdministrateurService, ProfilCibleService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
