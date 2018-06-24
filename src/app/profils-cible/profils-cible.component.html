@@ -1,15 +1,24 @@
-<h1>Profils Cible</h1>
-<table *ngIf="profilsCible">
-	<tr>
-		<th>Nom</th>
-		<th>Sites web</th>
-	</tr>
-	<tr *ngFor="let profilCible of profilsCible">
-		<td>{{ profilCible.nom }}</td>
-		<td>
-			<ul>
-				<li *ngFor="let siteWeb of profilCible.sites_web_profil_cible">{{ siteWeb.url }}</li>
-			</ul>
-		</td>
-	</tr>
-</table>
+<h2 class="title-1 m-b-25">Profils Cible</h2>
+
+<div class="table-responsive table--no-card m-b-40">
+
+	<table *ngIf="profilsCible" class="table table-borderless table-striped table-earning">
+		<thead>
+			<tr>
+				<th>Nom</th>
+				<th>Sites web</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr *ngFor="let profilCible of profilsCible">
+				<td>{{ profilCible.nom }}</td>
+				<td>
+					<ul>
+						<li *ngFor="let siteWeb of profilCible.sites_web_profil_cible">{{ siteWeb.url }}</li>
+					</ul>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+
+</div>
