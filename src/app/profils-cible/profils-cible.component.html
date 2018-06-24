@@ -1,0 +1,15 @@
+<h1>Profils Cible</h1>
+<table *ngIf="profilsCible">
+	<tr>
+		<th>Nom</th>
+		<th>Sites web</th>
+	</tr>
+	<tr *ngFor="let profilCible of profilsCible">
+		<td>{{ profilCible.nom }}</td>
+		<td>
+			<ul>
+				<li *ngFor="let siteWeb of profilCible.sites_web_profil_cible">{{ siteWeb.url }}</li>
+			</ul>
+		</td>
+	</tr>
+</table>
