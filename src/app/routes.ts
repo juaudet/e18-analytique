@@ -16,6 +16,7 @@ export const appRoutes: Routes = [
     path: 'login', component: HomeComponent,
     children: [{ path: '', component: SignInComponent }]
   },
+  { path: 'admin', component: AdminComponent },
   {
     path: 'profils-cible', component: AdminComponent,
     children: [{ path: '', component: ProfilsCibleComponent }]
