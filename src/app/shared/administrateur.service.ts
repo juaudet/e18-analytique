@@ -4,10 +4,11 @@ import {  Response } from '@angular/http';
 import {Observable} from 'rxjs';
 // import 'rxjs/add/operator/map';
 import { Administrateur, Identification } from './administrateur.model';
+import { environment } from '../../environments/environment';
 
 @Injectable()
   export class AdministrateurService {
-    readonly rootUrl = 'http://127.0.0.1:8000';
+    readonly rootUrl = environment.apiUrl;
     constructor(private http: HttpClient) { }
 
     enregistrerAdministrateur(administrateur: Administrateur) {
