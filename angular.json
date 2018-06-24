@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "signUp": {
+    "e18-analytique": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/signUp",
+            "outputPath": "dist/e18-analytique",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -50,18 +50,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "signUp:build"
+            "browserTarget": "e18-analytique:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "signUp:build:production"
+              "browserTarget": "e18-analytique:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "signUp:build"
+            "browserTarget": "e18-analytique:build"
           }
         },
         "test": {
@@ -95,7 +95,7 @@
         }
       }
     },
-    "signUp-e2e": {
+    "e18-analytique-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "architect": {
@@ -103,7 +103,7 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "signUp:serve"
+            "devServerTarget": "e18-analytique:serve"
           }
         },
         "lint": {
@@ -118,5 +118,5 @@
       }
     }
   },
-  "defaultProject": "signUp"
+  "defaultProject": "e18-analytique"
 }
