@@ -1,4 +1,4 @@
 export class SiteWebProfilCible {
-	url: string
+	url: string;
 }
 

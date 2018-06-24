@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProfilCibleService } from '../profil-cible.service';
-import { ProfilCible } from '../profilCible';
+import { ProfilCible } from '../profil-cible';
 
 @Component({
   selector: 'app-profils-cible',
