@@ -35,7 +35,8 @@ export class SignInComponent implements OnInit {
     this.administrateurService.identifierAdministrateur(form.value).subscribe(
       (data: any) => {
         this.toastr.success('Connexion effectuée avec succès.');
-        console.log(data);
+        console.log(data.access_token);
+        localStorage.setItem('token', data.access_token);
       },
       (error: any) => {
         this.toastr.error("Courriel ou mot de passe invalide.");
