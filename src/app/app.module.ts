@@ -17,6 +17,8 @@ import { ProfilsCibleComponent } from './components/profils-cible/profils-cible.
 import { ProfilCibleService } from './services/profil-cible.service';
 import { AdminComponent } from './components/admin/admin.component';
 import { httpInterceptorProviders } from './http-interceptors/index';
+import { CampagnePubComponent } from './components/campagne-pub/campagne-pub.component';
+import { TableauBordComponent } from './components/tableau-bord/tableau-bord.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +29,8 @@ import { httpInterceptorProviders } from './http-interceptors/index';
     UserProfilFormComponent,
     ProfilsCibleComponent,
     AdminComponent,
+    CampagnePubComponent,
+    TableauBordComponent,
   ],
   imports: [
     BrowserModule,

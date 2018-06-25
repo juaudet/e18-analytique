@@ -27,5 +27,4 @@ export class ProfilsCibleComponent implements OnInit {
           }
       );
   }
-
 }

@@ -32,4 +32,9 @@ import { environment } from '../../../environments/environment';
       }
     return this.http.post(this.rootUrl + '/api/auth/login', body);
     }
+
+  nomRoleAdministrateur() {
+
+    return this.http.get(this.rootUrl + '/api/auth/me');
+    }
   }
