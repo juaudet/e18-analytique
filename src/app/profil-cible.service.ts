@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { ProfilCible } from './profilCible';
+import { ProfilCible } from './profil-cible';
 import { environment } from '../environments/environment';
 
 const httpOptions = {
