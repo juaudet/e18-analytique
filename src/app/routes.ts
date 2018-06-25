@@ -1,9 +1,9 @@
 import { Routes } from '@angular/router';
-import { HomeComponent } from './home/home.component';
-import { SignUpComponent } from './sign-up/sign-up.component';
-import { SignInComponent } from './sign-in/sign-in.component';
-import { ProfilsCibleComponent } from './profils-cible/profils-cible.component';
-import { AdminComponent } from './admin/admin.component';
+import { HomeComponent } from './components/home/home.component';
+import { SignUpComponent } from './components/sign-up/sign-up.component';
+import { SignInComponent } from './components/sign-in/sign-in.component';
+import { ProfilsCibleComponent } from './components/profils-cible/profils-cible.component';
+import { AdminComponent } from './components/admin/admin.component';
 
 
 export const appRoutes: Routes = [

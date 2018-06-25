@@ -3,8 +3,8 @@ import { HttpClient } from '@angular/common/http';
 import {  Response } from '@angular/http';
 import {Observable} from 'rxjs';
 // import 'rxjs/add/operator/map';
-import { Administrateur, Identification } from './administrateur.model';
-import { environment } from '../../environments/environment';
+import { Administrateur, Identification } from '../../models/administrateur.model';
+import { environment } from '../../../environments/environment';
 
 @Injectable()
   export class AdministrateurService {

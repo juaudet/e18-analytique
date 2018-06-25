@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {NgForm} from '@angular/forms';
-import {Identification} from '../shared/administrateur.model';
-import { AdministrateurService } from '../shared/administrateur.service';
+import {Identification} from '../../models/administrateur.model';
+import { AdministrateurService } from '../../services/shared/administrateur.service';
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
 
@@ -14,7 +14,7 @@ export class SignInComponent implements OnInit {
   identification: Identification;
 
   constructor(
-    private administrateurService: AdministrateurService, 
+    private administrateurService: AdministrateurService,
     private toastr: ToastrService,
     private router: Router
   ) { }

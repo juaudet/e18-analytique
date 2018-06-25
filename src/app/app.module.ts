@@ -4,18 +4,18 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
-import { SignUpComponent } from './sign-up/sign-up.component';
+import { HomeComponent } from './components/home/home.component';
+import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { AdministrateurService } from './shared/administrateur.service';
-import { SignInComponent } from './sign-in/sign-in.component';
-import { UserProfilFormComponent } from './user-profil-form/user-profil-form.component';
+import { AdministrateurService } from './services/shared/administrateur.service';
+import { SignInComponent } from './components/sign-in/sign-in.component';
+import { UserProfilFormComponent } from './components/user-profil-form/user-profil-form.component';
 import { RouterModule } from '@angular/router';
 import { appRoutes } from './routes';
-import { ProfilsCibleComponent } from './profils-cible/profils-cible.component';
-import { ProfilCibleService } from './profil-cible.service';
-import { AdminComponent } from './admin/admin.component';
+import { ProfilsCibleComponent } from './components/profils-cible/profils-cible.component';
+import { ProfilCibleService } from './services/profil-cible.service';
+import { AdminComponent } from './components/admin/admin.component';
 import { httpInterceptorProviders } from './http-interceptors/index';
 
 @NgModule({
