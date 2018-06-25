@@ -16,6 +16,7 @@ import { appRoutes } from './routes';
 import { ProfilsCibleComponent } from './profils-cible/profils-cible.component';
 import { ProfilCibleService } from './profil-cible.service';
 import { AdminComponent } from './admin/admin.component';
+import { httpInterceptorProviders } from './http-interceptors/index';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,7 @@ import { AdminComponent } from './admin/admin.component';
     BrowserAnimationsModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [AdministrateurService, ProfilCibleService],
+  providers: [AdministrateurService, ProfilCibleService, httpInterceptorProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
