@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {Administrateur} from '../shared/administrateur.model';
+import {Administrateur} from '../../models/administrateur.model';
 import { NgForm } from '@angular/forms';
-import { AdministrateurService } from '../shared/administrateur.service';
+import { AdministrateurService } from '../../services/shared/administrateur.service';
 import { ToastrService } from 'ngx-toastr';
 
 @Component({
