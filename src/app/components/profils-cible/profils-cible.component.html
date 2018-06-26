@@ -2,34 +2,42 @@
 
 <p class="m-b-25"><a routerLink="/profils-cible/create" class="btn btn-primary">Créer</a></p>
 
-<div *ngIf="!chargementListeProfilsCible" class="table-responsive table--no-card m-b-40">
+<ng-container *ngIf="!chargementListeProfilsCible">
+	<div *ngIf="profilsCible.length > 0;else aucun_profil_cible" class="table-responsive table--no-card m-b-40">
 
-	<table class="table table-borderless table-striped table-earning">
-		<thead>
-			<tr>
-				<th>Nom</th>
-				<th>Sites web</th>
-        <th>Opérations</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr *ngFor="let profilCible of profilsCible">
-				<td>{{ profilCible.nom }}</td>
-				<td>
-					<ul>
-						<li *ngFor="let siteWeb of profilCible.sites_web_profil_cible">{{ siteWeb.url }}</li>
-					</ul>
-				</td>
-        <td>
-            <div class="btn-group-vertical">
-              <button type="button" class="btn btn-primary">Ajouter</button>
-              <button type="button" class="btn btn-primary">Modifier</button>
-              <button type="button" class="btn btn-primary">Supprimer</button>
-            </div>
-        </td>
-			</tr>
-		</tbody>
-	</table>
+		<table class="table table-borderless table-striped table-earning">
+			<thead>
+				<tr>
+					<th>Nom</th>
+					<th>Sites web</th>
+	        <th>Opérations</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr *ngFor="let profilCible of profilsCible">
+					<td>{{ profilCible.nom }}</td>
+					<td>
+						<ul>
+							<li *ngFor="let siteWeb of profilCible.sites_web_profil_cible">{{ siteWeb.url }}</li>
+						</ul>
+					</td>
+	        <td>
+	            <div class="btn-group-vertical">
+	              <button type="button" class="btn btn-primary">Ajouter</button>
+	              <button type="button" class="btn btn-primary">Modifier</button>
+	              <button type="button" class="btn btn-primary">Supprimer</button>
+	            </div>
+	        </td>
+				</tr>
+			</tbody>
+		</table>
 
-</div>
+	</div>
+
+	<ng-template #aucun_profil_cible>
+		Aucun profil cible
+	</ng-template>
+
+</ng-container>
+
 <app-chargement [chargement]="chargementListeProfilsCible"></app-chargement>
