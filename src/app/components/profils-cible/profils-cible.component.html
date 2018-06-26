@@ -2,8 +2,8 @@
 
 <p class="m-b-25"><a routerLink="/profils-cible/create" class="btn btn-primary">Créer</a></p>
 
-<ng-container *ngIf="!chargementListeProfilsCible">
-	<div *ngIf="profilsCible.length > 0;else aucun_profil_cible" class="table-responsive table--no-card m-b-40">
+<ng-container *ngIf="profilsCible">
+	<div *ngIf="(profilsCible.length > 0);else aucun_profil_cible" class="table-responsive table--no-card m-b-40">
 
 		<table class="table table-borderless table-striped table-earning">
 			<thead>
@@ -40,4 +40,4 @@
 
 </ng-container>
 
-<app-chargement [chargement]="chargementListeProfilsCible"></app-chargement>
+<app-chargement [chargement]="!profilsCible"></app-chargement>
