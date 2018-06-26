@@ -10,6 +10,7 @@ import { ProfilCible } from '../../models/profil-cible';
 export class ProfilsCibleComponent implements OnInit {
 
   profilsCible: ProfilCible[];
+  chargementListeProfilsCible: boolean = false;
 
   constructor(
       private profilCibleService: ProfilCibleService
@@ -20,11 +21,13 @@ export class ProfilsCibleComponent implements OnInit {
   }
 
   getProfilsCible(): void {
-      this.profilCibleService.getProfilsCible().subscribe(
-          (data) => {
-            this.profilsCible = data;
-            console.log(this.profilsCible);
-          }
-      );
+    this.chargementListeProfilsCible = true;
+    this.profilCibleService.getProfilsCible().subscribe(
+      (data) => {
+        this.chargementListeProfilsCible = false;
+        this.profilsCible = data;
+        console.log(this.profilsCible);
+      }
+    );
   }
 }

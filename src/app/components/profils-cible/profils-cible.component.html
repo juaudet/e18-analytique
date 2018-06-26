@@ -2,9 +2,9 @@
 
 <p class="m-b-25"><a routerLink="/profils-cible/create" class="btn btn-primary">Créer</a></p>
 
-<div class="table-responsive table--no-card m-b-40">
+<div *ngIf="!chargementListeProfilsCible" class="table-responsive table--no-card m-b-40">
 
-	<table *ngIf="profilsCible" class="table table-borderless table-striped table-earning">
+	<table class="table table-borderless table-striped table-earning">
 		<thead>
 			<tr>
 				<th>Nom</th>
@@ -32,4 +32,4 @@
 	</table>
 
 </div>
-<p *ngIf="!profilsCible"><i class="fas fa-circle-notch fa-spin"></i> Chargement...</p>
+<app-chargement [chargement]="chargementListeProfilsCible"></app-chargement>

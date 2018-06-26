@@ -19,6 +19,7 @@ import { AdminComponent } from './components/admin/admin.component';
 import { httpInterceptorProviders } from './http-interceptors/index';
 import { CampagnePubComponent } from './components/campagne-pub/campagne-pub.component';
 import { TableauBordComponent } from './components/tableau-bord/tableau-bord.component';
+import { ChargementComponent } from './components/chargement/chargement.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { TableauBordComponent } from './components/tableau-bord/tableau-bord.com
     AdminComponent,
     CampagnePubComponent,
     TableauBordComponent,
+    ChargementComponent,
   ],
   imports: [
     BrowserModule,
