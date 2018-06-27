@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ProfilCible } from '../../models/profil-cible';
+import { ProfilCibleService } from '../../services/profil-cible.service';
 
 @Component({
   selector: 'app-user-profil-form',
@@ -7,9 +9,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserProfilFormComponent implements OnInit {
 
-  constructor() { }
+  profilCible: ProfilCible;
+
+  constructor(
+    private profilCibleService: ProfilCibleService
+  ) { }
 
   ngOnInit() {
+    this.profilCible = new ProfilCible();
+  }
+
+  OnSubmit() {
+    this.profilCibleService.postProfilCible(this.profilCible).subscribe(
+      (data: any) => {
+        console.log('Submit Profil Cible');
+      }
+    )
   }
 
 }
