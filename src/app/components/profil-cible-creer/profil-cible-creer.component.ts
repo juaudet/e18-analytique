@@ -19,7 +19,7 @@ export class UserProfilFormComponent implements OnInit {
     this.profilCible = new ProfilCible();
   }
 
-  OnSubmit() {
+  save() {
     this.profilCibleService.postProfilCible(this.profilCible).subscribe(
       (data: any) => {
         console.log('Submit Profil Cible');

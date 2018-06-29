@@ -20,6 +20,7 @@ import { httpInterceptorProviders } from './http-interceptors/index';
 import { CampagnePubComponent } from './components/campagne-pub/campagne-pub.component';
 import { ChargementComponent } from './components/chargement/chargement.component';
 import { TableauBordPubComponent } from './components/tableau-bord-pub/tableau-bord-pub.component';
+import { ProfilCibleFormulaireComponent } from './components/profil-cible-formulaire/profil-cible-formulaire.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { TableauBordPubComponent } from './components/tableau-bord-pub/tableau-b
     CampagnePubComponent,
     ChargementComponent,
     TableauBordPubComponent,
+    ProfilCibleFormulaireComponent,
   ],
   imports: [
     BrowserModule,
