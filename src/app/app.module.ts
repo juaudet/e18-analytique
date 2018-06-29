@@ -10,7 +10,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AdministrateurService } from './services/shared/administrateur.service';
 import { SignInComponent } from './components/sign-in/sign-in.component';
-import { UserProfilFormComponent } from './components/user-profil-form/user-profil-form.component';
+import { UserProfilFormComponent } from './components/profil-cible-creer/profil-cible-creer.component';
 import { RouterModule } from '@angular/router';
 import { appRoutes } from './routes';
 import { ProfilsCibleComponent } from './components/profils-cible/profils-cible.component';

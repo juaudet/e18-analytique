@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { UserProfilFormComponent } from './user-profil-form.component';
+import { UserProfilFormComponent } from './profil-cible-creer.component';
 
 describe('UserProfilFormComponent', () => {
   let component: UserProfilFormComponent;

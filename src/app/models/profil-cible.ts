@@ -5,8 +5,8 @@ export class ProfilCible {
     sites_web_profil_cible: SiteWebProfilCible[];
 
     public constructor() {
-    	this.nom = '';
-    	this.sites_web_profil_cible = [];
+      this.nom = '';
+      this.sites_web_profil_cible = [];
     }
 
 }

@@ -6,8 +6,7 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./chargement.component.css']
 })
 export class ChargementComponent implements OnInit {
-
-	@Input() chargement: any;
+  @Input() chargement: any;
 
   constructor() { }
 

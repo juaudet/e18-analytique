@@ -4,8 +4,8 @@ import { ProfilCibleService } from '../../services/profil-cible.service';
 
 @Component({
   selector: 'app-user-profil-form',
-  templateUrl: './user-profil-form.component.html',
-  styleUrls: ['./user-profil-form.component.css']
+  templateUrl: './profil-cible-creer.component.html',
+  styleUrls: ['./profil-cible-creer.component.css']
 })
 export class UserProfilFormComponent implements OnInit {
 
@@ -24,7 +24,7 @@ export class UserProfilFormComponent implements OnInit {
       (data: any) => {
         console.log('Submit Profil Cible');
       }
-    )
+    );
   }
 
 }
