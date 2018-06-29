@@ -29,7 +29,6 @@ export class SignUpComponent implements OnInit {
       confirmationPassword: '',
       email: '',
       nom: '',
-      prenom: '',
       no_civique: '',
       ville: '',
       code_postal: '',
