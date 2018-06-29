@@ -1,0 +1,15 @@
+<form (ngSubmit)="OnSubmit()">
+	<div class="form-group">
+		<label for="title">Nom du Profil </label>
+		<input type="text" class="form-control" name="nom" required [(ngModel)]="profilCible.nom">
+	</div>
+
+	<div class="form-group">
+		<label for="url">URL site Visité </label>
+		<input type="text" class="form-control" name="url" required [(ngModel)]="profilCible.sites_web_profil_cible">
+	</div>
+	<button type="submit" class="btn btn-primary">Save</button>
+	<a routerLink="/admin/profils-cible">
+		<button class="btn btn-danger">Annuler</button>
+	</a>
+</form>

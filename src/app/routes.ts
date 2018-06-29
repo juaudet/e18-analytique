@@ -4,9 +4,9 @@ import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { SignInComponent } from './components/sign-in/sign-in.component';
 import { ProfilsCibleComponent } from './components/profils-cible/profils-cible.component';
 import { AdminComponent } from './components/admin/admin.component';
-import { UserProfilFormComponent } from './components/profil-cible-creer/profil-cible-creer.component';
+import { ProfilCibleCreerComponent } from './components/profil-cible-creer/profil-cible-creer.component';
 import { TableauBordPubComponent } from './components/tableau-bord-pub/tableau-bord-pub.component';
-import {CampagnePubComponent} from './components/campagne-pub/campagne-pub.component';
+import { CampagnePubComponent } from './components/campagne-pub/campagne-pub.component';
 
 
 export const appRoutes: Routes = [
@@ -25,7 +25,7 @@ export const appRoutes: Routes = [
                { path: 'campagnes', component: CampagnePubComponent }]},
   {
     path: 'profils-cible/create', component: AdminComponent,
-    children: [{ path: '', component: UserProfilFormComponent }]
+    children: [{ path: '', component: ProfilCibleCreerComponent }]
   },
   { path : '', redirectTo: '/login', pathMatch : 'full'}
 
