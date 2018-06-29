@@ -5,6 +5,8 @@ import { SignInComponent } from './components/sign-in/sign-in.component';
 import { ProfilsCibleComponent } from './components/profils-cible/profils-cible.component';
 import { AdminComponent } from './components/admin/admin.component';
 import { UserProfilFormComponent } from './components/user-profil-form/user-profil-form.component';
+import { TableauBordPubComponent } from './components/tableau-bord-pub/tableau-bord-pub.component';
+import {CampagnePubComponent} from './components/campagne-pub/campagne-pub.component';
 
 
 export const appRoutes: Routes = [
@@ -17,11 +19,11 @@ export const appRoutes: Routes = [
     path: 'login', component: HomeComponent,
     children: [{ path: '', component: SignInComponent }]
   },
-  { path: 'admin', component: AdminComponent },
-  {
-    path: 'profils-cible', component: AdminComponent,
-    children: [{ path: '', component: ProfilsCibleComponent }]
-  },
+  { path: 'admin', component: AdminComponent,
+    children: [{ path: 'tableau-bord-pub', component: TableauBordPubComponent },
+               { path: 'profils-cible', component: ProfilsCibleComponent },
+               { path: 'campagnes', component: CampagnePubComponent },
+    ]},
   {
     path: 'profils-cible/create', component: AdminComponent,
     children: [{ path: '', component: UserProfilFormComponent }]
