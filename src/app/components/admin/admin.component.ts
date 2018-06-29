@@ -19,9 +19,6 @@ export class AdminComponent implements OnInit {
       (data: any) => {
        this.nom = data.nom;
        this.courriel = data.email;
-       console.log(data);
-       console.log(this.nom);
-       console.log(this.courriel);
       },
     );
   }
