@@ -12,10 +12,6 @@ import { environment } from '../../../environments/environment';
     constructor(private http: HttpClient) { }
 
     enregistrerAdministrateur(administrateur: Administrateur) {
-<<<<<<< HEAD
-=======
-
->>>>>>> origin/G19-create-profil
       return this.http.post<Administrateur>(this.rootUrl + '/api/Administrateur/Enregistrer', administrateur);
     }
 
