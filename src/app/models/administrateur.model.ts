@@ -1,15 +1,16 @@
 export class Administrateur {
-  NomUtilisateur: string;
-  MotDePasse: string;
-  ConfirmationMotDePasse: string;
-  Courriel: string;
-  Nom: string;
-  Prenom: string;
-  Adress: string;
-  Ville: string;
-  // True = admin Site
-  // False = admin pub
-  // adminSite: boolean;
+  nom: string;
+  password: string;
+  confirmationPassword: string;
+  email: string;
+  prenom: string;
+  no_civique: string;
+  ville: string;
+  rue: string;
+  code_postal: string;
+  no_compte_bancaire: number;
+  url: string;
+  type: string;
 }
 export class Identification {
   email: string;

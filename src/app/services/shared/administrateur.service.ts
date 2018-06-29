@@ -13,14 +13,18 @@ import { environment } from '../../../environments/environment';
 
     enregistrerAdministrateur(administrateur: Administrateur) {
       const body: Administrateur = {
-        NomUtilisateur: administrateur.NomUtilisateur,
-        MotDePasse: administrateur.MotDePasse,
-        ConfirmationMotDePasse: administrateur.ConfirmationMotDePasse,
-        Courriel: administrateur.Courriel,
-        Nom: administrateur.Nom,
-        Prenom: administrateur.Prenom,
-        Adress: administrateur.Adress,
-        Ville: administrateur.Ville
+        nom: administrateur.nom,
+        password: administrateur.password,
+        confirmationPassword: administrateur.confirmationPassword,
+        email: administrateur.email,
+        prenom: administrateur.prenom,
+        rue: administrateur.rue,
+        ville: administrateur.ville,
+        code_postal: administrateur.code_postal,
+        no_civique: administrateur.no_civique,
+        type: administrateur.type,
+        no_compte_bancaire: administrateur.no_compte_bancaire,
+        url: administrateur.url,
       }
       return this.http.post(this.rootUrl + '/api/Administrateur/Enregistrer', body);
     }

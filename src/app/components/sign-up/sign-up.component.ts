@@ -23,15 +23,21 @@ export class SignUpComponent implements OnInit {
     if (form != null) {
         form.reset();
     }
+
     this.administrateur = {
-      NomUtilisateur: '',
-      MotDePasse: '',
-      ConfirmationMotDePasse: '',
-      Courriel: '',
-      Nom: '',
-      Prenom: '',
-      Adress: '',
-      Ville: ''
+      password: '',
+      confirmationPassword: '',
+      email: '',
+      nom: '',
+      prenom: '',
+      no_civique: '',
+      ville: '',
+      code_postal: '',
+      rue: '',
+      type: '',
+      no_compte_bancaire: null,
+      url: '',
+
     };
   }
 
@@ -44,5 +50,24 @@ export class SignUpComponent implements OnInit {
         this.toastr.error(data.Errors[0]);
       }
     });
+  }
+
+  public UpdateForm(formName:string){
+
+    if(formName == "publicite"){
+
+      document.getElementById("noCompte").hidden = true;
+      (<HTMLInputElement>document.getElementById("noCompte")).value = "";
+
+     document.getElementById("urlSite").hidden = true;
+     (<HTMLInputElement>document.getElementById("urlSite")).value = "";
+
+    }else if(formName == "site"){
+
+      document.getElementById("noCompte").hidden = false;
+      document.getElementById("urlSite").hidden = false;
+
+    }
+
   }
 }

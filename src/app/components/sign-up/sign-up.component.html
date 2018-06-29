@@ -1,36 +1,44 @@
 <div class="row" xmlns="">
 
       <form class="col s12 white" #enregistrement="ngForm" (ngSubmit)="OnSubmit(enregistrement)">
-            <input class="form-control" placeholder="Nom d'utilisateur" type="text" name="NomUtilisateur"  #NomUtilisateur="ngModel" [(ngModel)]="administrateur.NomUtilisateur" required>
+            <input class="form-control" placeholder="Courriel" type="text" name="email" [(ngModel)]="administrateur.email" required>
             <label data-error="Champ requis!"></label>
 
-            <input class="form-control" placeholder="Mot de passe" type="password" name="MotDePasse" #MotDePasse="ngModel" [(ngModel)]="administrateur.MotDePasse" required  minlength="3">
-            <label [attr.data-error]="MotDePasse.errors!=null?(!MotDePasse.errors.required?'Minimum 3 charactères requis':'Champ requis!'):''"> </label>
+            <input class="form-control" placeholder="Mot de passe" type="password" name="password"  #password="ngModel" [(ngModel)]="administrateur.password" required  minlength="3">
+            <label [attr.data-error]="password.errors!=null?(!password.errors.required?'Minimum 3 charactères requis':'Champ requis!'):''"> </label>
 
-            <input class="form-control" placeholder="Confirmation mot de passe" type="password" name="ConfirmationMotDePasse" #ConfirmationMotDePasse="ngModel" [(ngModel)]="administrateur.ConfirmationMotDePasse" required  minlength="3">
-            <label [attr.data-error]="ConfirmationMotDePasse.errors!=null?(!ConfirmationMotDePasse.errors.required?'Minimum 3 charactères requis':'Champ requis!'):''"></label>
+            <input class="form-control" placeholder="Confirmation mot de passe" type="password" name="confirmationPassword"  #confirmationPassword ="ngModel"[(ngModel)]="administrateur.confirmationPassword" required  minlength="3">
+            <label [attr.data-error]="confirmationPassword.errors!=null?(!confirmationPassword.errors.required?'Minimum 3 charactères requis':'Champ requis!'):''"></label>
 
-            <input class="form-control" placeholder="Courriel" type="text" name="Courriel" #Courriel="ngModel" [(ngModel)]="administrateur.Courriel" [pattern]="paternDuCourriel">
-            <label data-error="Courriel invalide!"></label>
-
-            <input class="form-control" placeholder="Prénom" type="text" name="Prenom" #Prenom="ngModel" [(ngModel)]="administrateur.Prenom">
+            <input class="form-control" placeholder="Prénom" type="text" name="Prenom" [(ngModel)]="administrateur.prenom">
             <label data-error="Champ requis!"></label>
 
-            <input class="form-control" placeholder="Nom" type="text" name="Nom" #Nom="ngModel" [(ngModel)]="administrateur.Nom">
+            <input class="form-control" placeholder="Nom" type="text" name="Nom" [(ngModel)]="administrateur.nom">
             <label data-error="Champ requis!"></label>
 
-            <input class="form-control" placeholder="Adresse" type="text" name="Adress" #Adress="ngModel" [(ngModel)]="administrateur.Adress">
+            <input class="form-control" placeholder="Ville" type="text" name="Ville" [(ngModel)]="administrateur.ville">
+            <label data-error="Champ requis!"></label>
+            
+            <input class="form-control" placeholder="Rue" type="text" name="rue" [(ngModel)]="administrateur.rue">
             <label data-error="Champ requis!"></label>
 
-            <input class="form-control" placeholder="Ville" type="text" name="Ville" #Ville="ngModel" [(ngModel)]="administrateur.Ville">
+            <input class="form-control" placeholder="Numéro Civique" type="text" name="no_civique"  [(ngModel)]="administrateur.no_civique">
+            <label data-error="Champ requis!"></label>
+
+            <input class="form-control" placeholder="Code postal" type="text" name="code_postal"  [(ngModel)]="administrateur.code_postal">
+            <label data-error="Champ requis!"></label>
+
+            <input class="form-control" placeholder="Numéro du compte bancaire" type="text" name="noCommpteBancaire" id="noCompte" #NoCompte="ngModel" hidden="true" [(ngModel)]="administrateur.no_compte_bancaire">
+            <label data-error="Champ requis!"></label>
+
+            <input class="form-control" placeholder="URL de votre site web" type="text" name="url" #Url="ngModel" id="urlSite" hidden="true" [(ngModel)]="administrateur.url">
             <label data-error="Champ requis!"></label>
 
         <div class="input-group mb-3">
           <div class="input-group-prepend">
-            <button class="btn btn-outline-secondary" type="button">Administrateur site web</button>
-            <button class="btn btn-outline-secondary" type="button">Administrateur publicité</button>
+            <button class="btn btn-outline-secondary" type="button" name="btnSite"  (click)="UpdateForm('site');" >Administrateur site web</button>
+            <button class="btn btn-outline-secondary" type="button" name="btnPub" (click)="UpdateForm('publicite');"  >Administrateur publicité</button>
           </div>
-          <input type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1">
         </div>
 
         <input type="submit" name="login-submit" id="login-submit" tabindex="4" class="form-control btn btn-login" value="S'enregistrer">
