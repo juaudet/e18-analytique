@@ -34,7 +34,7 @@ export class SignUpComponent implements OnInit {
       code_postal: '',
       rue: '',
       type: '',
-      no_compte_bancaire: null,
+      no_compte_bancaire: '',
       url: '',
 
     };

@@ -10,10 +10,10 @@
             <input class="form-control" placeholder="Confirmation mot de passe" type="password" name="confirmationPassword"  #confirmationPassword ="ngModel"[(ngModel)]="administrateur.confirmationPassword" required  minlength="3">
             <label [attr.data-error]="confirmationPassword.errors!=null?(!confirmationPassword.errors.required?'Minimum 3 charactères requis':'Champ requis!'):''"></label>
 
-            <input class="form-control" placeholder="Nom" type="text" name="Nom" [(ngModel)]="administrateur.nom">
+            <input class="form-control" placeholder="Nom" type="text" name="nom" [(ngModel)]="administrateur.nom">
             <label data-error="Champ requis!"></label>
 
-            <input class="form-control" placeholder="Ville" type="text" name="Ville" [(ngModel)]="administrateur.ville">
+            <input class="form-control" placeholder="Ville" type="text" name="ville" [(ngModel)]="administrateur.ville">
             <label data-error="Champ requis!"></label>
             
             <input class="form-control" placeholder="Rue" type="text" name="rue" [(ngModel)]="administrateur.rue">
@@ -25,16 +25,16 @@
             <input class="form-control" placeholder="Code postal" type="text" name="code_postal"  [(ngModel)]="administrateur.code_postal">
             <label data-error="Champ requis!"></label>
 
-            <input class="form-control" placeholder="Numéro du compte bancaire" type="text" name="noCommpteBancaire" id="noCompte" #NoCompte="ngModel" hidden="true" [(ngModel)]="administrateur.no_compte_bancaire">
+            <input class="form-control" placeholder="Numéro du compte bancaire" type="text" name="no_compte_bancaire" id="noCompte" hidden="true" [(ngModel)]="administrateur.no_compte_bancaire">
             <label data-error="Champ requis!"></label>
 
-            <input class="form-control" placeholder="URL de votre site web" type="text" name="url" #Url="ngModel" id="urlSite" hidden="true" [(ngModel)]="administrateur.url">
+            <input class="form-control" placeholder="URL de votre site web" type="text" name="url"  id="urlSite" hidden="true" [(ngModel)]="administrateur.url">
             <label data-error="Champ requis!"></label>
 
         <div class="input-group mb-3">
           <div class="input-group-prepend">
-            <button class="btn btn-outline-secondary" type="button" name="btnSite"  (click)="UpdateForm('site');" >Administrateur site web</button>
-            <button class="btn btn-outline-secondary" type="button" name="btnPub" (click)="UpdateForm('publicite');"  >Administrateur publicité</button>
+            <input class="btn btn-outline-secondary form-control" type="radio" value="site" #type="ngModel" name="type" [(ngModel)]="administrateur.type" (click)="UpdateForm('site');" >Administrateur site web
+            <input class="btn btn-outline-secondary form-control" type="radio" value="publicite" #type="ngModel" name="type"  [(ngModel)]="administrateur.type" (click)="UpdateForm('publicite');">Administrateur publicité
           </div>
         </div>
 

@@ -7,7 +7,7 @@ export class Administrateur {
   ville: string;
   rue: string;
   code_postal: string;
-  no_compte_bancaire: number;
+  no_compte_bancaire: string;
   url: string;
   type: string;
 }
