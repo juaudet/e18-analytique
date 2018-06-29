@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TableauBordComponent } from './tableau-bord.component';
+import { TableauBordPubComponent } from './tableau-bord-pub.component';
 
-describe('TableauBordComponent', () => {
-  let component: TableauBordComponent;
-  let fixture: ComponentFixture<TableauBordComponent>;
+describe('TableauBordPubComponent', () => {
+  let component: TableauBordPubComponent;
+  let fixture: ComponentFixture<TableauBordPubComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TableauBordComponent ]
+      declarations: [ TableauBordPubComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(TableauBordComponent);
+    fixture = TestBed.createComponent(TableauBordPubComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

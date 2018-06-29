@@ -18,8 +18,8 @@ import { ProfilCibleService } from './services/profil-cible.service';
 import { AdminComponent } from './components/admin/admin.component';
 import { httpInterceptorProviders } from './http-interceptors/index';
 import { CampagnePubComponent } from './components/campagne-pub/campagne-pub.component';
-import { TableauBordComponent } from './components/tableau-bord/tableau-bord.component';
 import { ChargementComponent } from './components/chargement/chargement.component';
+import { TableauBordPubComponent } from './components/tableau-bord-pub/tableau-bord-pub.component';
 
 @NgModule({
   declarations: [
@@ -31,8 +31,8 @@ import { ChargementComponent } from './components/chargement/chargement.componen
     ProfilsCibleComponent,
     AdminComponent,
     CampagnePubComponent,
-    TableauBordComponent,
     ChargementComponent,
+    TableauBordPubComponent,
   ],
   imports: [
     BrowserModule,

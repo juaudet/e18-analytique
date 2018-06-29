@@ -2,25 +2,21 @@
 
     <aside class="menu-sidebar d-none d-lg-block">
         <div class="logo">
-            <a href="#">
                 <img src="assets/images/icon/analytics.png"/>
-            </a>
         </div>
         <div class="menu-sidebar__content js-scrollbar1">
             <nav class="navbar-sidebar">
                 <ul class="list-unstyled navbar__list">
-                    <li class="active has-sub">
-                        <a class="js-arrow" href="dashboard-ad.html">
+                    <li>
+                        <a class="js-arrow" routerLink="/admin/tableau-bord-pub" routerLinkActive="active">
                             <i class="fas fa-tachometer-alt"></i>Tableau de bord</a>
-                        <ul class="list-unstyled navbar__sub-list js-sub-list">
-                        </ul>
                     </li>
                     <li>
-                        <a class="js-arrow" href="ad-campagnes.html">
+                        <a class="js-arrow" routerLink="/admin/campagnes" routerLinkActive="active">
                             <i class="fas fa-images  "></i>Campagnes publicitaires</a>
                     </li>
                     <li>
-                        <a class="js-arrow" routerLink="/profils-cible">
+                        <a class="js-arrow" routerLink="/admin/profils-cible" routerLinkActive="active">
                             <i class="fas fa-user"></i>Profils utilisateurs</a>
                     </li>
                 </ul>
@@ -95,4 +91,5 @@
         <!-- END PAGE CONTAINER-->
 		</div>
 
+</div>
 </div>
