@@ -17,7 +17,6 @@ import { environment } from '../../../environments/environment';
         password: administrateur.password,
         confirmationPassword: administrateur.confirmationPassword,
         email: administrateur.email,
-        prenom: administrateur.prenom,
         rue: administrateur.rue,
         ville: administrateur.ville,
         code_postal: administrateur.code_postal,

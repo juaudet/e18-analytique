@@ -3,7 +3,6 @@ export class Administrateur {
   password: string;
   confirmationPassword: string;
   email: string;
-  prenom: string;
   no_civique: string;
   ville: string;
   rue: string;

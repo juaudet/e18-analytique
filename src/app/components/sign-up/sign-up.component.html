@@ -10,9 +10,6 @@
             <input class="form-control" placeholder="Confirmation mot de passe" type="password" name="confirmationPassword"  #confirmationPassword ="ngModel"[(ngModel)]="administrateur.confirmationPassword" required  minlength="3">
             <label [attr.data-error]="confirmationPassword.errors!=null?(!confirmationPassword.errors.required?'Minimum 3 charactères requis':'Champ requis!'):''"></label>
 
-            <input class="form-control" placeholder="Prénom" type="text" name="Prenom" [(ngModel)]="administrateur.prenom">
-            <label data-error="Champ requis!"></label>
-
             <input class="form-control" placeholder="Nom" type="text" name="Nom" [(ngModel)]="administrateur.nom">
             <label data-error="Champ requis!"></label>
 
