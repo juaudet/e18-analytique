@@ -21,7 +21,7 @@ export class ProfilCibleFormulaireComponent implements OnInit {
 
   ngOnInit() {
     this.ajout = this.formBuilder.group({
-      ajoutLigne: this.formBuilder.array([this.initItemRows()]) // here
+      ajoutLigne: this.formBuilder.array([this.initItemRows()])
     });
   }
 
