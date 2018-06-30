@@ -1,4 +1,4 @@
-<form [formGroup]="ajout" (ngSubmit)="OnSubmit()">
+<form (ngSubmit)="OnSubmit()">
 	<div class="form-group">
 		<label for="title">Nom du Profil </label>
 		<input type="text" class="form-control" name="nom" required [(ngModel)]="profilCible.nom">
@@ -7,6 +7,7 @@
       <label for="url">URL site Visité </label>
       <!--<input type="text" class="form-control" name="url"> -->
   </div>
+  <form [formGroup]="ajout">
     <div formArrayName="ajoutLigne">
       <div *ngFor="let ligne of ajout.controls.ajoutLigne.controls; let i=index"  [formGroupName]="i">
         <div class="form-group">
@@ -14,6 +15,7 @@
         </div>
       </div>
     </div>
+  </form>
   <button type="button" (click)="AjouterLigneUrl()" class="btn btn-success">Ajouter</button>
 	<button type="submit" class="btn btn-primary">Sauvegarder</button>
 	<a routerLink="/admin/profils-cible">

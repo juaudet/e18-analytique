@@ -14,6 +14,7 @@ export class ProfilCibleFormulaireComponent implements OnInit {
   @Output() saveEvent = new EventEmitter<ProfilCible>();
 
   ajout: FormGroup;
+  url: [''];
 
   constructor( private formBuilder: FormBuilder) {
   }
