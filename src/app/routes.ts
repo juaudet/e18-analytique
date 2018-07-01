@@ -21,11 +21,10 @@ export const appRoutes: Routes = [
   },
   { path: 'admin', component: AdminComponent,
     children: [{ path: 'tableau-bord-pub', component: TableauBordPubComponent },
+               { path: 'profils-cible/create', component: ProfilCibleCreerComponent},
                { path: 'profils-cible', component: ProfilsCibleComponent },
-               { path: 'campagnes', component: CampagnePubComponent }]},
-  {
-    path: 'profils-cible/create', component: AdminComponent,
-    children: [{ path: '', component: ProfilCibleCreerComponent }]
+               { path: 'campagnes', component: CampagnePubComponent },
+              ]
   },
   { path : '', redirectTo: '/login', pathMatch : 'full'}
 
