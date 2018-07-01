@@ -23,4 +23,9 @@ export class ProfilCibleService {
     	return this.http.post<ProfilCible>(url, profilCible);
     }
 
+    getProfilCible(id: number): Observable<ProfilCible> {
+        const url = `${this.rootUrl}/api/profils/${id}`;
+        return this.http.get<ProfilCible>(url);
+    }
+
 }

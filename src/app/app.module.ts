@@ -21,6 +21,7 @@ import { CampagnePubComponent } from './components/campagne-pub/campagne-pub.com
 import { ChargementComponent } from './components/chargement/chargement.component';
 import { TableauBordPubComponent } from './components/tableau-bord-pub/tableau-bord-pub.component';
 import { ProfilCibleFormulaireComponent } from './components/profil-cible-formulaire/profil-cible-formulaire.component';
+import { ProfilCibleEditerComponent } from './components/profil-cible-editer/profil-cible-editer.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { ProfilCibleFormulaireComponent } from './components/profil-cible-formul
     ChargementComponent,
     TableauBordPubComponent,
     ProfilCibleFormulaireComponent,
+    ProfilCibleEditerComponent,
   ],
   imports: [
     BrowserModule,

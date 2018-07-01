@@ -5,6 +5,7 @@ import { SignInComponent } from './components/sign-in/sign-in.component';
 import { ProfilsCibleComponent } from './components/profils-cible/profils-cible.component';
 import { AdminComponent } from './components/admin/admin.component';
 import { ProfilCibleCreerComponent } from './components/profil-cible-creer/profil-cible-creer.component';
+import { ProfilCibleEditerComponent } from './components/profil-cible-editer/profil-cible-editer.component';
 import { TableauBordPubComponent } from './components/tableau-bord-pub/tableau-bord-pub.component';
 import { CampagnePubComponent } from './components/campagne-pub/campagne-pub.component';
 
@@ -22,6 +23,7 @@ export const appRoutes: Routes = [
   { path: 'admin', component: AdminComponent,
     children: [{ path: 'tableau-bord-pub', component: TableauBordPubComponent },
                { path: 'profils-cible/create', component: ProfilCibleCreerComponent},
+               { path: 'profils-cible/:id', component: ProfilCibleEditerComponent},
                { path: 'profils-cible', component: ProfilsCibleComponent },
                { path: 'campagnes', component: CampagnePubComponent },
               ]
