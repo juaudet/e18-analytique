@@ -1,22 +1,22 @@
-<form (ngSubmit)="OnSubmit()">
+<form [formGroup]="profilCibleForm" (ngSubmit)="OnSubmit()">
 	<div class="form-group">
 		<label for="title">Nom du Profil </label>
-		<input type="text" class="form-control" name="nom" required [(ngModel)]="profilCible.nom">
+		<input type="text" class="form-control" formControlName="nom">
 	</div>
 	<div class="form-group">
-      <label for="url">URL site Visité </label>
-      <!--<input type="text" class="form-control" name="url"> -->
-  </div>
-  <form [formGroup]="ajout">
-    <div formArrayName="ajoutLigne">
-      <div *ngFor="let ligne of ajout.controls.ajoutLigne.controls; let i=index"  [formGroupName]="i">
+    <label for="url">URL site Visité </label>
+    <div formArrayName="sitesWeb">
+      <div *ngFor="let siteWeb of sitesWeb.controls; let i=index" [formGroupName]="i">
         <div class="form-group">
-          <input formControlName="url" class="form-control">
+          <div class="input-group">
+            <input formControlName="url" class="form-control">
+            <button type="button" (click)="retirerLigneUrl(i)" class="btn btn-danger input-group-append" tabindex="-1"><i class="icon fa fa-trash-alt"></i></button>
+          </div>
         </div>
       </div>
     </div>
-  </form>
-  <button type="button" (click)="AjouterLigneUrl()" class="btn btn-success">Ajouter</button>
+  </div>
+  <button type="button" (click)="ajouterLigneUrl()" class="btn btn-success">Ajouter</button>
 	<button type="submit" class="btn btn-primary">Sauvegarder</button>
 	<a routerLink="/admin/profils-cible">
 		<button class="btn btn-danger">Annuler</button>

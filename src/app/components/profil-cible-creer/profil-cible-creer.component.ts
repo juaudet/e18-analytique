@@ -21,8 +21,8 @@ export class ProfilCibleCreerComponent implements OnInit {
     this.profilCible = new ProfilCible();
   }
 
-  save() {
-    this.profilCibleService.postProfilCible(this.profilCible).subscribe(
+  save(profilCible: ProfilCible) {
+    this.profilCibleService.postProfilCible(profilCible).subscribe(
       (data: any) => {
         this.router.navigate(['/admin/profils-cible']);
         console.log('Submit Profil Cible');
