@@ -29,4 +29,8 @@ export class ProfilCibleEditerComponent implements OnInit {
     		.subscribe(profilCible => this.profilCible = profilCible);
     }
 
+    save(profilCible: ProfilCible) {
+      console.log(profilCible);
+    }
+
 }
