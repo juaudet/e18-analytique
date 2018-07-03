@@ -28,6 +28,11 @@ export class ProfilCibleService {
         return this.http.get<ProfilCible>(url);
     }
 
+    patchProfilCible(profilCible: ProfilCible):Observable<ProfilCible> {
+        const url = `${this.rootUrl}/api/profils/${profilCible.id}`;
+        return this.http.patch<ProfilCible>(url, profilCible);
+    }
+    
     deleteProfilCible(profilCible: ProfilCible):Observable<ProfilCible> {
         const url = `${this.rootUrl}/api/profils/${profilCible.id}`;
         return this.http.delete<ProfilCible>(url);
