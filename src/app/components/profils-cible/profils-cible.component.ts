@@ -38,6 +38,5 @@ export class ProfilsCibleComponent implements OnInit {
         this.profilsCible.splice(index, 1);
       }
     });
- 
   }
 }

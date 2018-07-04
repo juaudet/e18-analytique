@@ -31,10 +31,11 @@ export class ProfilCibleEditerComponent implements OnInit {
 
     save(profilCible: ProfilCible) {
       
-        this.profilCibleService.patchProfilCible(profilCible).subscribe((ok)=>{
+       console.log(profilCible);
+        // this.profilCibleService.patchProfilCible(profilCible).subscribe((ok)=>{
           
-          console.log(ok);
-        });
+        //   console.log(ok);
+        // });
      
       }
 }

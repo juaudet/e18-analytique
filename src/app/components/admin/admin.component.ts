@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
 export class AdminComponent implements OnInit {
   nom: string;
   courriel: string;
+  role: string;
 
   constructor( private nomRoleService: AdministrateurService) { }
 
@@ -19,6 +20,11 @@ export class AdminComponent implements OnInit {
       (data: any) => {
        this.nom = data.nom;
        this.courriel = data.email;
+       this.role = data.role;
+
+        if(this.role === "site"){
+          document.getElementById("profilSideBar").hidden = true;
+        }
       },
     );
   }
