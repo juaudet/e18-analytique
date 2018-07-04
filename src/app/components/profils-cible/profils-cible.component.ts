@@ -27,4 +27,17 @@ export class ProfilsCibleComponent implements OnInit {
       }
     );
   }
+
+  deleteProfilsCible(profilCible: ProfilCible): void{
+    this.profilCibleService.deleteProfilCible(profilCible).subscribe((ok)=>{
+      
+      console.log(ok);
+      var index = this.profilsCible.indexOf(profilCible,0);
+      if(index > -1){
+
+        this.profilsCible.splice(index, 1);
+      }
+    });
+ 
+  }
 }

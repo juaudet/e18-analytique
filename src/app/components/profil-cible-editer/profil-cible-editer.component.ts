@@ -30,7 +30,11 @@ export class ProfilCibleEditerComponent implements OnInit {
     }
 
     save(profilCible: ProfilCible) {
-      console.log(profilCible);
-    }
-
+      
+        this.profilCibleService.patchProfilCible(profilCible).subscribe((ok)=>{
+          
+          console.log(ok);
+        });
+     
+      }
 }
