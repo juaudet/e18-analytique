@@ -22,6 +22,7 @@ import { ChargementComponent } from './components/chargement/chargement.componen
 import { TableauBordPubComponent } from './components/tableau-bord-pub/tableau-bord-pub.component';
 import { ProfilCibleFormulaireComponent } from './components/profil-cible-formulaire/profil-cible-formulaire.component';
 import { ProfilCibleEditerComponent } from './components/profil-cible-editer/profil-cible-editer.component';
+import { AuthGuard } from './auth.guard';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,7 @@ import { ProfilCibleEditerComponent } from './components/profil-cible-editer/pro
     RouterModule.forRoot(appRoutes),
     NgbModule.forRoot()
   ],
-  providers: [AdministrateurService, ProfilCibleService, httpInterceptorProviders],
+  providers: [AdministrateurService, ProfilCibleService, httpInterceptorProviders, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

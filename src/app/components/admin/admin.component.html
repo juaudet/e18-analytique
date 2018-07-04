@@ -30,15 +30,13 @@
                 <div class="section__content section__content--p30">
                         <div class="container-fluid">
                             <div class="header-wrap pull-right">
-                                
                                     <div ngbDropdown class="d-inline-block">
                                             <button class="btn " id="dropdownBasic1" ngbDropdownToggle>Administrateur de {{ role }} <br> {{ nom }}</button>
                                             <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
                                               <button class="dropdown-item">Paramètres</button>
-                                              <button class="dropdown-item btn-outline-danger">Déconnection</button>
+                                              <button class="dropdown-item btn-outline-danger" (click)="logoutAdministrateur()">Déconnection</button>
                                             </div>
-                                    </div>
-                                
+                                    </div>      
                             </div>
                         </div>
                     </div>

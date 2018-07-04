@@ -8,6 +8,7 @@ import { ProfilCibleCreerComponent } from './components/profil-cible-creer/profi
 import { ProfilCibleEditerComponent } from './components/profil-cible-editer/profil-cible-editer.component';
 import { TableauBordPubComponent } from './components/tableau-bord-pub/tableau-bord-pub.component';
 import { CampagnePubComponent } from './components/campagne-pub/campagne-pub.component';
+import { AuthGuard } from './auth.guard';
 
 
 export const appRoutes: Routes = [
@@ -21,6 +22,7 @@ export const appRoutes: Routes = [
     children: [{ path: '', component: SignInComponent }]
   },
   { path: 'admin', component: AdminComponent,
+  canActivate: [AuthGuard],
     children: [{ path: 'tableau-bord-pub', component: TableauBordPubComponent },
                { path: 'profils-cible/create', component: ProfilCibleCreerComponent},
                { path: 'profils-cible/:id', component: ProfilCibleEditerComponent},
