@@ -22,7 +22,7 @@ export const appRoutes: Routes = [
   { path: 'admin', component: AdminComponent,
     children: [{ path: 'tableau-bord-pub', component: TableauBordPubComponent },
                { path: 'profils-cible', component: ProfilsCibleComponent },
-               { path: 'campagnes', component: CampagnePubComponent }]},
+               { path: 'campagnes/create', component: CampagnePubCreerComponent }]},
   {
     path: 'profils-cible/create', component: AdminComponent,
     children: [{ path: '', component: ProfilCibleCreerComponent }]

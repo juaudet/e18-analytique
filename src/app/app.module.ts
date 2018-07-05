@@ -17,7 +17,7 @@ import { ProfilsCibleComponent } from './components/profils-cible/profils-cible.
 import { ProfilCibleService } from './services/profil-cible.service';
 import { AdminComponent } from './components/admin/admin.component';
 import { httpInterceptorProviders } from './http-interceptors/index';
-import { CampagnePubComponent } from './components/campagne-pub/campagne-pub.component';
+import { CampagnePubCreerComponent } from './components/campagne-pub-creer/campagne-pub-creer.component';
 import { ChargementComponent } from './components/chargement/chargement.component';
 import { TableauBordPubComponent } from './components/tableau-bord-pub/tableau-bord-pub.component';
 import { ProfilCibleFormulaireComponent } from './components/profil-cible-formulaire/profil-cible-formulaire.component';
@@ -32,6 +32,7 @@ import { ProfilCibleFormulaireComponent } from './components/profil-cible-formul
     ProfilsCibleComponent,
     AdminComponent,
     CampagnePubComponent,
+    CampagnePubCreerComponent,
     ChargementComponent,
     TableauBordPubComponent,
     ProfilCibleFormulaireComponent,
