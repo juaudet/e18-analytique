@@ -12,7 +12,6 @@ import { environment } from '../../../environments/environment';
     constructor(private http: HttpClient) { }
 
     enregistrerAdministrateur(administrateur: Administrateur) {
-      console.log(administrateur);
       return this.http.post<Administrateur>(this.rootUrl + '/api/register', administrateur);
     }
 
