@@ -13,7 +13,9 @@ export class AdminComponent implements OnInit {
   email: string;
   role: string;
 
-  constructor( private administrateurService: AdministrateurService, private _router: Router) { }
+  constructor( private administrateurService: AdministrateurService,
+     private _router: Router,
+     private toastr: ToastrService) { }
 
   ngOnInit() {
     this.administrateurService.nomRoleAdministrateur().subscribe(
@@ -32,7 +34,7 @@ export class AdminComponent implements OnInit {
   logoutAdministrateur(){
     this.administrateurService.logoutAdministrateur(this.email).subscribe(
       (data: any) => {
-        console.log(data.message);
+        this.toastr.success('Vous êtes déconnecté !')
       },
     );
     localStorage.clear();

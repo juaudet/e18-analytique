@@ -4,10 +4,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
-import { ToastrModule } from 'ngx-toastr';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AdministrateurService } from './services/shared/administrateur.service';
 import { SignInComponent } from './components/sign-in/sign-in.component';
 import { ProfilCibleCreerComponent } from './components/profil-cible-creer/profil-cible-creer.component';
@@ -24,6 +21,10 @@ import { TableauBordPubComponent } from './components/tableau-bord-pub/tableau-b
 import { ProfilCibleFormulaireComponent } from './components/profil-cible-formulaire/profil-cible-formulaire.component';
 import { ProfilCibleEditerComponent } from './components/profil-cible-editer/profil-cible-editer.component';
 import { AuthGuard } from './auth.guard';
+import { CommonModule } from '@angular/common';
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -48,6 +49,7 @@ import { AuthGuard } from './auth.guard';
     HttpClientModule,
     ToastrModule.forRoot(),
     BrowserAnimationsModule,
+    CommonModule,
     RouterModule.forRoot(appRoutes),
     NgbModule.forRoot()
   ],

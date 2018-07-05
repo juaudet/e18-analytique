@@ -49,8 +49,8 @@ export class SignUpComponent implements OnInit {
       (data: any) => {
         this.toastr.success('Enregistrement effectuée avec succès.');
         this.resetForm(form);
-        console.log(data.message);
-        this.router.navigate[('login')];
+        console.log("salut");
+        this.router.navigate(['login'])
       },
       (error: any) => {
         this.toastr.error("Vos champs sont invalide !");
