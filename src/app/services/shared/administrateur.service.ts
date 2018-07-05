@@ -20,8 +20,16 @@ import { environment } from '../../../environments/environment';
       return this.http.post<Identification>(this.rootUrl + '/api/auth/login', identification);
     }
 
-  nomRoleAdministrateur() {
-
-    return this.http.get(this.rootUrl + '/api/auth/me');
+    nomRoleAdministrateur() {
+      return this.http.get(this.rootUrl + '/api/auth/me');
     }
+
+    logoutAdministrateur(email: string){
+      return this.http.post(this.rootUrl + '/api/auth/logout', email );
+    }
+
+    loggedIn() {
+      return !!localStorage.getItem('token');
+    }
+    
   }

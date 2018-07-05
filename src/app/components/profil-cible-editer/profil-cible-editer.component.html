@@ -1,0 +1,8 @@
+
+<div class="container" *ngIf="profilCible">
+  <h1>Éditer le profil utilisateur {{ profilCible.nom }}</h1>
+
+  <app-profil-cible-formulaire [profilCible]="profilCible" (saveEvent)="save($event)"></app-profil-cible-formulaire>
+  
+</div>
+

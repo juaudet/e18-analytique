@@ -5,8 +5,10 @@ import { SignInComponent } from './components/sign-in/sign-in.component';
 import { ProfilsCibleComponent } from './components/profils-cible/profils-cible.component';
 import { AdminComponent } from './components/admin/admin.component';
 import { ProfilCibleCreerComponent } from './components/profil-cible-creer/profil-cible-creer.component';
+import { ProfilCibleEditerComponent } from './components/profil-cible-editer/profil-cible-editer.component';
 import { TableauBordPubComponent } from './components/tableau-bord-pub/tableau-bord-pub.component';
 import { CampagnePubComponent } from './components/campagne-pub/campagne-pub.component';
+import { AuthGuard } from './auth.guard';
 
 
 export const appRoutes: Routes = [
@@ -20,12 +22,14 @@ export const appRoutes: Routes = [
     children: [{ path: '', component: SignInComponent }]
   },
   { path: 'admin', component: AdminComponent,
+  canActivate: [AuthGuard],
     children: [{ path: 'tableau-bord-pub', component: TableauBordPubComponent },
+               { path: 'profils-cible/create', component: ProfilCibleCreerComponent},
+               { path: 'profils-cible/:id', component: ProfilCibleEditerComponent},
                { path: 'profils-cible', component: ProfilsCibleComponent },
-               { path: 'campagnes/create', component: CampagnePubCreerComponent }]},
-  {
-    path: 'profils-cible/create', component: AdminComponent,
-    children: [{ path: '', component: ProfilCibleCreerComponent }]
+               { path: 'campagnes/create', component: CampagnePubCreerComponent },
+               { path: 'campagnes', component: CampagnePubComponent }
+              ]},
   },
   { path : '', redirectTo: '/login', pathMatch : 'full'}
 

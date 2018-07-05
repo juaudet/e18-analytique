@@ -1,10 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -21,6 +21,8 @@ import { CampagnePubCreerComponent } from './components/campagne-pub-creer/campa
 import { ChargementComponent } from './components/chargement/chargement.component';
 import { TableauBordPubComponent } from './components/tableau-bord-pub/tableau-bord-pub.component';
 import { ProfilCibleFormulaireComponent } from './components/profil-cible-formulaire/profil-cible-formulaire.component';
+import { ProfilCibleEditerComponent } from './components/profil-cible-editer/profil-cible-editer.component';
+import { AuthGuard } from './auth.guard';
 
 @NgModule({
   declarations: [
@@ -36,16 +38,19 @@ import { ProfilCibleFormulaireComponent } from './components/profil-cible-formul
     ChargementComponent,
     TableauBordPubComponent,
     ProfilCibleFormulaireComponent,
+    ProfilCibleEditerComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
     ToastrModule.forRoot(),
     BrowserAnimationsModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    NgbModule.forRoot()
   ],
-  providers: [AdministrateurService, ProfilCibleService, httpInterceptorProviders],
+  providers: [AdministrateurService, ProfilCibleService, httpInterceptorProviders, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
