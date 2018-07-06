@@ -34,11 +34,11 @@ export class AdminComponent implements OnInit {
   logoutAdministrateur(){
     this.administrateurService.logoutAdministrateur(this.email).subscribe(
       (data: any) => {
-        this.toastr.success('Vous êtes déconnecté !')
+        this.toastr.success('Vous êtes déconnecté !');
       },
     );
     localStorage.clear();
-    this._router.navigate(['login'])
+    this._router.navigate(['login']);
   }
 
 }

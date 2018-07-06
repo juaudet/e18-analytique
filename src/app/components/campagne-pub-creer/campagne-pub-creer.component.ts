@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ToastrService } from 'ngx-toastr';
-import { Router } from '@angular/router';
-import { NgForm } from '@angular/forms';
-import { CampagnePublicitaireService } from '../../services/campagne-publicitaire.service';
+import { CampagnePublicitaireService} from '../../services/campagne-publicitaire.service';
 import { CampagnePublicitaire } from '../../models/campagne-publicitaire';
+import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-campagne-pub-creer',
@@ -13,43 +12,23 @@ import { CampagnePublicitaire } from '../../models/campagne-publicitaire';
 export class CampagnePubCreerComponent implements OnInit {
 campagnePublicitaire: CampagnePublicitaire;
 
-  constructor(private campagnePublicitaireService: CampagnePublicitaireService, 
-    private toastr: ToastrService,
-    private router: Router) { }
+  campagnePublicitaire: CampagnePublicitaire;
+
+  constructor(private  campagnePubService: CampagnePublicitaireService,
+              private  router: Router) { }
 
   ngOnInit() {
-    this.resetForm();
+    this.campagnePublicitaire = new CampagnePublicitaire();
   }
 
-  resetForm(form?: NgForm) {
-    if (form != null) {
-        form.reset();
-    }
-  
-
-    this.campagnePublicitaire = {
-      nom: '',
-      date_debut: '',
-      date_fin: '',
-      budget: null,
-      active: false,
-
-    }
+  save (campagnePublicitaire: CampagnePublicitaire) {
+    this.campagnePubService.postCampagnesPublicitaires(campagnePublicitaire).subscribe(
+      (data: any) => {
+        this.router.navigate(['/admin/campagne-pub']);
+        console.log('Submit Campagne Publicitaire');
+        console.log(this.campagnePublicitaire.nom);
+      }
+    );
   }
-
-    OnSubmit (form: NgForm) {
-
-      this.campagnePublicitaireService.creerCampagnePublicitaire(form.value).subscribe(
-        (data: any) =>{
-          this.toastr.success('Campagne enregistrée avec succès.');
-          this.resetForm(form);
-          this.router.navigate(['campagnes']);
-        },
-        (error: any) => {
-          this.toastr.error("Vos champs sont invalide !");
-        }
-      );
-    }
-
 }
 

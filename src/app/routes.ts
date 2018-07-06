@@ -9,6 +9,7 @@ import { ProfilCibleEditerComponent } from './components/profil-cible-editer/pro
 import { TableauBordPubComponent } from './components/tableau-bord-pub/tableau-bord-pub.component';
 import { CampagnePubComponent } from './components/campagne-pub/campagne-pub.component';
 import { CampagnePubCreerComponent } from './components/campagne-pub-creer/campagne-pub-creer.component';
+import { CampagnePubFormulaireComponent} from './components/campagne-pub-formulaire/campagne-pub-formulaire.component';
 import { AuthGuard } from './auth.guard';
 
 
@@ -30,6 +31,7 @@ export const appRoutes: Routes = [
                { path: 'profils-cible', component: ProfilsCibleComponent },
                { path: 'campagnes', component: CampagnePubComponent },
                { path: 'campagnes/create', component: CampagnePubCreerComponent },
+               { path: 'campagnes/:id', component: CampagnePubFormulaireComponent }
               ]
   },
   { path : '', redirectTo: '/login', pathMatch : 'full'}
