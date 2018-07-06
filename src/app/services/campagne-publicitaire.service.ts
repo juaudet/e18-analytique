@@ -21,4 +21,8 @@ export class CampagnePublicitaireService {
     return this.http.get<CampagnePublicitaire[]>(url);
   }
 
+  creerCampagnePublicitaire(campagnePublicitaire: CampagnePublicitaire) {
+    return this.http.post<CampagnePublicitaire>(this.rootUrl + '/api/admin/campagnes/', campagnePublicitaire);
+  }
+
 }
