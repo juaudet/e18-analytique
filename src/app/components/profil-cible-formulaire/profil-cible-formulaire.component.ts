@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-
+import { ToastrService } from 'ngx-toastr';
 import { ProfilCible } from '../../models/profil-cible';
 import { SiteWebProfilCible } from '../../models/site-web-profil-cible';
 import { FormGroup, FormArray, FormBuilder, Validators, ReactiveFormsModule } from '@angular/forms';
@@ -18,7 +18,7 @@ export class ProfilCibleFormulaireComponent implements OnInit {
   // url: [''];
   profilCibleForm: FormGroup;
 
-  constructor( private formBuilder: FormBuilder) {
+  constructor( private formBuilder: FormBuilder, private toastr: ToastrService) {
   }
 
   ngOnInit() {
@@ -30,7 +30,7 @@ export class ProfilCibleFormulaireComponent implements OnInit {
       nom: this.profilCible.nom,
       sitesWeb: this.formBuilder.array([])
     });
-    this.setSitesWeb(this.profilCible.sites_web_profil_cible); 
+    this.setSitesWeb(this.profilCible.sites_web_profil_cible);
   }
 
   setSitesWeb(sitesWeb: SiteWebProfilCible[]) {
@@ -81,13 +81,13 @@ export class ProfilCibleFormulaireComponent implements OnInit {
 
   prepareSaveProfilCible(): ProfilCible {
     const formModel = this.profilCibleForm.value;
- 
+
     // deep copy of form siteWeb
     const sitesWebProfilsCibleDeepCopy: SiteWebProfilCible[] = formModel.sitesWeb.map(
       (siteWeb: SiteWebProfilCible) => Object.assign({}, siteWeb)
     );
- 
-    // return new `ProfilCible` object containing a combination of original 
+
+    // return new `ProfilCible` object containing a combination of original
     // ProfilCible value(s) and deep copies of changed form model values
     const saveProfilCible: ProfilCible = {
       id: this.profilCible.id,

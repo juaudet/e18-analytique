@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { environment } from '../../environments/environment';
 
 import { CampagnePublicitaire } from '../models/campagne-publicitaire';
+import {ProfilCible} from '../models/profil-cible';
 
 @Injectable({
   providedIn: 'root'
@@ -19,6 +20,11 @@ export class CampagnePublicitaireService {
   getCampagnesPublicitaires(): Observable<CampagnePublicitaire[]> {
     const url = this.rootUrl;
     return this.http.get<CampagnePublicitaire[]>(url);
+  }
+
+  postCampagnesPublicitaires(campagnesPublicitaire: CampagnePublicitaire): Observable <any> {
+    const url = this.rootUrl + '/api/campagnes-Publicitaires';
+    return this.http.post<CampagnePublicitaire>(url, campagnesPublicitaire);
   }
 
 }

@@ -25,6 +25,7 @@ import { CommonModule } from '@angular/common';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { CampagnePubFormulaireComponent } from './components/campagne-pub-formulaire/campagne-pub-formulaire.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     TableauBordPubComponent,
     ProfilCibleFormulaireComponent,
     ProfilCibleEditerComponent,
+    CampagnePubFormulaireComponent,
   ],
   imports: [
     BrowserModule,

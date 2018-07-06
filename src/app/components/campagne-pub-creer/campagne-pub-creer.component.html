@@ -1,73 +1,7 @@
 
-<div class="row" xmlns="">
+<div class="container">
+  <h1>Créer une Campagne de publicité </h1>
 
-<form #identification="ngForm" (ngSubmit)="OnSubmit(identification)">
+  <app-campagne-pub-formulaire [campagnePublicitaire]="campagnePublicitaire" (saveEvent)="save($event)"></app-campagne-pub-formulaire>
 
-  <fieldset>
-    <legend>   Créer une campagne de Pub </legend>
-  <div class="form-group">
-    <label for="campagnes_publicitaires.id">id :</label>
-    <input class="form-control" type="text" name="id" [(ngModel)]="campagnes_publicitaires.id">
-    <label data-error="Champ requis!"></label>  </div>
-
-    <div class="form-group">
-      <label for="campagnes_publicitaires.Administrateur_Publicite_id">Id Administrateur de la Publicité :</label>
-       <select >
-        <option selected>121323224484</option>
-        <option>98493443999</option>
-        <option selected>08886668634</option>     /* to do  A PROGRAMMER POUR QU IL AILLE CHERCHER LES DONNER DANS LA BD*/
-        <option>90909478494</option>
-        <option>79466464889</option>
-        <option>67898504009</option>
-        <option>09876534559</option>
-        <option>34567890084</option>
-        <option>67622948294</option>
-      </select>
-      <label data-error="Champ requis!"></label>  </div>
-
-    <div class="form-group">
-      <label for="campagnes_publicitaires.nom">Nom de la Campagne:</label>
-      <input class="form-control"  type="text" name="Nom" [(ngModel)]="campagnes_publicitaires.nom">
-      <label data-error="Champ requis!"></label>  </div>
-
-  <div class="form-group" >
-    <label for="campagnes_publicitaires.budget">Budget en $CAD:</label>
-    <input class="form-control" type="text" name="budget" [(ngModel)]="campagnes_publicitaires.budget">
-
-    <label data-error="Champ requis!"></label>  </div>
-
-  <div class="form-group">
-    <label for="campagnes_publicitaires">Date de début:</label>
-    <input class="form-control"  type="date" name="date_debut"  [(ngModel)]="campagnes_publicitaires.date_debut">
-    <label data-error="Champ requis!"></label> </div>
-
-  <div class="form-group">
-    <label for="email">Date de fin:</label>
-    <input class="form-control"  type="date" name="date_fin"  [(ngModel)]="campagnes_publicitaires.date_fin">
-    <label data-error="Champ requis!"></label> </div>
-
-    <p>Active ? : </p>
-    <input type="radio" name="CSS" value="oui" id="oui"
-           checked="checked" />
-    <label for="oui" class="inline">oui</label>
-    <input type="radio" name="CSS" value="non" id="non" />
-    <label for="non" class="inline">non</label>
-
-
-
-  <div class="row justify-content-center">
-    <div class="col col-sm-6 col-sm-offset-3">
-      <div class="form-group">
-        <input type="submit" name="login-submit" id="login-submit" tabindex="4" class="form-control btn btn-login" value="Créer">
-      </div>
-    </div>
-  </div>
-
-  </fieldset>
-</form>
-
-
-
-
-
-
+</div>
