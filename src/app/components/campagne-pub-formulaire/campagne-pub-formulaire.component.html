@@ -29,6 +29,19 @@
         <label for="active" class="inline">non</label>
       </div>
     
+      <!-- <div class="form-group">
+        <label for="url">Liste des profils cibles </label>
+        <div formArrayName="profilsCible">
+          <div *ngFor="let profilCible of profilsCible.controls; let i=index" [formGroupName]="i">
+            <div class="form-group">
+              <div class="input-group">
+                <input formControlName="url" class="form-control">
+                <button type="button" (click)="retirerLigneUrl(i)" class="btn btn-danger input-group-append" tabindex="-1"><i class="far fa-trash-alt"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> -->
     <button type="submit" class="btn btn-primary mybtn">Créer</button>
     <a routerLink="/admin/campagnes">
        <button class="btn btn-danger">Annuler</button>

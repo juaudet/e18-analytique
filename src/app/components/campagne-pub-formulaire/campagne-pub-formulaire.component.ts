@@ -2,6 +2,7 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {FormArray, FormBuilder, FormGroup} from '@angular/forms';
 import {ToastrService} from 'ngx-toastr';
 import {CampagnePublicitaire} from '../../models/campagne-publicitaire';
+import { ProfilCibleService } from '../../services/profil-cible.service';
 
 @Component({
   selector: 'app-campagne-pub-formulaire',
@@ -15,7 +16,7 @@ export class CampagnePubFormulaireComponent implements OnInit {
 
   campagnePublicitaireForm: FormGroup;
 
-  constructor( private formBuilder: FormBuilder, private toastr: ToastrService) {
+  constructor( private formBuilder: FormBuilder, private toastr: ToastrService, private profilCibleService: ProfilCibleService) {
   }
 
   ngOnInit() {
@@ -28,7 +29,8 @@ export class CampagnePubFormulaireComponent implements OnInit {
       budget: this.campagnePublicitaire.budget,
       date_debut: this.campagnePublicitaire.date_debut,
       date_fin: this.campagnePublicitaire.date_fin,
-      active: this.campagnePublicitaire.active
+      active: this.campagnePublicitaire.active,
+      profilsCible: this.formBuilder.array([])
     });
   }
 
@@ -51,4 +53,6 @@ export class CampagnePubFormulaireComponent implements OnInit {
     };
     return saveCampagnePublicitaire;
   }
+
+  
 }
