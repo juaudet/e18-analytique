@@ -26,6 +26,8 @@ import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { CampagnePubFormulaireComponent } from './components/campagne-pub-formulaire/campagne-pub-formulaire.component';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
+
 
 @NgModule({
   declarations: [
@@ -53,7 +55,8 @@ import { CampagnePubFormulaireComponent } from './components/campagne-pub-formul
     BrowserAnimationsModule,
     CommonModule,
     RouterModule.forRoot(appRoutes),
-    NgbModule.forRoot()
+    NgbModule.forRoot(),
+    AngularFontAwesomeModule
   ],
   providers: [AdministrateurService, ProfilCibleService, httpInterceptorProviders, AuthGuard],
   bootstrap: [AppComponent]

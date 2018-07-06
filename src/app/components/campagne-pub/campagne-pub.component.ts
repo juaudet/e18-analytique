@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-
 import { CampagnePublicitaireService } from '../../services/campagne-publicitaire.service';
 import { CampagnePublicitaire } from '../../models/campagne-publicitaire';
 
