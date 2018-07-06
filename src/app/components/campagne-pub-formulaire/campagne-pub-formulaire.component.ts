@@ -26,8 +26,8 @@ export class CampagnePubFormulaireComponent implements OnInit {
     this.campagnePublicitaireForm = this.formBuilder.group({
       nom: this.campagnePublicitaire.nom,
       budget: this.campagnePublicitaire.budget,
-      dateDebut: this.campagnePublicitaire.date_debut,
-      dateFin: this.campagnePublicitaire.date_fin,
+      date_debut: this.campagnePublicitaire.date_debut,
+      date_fin: this.campagnePublicitaire.date_fin,
       active: this.campagnePublicitaire.active
     });
   }

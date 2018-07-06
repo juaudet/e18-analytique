@@ -14,7 +14,9 @@ export class CampagnePubCreerComponent implements OnInit {
   campagnePublicitaire: CampagnePublicitaire;
 
   constructor(private  campagnePubService: CampagnePublicitaireService,
-              private  router: Router) { }
+              private  router: Router,
+              private toastr: ToastrService
+            ) { }
 
   ngOnInit() {
     this.campagnePublicitaire = new CampagnePublicitaire();
@@ -23,10 +25,14 @@ export class CampagnePubCreerComponent implements OnInit {
   save (campagnePublicitaire: CampagnePublicitaire) {
     this.campagnePubService.postCampagnesPublicitaires(campagnePublicitaire).subscribe(
       (data: any) => {
+        this.toastr.success("Votre campagne a été créé !")
         this.router.navigate(['/admin/campagne-pub']);
         console.log('Submit Campagne Publicitaire');
         console.log(this.campagnePublicitaire.nom);
-      }
+      },
+        (error: any) => {
+          this.toastr.error("Votre campagne n'a pu être créée !");
+        }
     );
   }
 }

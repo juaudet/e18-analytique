@@ -1,6 +1,3 @@
-
-<div class="row" xmlns="">
-
   <form [formGroup]="campagnePublicitaireForm" (ngSubmit)="OnSubmit()">
      <div class="form-group">
         <label for="nom">Nom de la Campagne:</label>
@@ -9,7 +6,7 @@
 
       <div class="form-group" >
         <label for="budget">Budget en Rupees:</label>
-        <input class="form-control" type="text" formControlName="budget">
+        <input class="form-control" type="number" formControlName="budget">
       </div>
 
       <div class="form-group">
@@ -22,21 +19,20 @@
         <input class="form-control"  type="date" forControlName="date_fin">
       </div>
 
-      <p>Active </p>
-      <input type="radio" name="CSS" value="oui" id="oui"
-             checked="checked" />
-      <label for="oui" class="inline">oui</label>
-      <input type="radio" name="CSS" value="non" id="non" />
-      <label for="non" class="inline">non</label>
-
-    <div class="row">
-    <button type="submit" class="btn btn-primary">Créer</button>
-    </div>
-      <div class="row">
-        <a routerLink="/admin/campagnes">
-          <button class="btn btn-danger">Annuler</button>
-        </a>
+      <div class="form-group">
+        <label for="active">État de la campagne: </label>
+        <br>
+        <input type="radio" name="CSS" value="true" id="activeTrue" forControlName="active"
+              checked="checked" />
+        <label for="active" class="inline">oui</label>
+        <input type="radio" name="CSS" value="false" id="activeFalse" forControlName="active" />
+        <label for="active" class="inline">non</label>
       </div>
+    
+    <button type="submit" class="btn btn-primary">Créer</button>
+    <a routerLink="/admin/campagnes">
+       <button class="btn btn-danger">Annuler</button>
+     </a>
   </form>
 
 
