@@ -28,8 +28,7 @@ export class CampagnePubFormulaireComponent implements OnInit {
       budget: this.campagnePublicitaire.budget,
       dateDebut: this.campagnePublicitaire.date_debut,
       dateFin: this.campagnePublicitaire.date_fin,
-      active: this.campagnePublicitaire.active,
-      id: this.campagnePublicitaire.id
+      active: this.campagnePublicitaire.active
     });
   }
 
@@ -44,7 +43,6 @@ export class CampagnePubFormulaireComponent implements OnInit {
     // return new `campagnePublicitaire` object containing a combination of original
     // campagnePublicitaire value(s) and deep copies of changed form model values
     const saveCampagnePublicitaire: CampagnePublicitaire = {
-      id: this.campagnePublicitaire.id,
       nom: formModel.nom as string,
       budget: formModel.budget as number,
       date_fin: formModel.date_fin as string,

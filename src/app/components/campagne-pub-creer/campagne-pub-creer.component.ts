@@ -10,7 +10,6 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./campagne-pub-creer.component.css']
 })
 export class CampagnePubCreerComponent implements OnInit {
-campagnePublicitaire: CampagnePublicitaire;
 
   campagnePublicitaire: CampagnePublicitaire;
 
