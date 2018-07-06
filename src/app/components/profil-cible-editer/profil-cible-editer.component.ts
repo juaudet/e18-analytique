@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-
+import { ToastrService } from 'ngx-toastr';
 import { ProfilCible } from '../../models/profil-cible';
 import { ProfilCibleService } from '../../services/profil-cible.service';
 
@@ -16,7 +16,8 @@ export class ProfilCibleEditerComponent implements OnInit {
   	constructor(
 	    private profilCibleService: ProfilCibleService,
 	    private router: Router,
-	    private route: ActivatedRoute,
+      private route: ActivatedRoute,
+      private toastr: ToastrService,
 	) { }
 
     ngOnInit() {
@@ -30,7 +31,14 @@ export class ProfilCibleEditerComponent implements OnInit {
     }
 
     save(profilCible: ProfilCible) {
-      console.log(profilCible);
+      
+        this.profilCibleService.patchProfilCible(profilCible).subscribe((data: any)=> {
+          this.toastr.success('Profil modifié avec succès.');
+          this.router.navigate(['/admin/profils-cible']);
+        },
+        (error: any) => {
+          this.toastr.error("Votre profil n'a pu être modifié !");
+        }
+      );
     }
-
 }

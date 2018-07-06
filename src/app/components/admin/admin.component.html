@@ -15,7 +15,7 @@
                         <a class="js-arrow" routerLink="/admin/campagnes">
                             <i class="fas fa-images  "></i>Campagnes publicitaires</a>
                     </li>
-                    <li routerLinkActive="active">
+                    <li routerLinkActive="active" id="profilSideBar">
                         <a class="js-arrow" routerLink="/admin/profils-cible">
                             <i class="fas fa-user"></i>Profils utilisateurs</a>
                     </li>
@@ -23,55 +23,27 @@
             </nav>
         </div>
     </aside>
-
     <!-- PAGE CONTAINER-->
     <div class="page-container">
         <!-- HEADER DESKTOP-->
         <header class="header-desktop">
-            <div class="section__content section__content--p30">
-                <div class="container-fluid">
-                    <div class="header-wrap">
-                        <form class="form-header" action="" method="POST" style="visibility:hidden">
-                            <input class="au-input au-input--xl" type="text" name="search" placeholder="Search for datas &amp; reports..." />
-                            <button class="au-btn--submit" type="submit">
-                                <i class="zmdi zmdi-search"></i>
-                            </button>
-                        </form>
-                        <div class="header-button">
-                            <div class="account-wrap">
-                                <div class="account-item clearfix js-item-menu">
-                                    <div class="content">
-                                        <a class="js-acc-btn" href="#" >{{ nom }}</a>
-                                    </div>
-                                    <div class="account-dropdown js-dropdown">
-                                        <div class="info clearfix">
-                                            <div class="content">
-                                                <h5 class="name" >
-                                                    <a href="#">{{ nom }}</a>
-                                                </h5>
-                                                <span class="email">{{ courriel }}</span>
+                <div class="section__content section__content--p30">
+                        <div class="container-fluid">
+                            <div class="header-wrap pull-right">
+                                    <div ngbDropdown class="d-inline-block">
+                                            <button class="btn " id="dropdownBasic1" ngbDropdownToggle>Administrateur de {{ role }} <br> {{ nom }}</button>
+                                            <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                                              <button class="dropdown-item">Paramètres</button>
+                                              <button class="dropdown-item btn-outline-danger" (click)="logoutAdministrateur()">Déconnection</button>
                                             </div>
-                                        </div>
-                                        <div class="account-dropdown__body">
-                                            <div class="account-dropdown__item">
-                                                <a href="settings.html">
-                                                    <i class="zmdi zmdi-account"></i>Paramètres du compte</a>
-                                            </div>
-                                        </div>
-                                        <div class="account-dropdown__footer">
-                                            <a href="index.html">
-                                                <i class="zmdi zmdi-power"></i>Déconnection</a>
-                                        </div>
-                                    </div>
-                                </div>
+                                    </div>      
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
         </header>
         <!-- HEADER DESKTOP-->
-
+   
+        
         <!-- MAIN CONTENT-->
         <div class="main-content">
             <div class="section__content section__content--p30">

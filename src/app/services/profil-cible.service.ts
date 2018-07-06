@@ -28,9 +28,13 @@ export class ProfilCibleService {
         return this.http.get<ProfilCible>(url);
     }
 
-    deleteProfilCible(id: number): Observable<any> {
-
-        const url = `${this.rootUrl}/api/profils/${id}`;
+    patchProfilCible(profilCible: ProfilCible):Observable<ProfilCible> {
+        const url = `${this.rootUrl}/api/profils/${profilCible.id}`;
+        return this.http.patch<ProfilCible>(url, profilCible);
+    }
+    
+    deleteProfilCible(profilCible: ProfilCible):Observable<ProfilCible> {
+        const url = `${this.rootUrl}/api/profils/${profilCible.id}`;
         return this.http.delete<ProfilCible>(url);
     }
 

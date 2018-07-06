@@ -3,6 +3,7 @@ import {Administrateur} from '../../models/administrateur.model';
 import { NgForm } from '@angular/forms';
 import { AdministrateurService } from '../../services/shared/administrateur.service';
 import { ToastrService } from 'ngx-toastr';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sign-up',
@@ -13,7 +14,9 @@ export class SignUpComponent implements OnInit {
   administrateur: Administrateur;
   paternDuCourriel = '^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$';
 
-  constructor(private administrateurService: AdministrateurService, private toastr: ToastrService) { }
+  constructor(private administrateurService: AdministrateurService, 
+    private toastr: ToastrService,
+    private router: Router) { }
 
   ngOnInit() {
     this.resetForm();
@@ -41,14 +44,17 @@ export class SignUpComponent implements OnInit {
   }
 
   OnSubmit (form: NgForm) {
-    this.administrateurService.enregistrerAdministrateur(form.value).subscribe((data: any) => {
-      if (data.Succeeded === true) {
+    
+    this.administrateurService.enregistrerAdministrateur(form.value).subscribe(
+      (data: any) => {
+        this.toastr.success('Enregistrement effectuée avec succès.');
         this.resetForm(form);
-        this.toastr.success('Enregistrement réussit');
-      } else {
-        this.toastr.error(data.Errors[0]);
+        this.router.navigate(['login']);
+      },
+      (error: any) => {
+        this.toastr.error("Vos champs sont invalide !");
       }
-    });
+    );
   }
 
   public UpdateForm(formName:string){

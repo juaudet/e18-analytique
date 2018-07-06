@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CampagnePubComponent } from './campagne-pub.component';
+import { CampagnePubComponent } from './campagne-pub-creer.component';
 
 describe('CampagnePubComponent', () => {
   let component: CampagnePubComponent;

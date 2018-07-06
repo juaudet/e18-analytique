@@ -2,12 +2,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
-import { ToastrModule } from 'ngx-toastr';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AdministrateurService } from './services/shared/administrateur.service';
 import { SignInComponent } from './components/sign-in/sign-in.component';
 import { ProfilCibleCreerComponent } from './components/profil-cible-creer/profil-cible-creer.component';
@@ -18,10 +15,16 @@ import { ProfilCibleService } from './services/profil-cible.service';
 import { AdminComponent } from './components/admin/admin.component';
 import { httpInterceptorProviders } from './http-interceptors/index';
 import { CampagnePubComponent } from './components/campagne-pub/campagne-pub.component';
+import { CampagnePubCreerComponent } from './components/campagne-pub-creer/campagne-pub-creer.component';
 import { ChargementComponent } from './components/chargement/chargement.component';
 import { TableauBordPubComponent } from './components/tableau-bord-pub/tableau-bord-pub.component';
 import { ProfilCibleFormulaireComponent } from './components/profil-cible-formulaire/profil-cible-formulaire.component';
 import { ProfilCibleEditerComponent } from './components/profil-cible-editer/profil-cible-editer.component';
+import { AuthGuard } from './auth.guard';
+import { CommonModule } from '@angular/common';
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -33,6 +36,7 @@ import { ProfilCibleEditerComponent } from './components/profil-cible-editer/pro
     ProfilsCibleComponent,
     AdminComponent,
     CampagnePubComponent,
+    CampagnePubCreerComponent,
     ChargementComponent,
     TableauBordPubComponent,
     ProfilCibleFormulaireComponent,
@@ -45,9 +49,11 @@ import { ProfilCibleEditerComponent } from './components/profil-cible-editer/pro
     HttpClientModule,
     ToastrModule.forRoot(),
     BrowserAnimationsModule,
-    RouterModule.forRoot(appRoutes)
+    CommonModule,
+    RouterModule.forRoot(appRoutes),
+    NgbModule.forRoot()
   ],
-  providers: [AdministrateurService, ProfilCibleService, httpInterceptorProviders],
+  providers: [AdministrateurService, ProfilCibleService, httpInterceptorProviders, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

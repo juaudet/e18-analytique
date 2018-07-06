@@ -24,7 +24,7 @@
 	        <td>
 	            <div class="btn-group-vertical">
 	              <a routerLink="/admin/profils-cible/{{ profilCible.id }}" class="btn btn-primary">Modifier</a>
-	              <button type="button" class="btn btn-danger">Supprimer</button>
+	              <button type="button"  (click)="deleteProfilsCible(profilCible)" class="btn btn-danger">Supprimer</button>
 	            </div>
 	        </td>
 				</tr>

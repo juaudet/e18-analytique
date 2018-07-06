@@ -1,3 +1,44 @@
-<p>
-  campagne-pub works!
-</p>
+<h2 class="title-1 m-b-25">Campagnes Publicitaires</h2>
+
+<p class="m-b-25"><a routerLink="/admin/campagnes/create" class="btn btn-primary">Créer</a></p>
+
+<ng-container *ngIf="campagnesPublicitaires">
+	<div *ngIf="(campagnesPublicitaires.length > 0);else aucun" class="table-responsive table--no-card m-b-40">
+
+		<table class="table table-borderless table-striped table-earning">
+			<thead>
+				<tr>
+					<th>Nom</th>
+					<th>budget</th>
+					<th>date de début</th>
+					<th>date de fin</th>
+					<th>active</th>
+	        		<th>Opérations</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr *ngFor="let campagnePublicitaire of campagnesPublicitaires">
+					<td>{{ campagnePublicitaire.nom }}</td>
+					<td>{{ campagnePublicitaire.budget }}</td>
+					<td>{{ campagnePublicitaire.date_debut }}</td>
+					<td>{{ campagnePublicitaire.date_fin }}</td>
+					<td>{{ campagnePublicitaire.active }}</td>
+			        <td>
+			            <div class="btn-group-vertical">
+			              <a routerLink="/admin/campagnes/{{ campagnePublicitaire.id }}" class="btn btn-primary">Modifier</a>
+			              <button type="button" class="btn btn-danger">Supprimer</button>
+			            </div>
+			        </td>
+				</tr>
+			</tbody>
+		</table>
+
+	</div>
+
+	<ng-template #aucun>
+		Aucune campagne publicitaire
+	</ng-template>
+
+</ng-container>
+
+<app-chargement [chargement]="!campagnesPublicitaires"></app-chargement>

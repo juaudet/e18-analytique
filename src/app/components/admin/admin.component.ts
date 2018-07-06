@@ -10,17 +10,35 @@ import { Router } from '@angular/router';
 })
 export class AdminComponent implements OnInit {
   nom: string;
-  courriel: string;
+  email: string;
+  role: string;
 
-  constructor( private nomRoleService: AdministrateurService) { }
+  constructor( private administrateurService: AdministrateurService,
+     private _router: Router,
+     private toastr: ToastrService) { }
 
   ngOnInit() {
-    this.nomRoleService.nomRoleAdministrateur().subscribe(
+    this.administrateurService.nomRoleAdministrateur().subscribe(
       (data: any) => {
        this.nom = data.nom;
-       this.courriel = data.email;
+       this.email = data.email;
+       this.role = data.role;
+
+        if(this.role === "site"){
+          document.getElementById("profilSideBar").hidden = true;
+        }
       },
     );
+  }
+
+  logoutAdministrateur(){
+    this.administrateurService.logoutAdministrateur(this.email).subscribe(
+      (data: any) => {
+        this.toastr.success('Vous êtes déconnecté !')
+      },
+    );
+    localStorage.clear();
+    this._router.navigate(['login'])
   }
 
 }
