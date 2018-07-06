@@ -8,6 +8,8 @@ import { ProfilCibleCreerComponent } from './components/profil-cible-creer/profi
 import { ProfilCibleEditerComponent } from './components/profil-cible-editer/profil-cible-editer.component';
 import { TableauBordPubComponent } from './components/tableau-bord-pub/tableau-bord-pub.component';
 import { CampagnePubComponent } from './components/campagne-pub/campagne-pub.component';
+import { CampagnePubCreerComponent } from './components/campagne-pub-creer/campagne-pub-creer.component';
+import { CampagnePubFormulaireComponent} from './components/campagne-pub-formulaire/campagne-pub-formulaire.component';
 import { AuthGuard } from './auth.guard';
 
 
@@ -28,6 +30,8 @@ export const appRoutes: Routes = [
                { path: 'profils-cible/:id', component: ProfilCibleEditerComponent},
                { path: 'profils-cible', component: ProfilsCibleComponent },
                { path: 'campagnes', component: CampagnePubComponent },
+               { path: 'campagnes/create', component: CampagnePubCreerComponent },
+               { path: 'campagnes/:id', component: CampagnePubFormulaireComponent }
               ]
   },
   { path : '', redirectTo: '/login', pathMatch : 'full'}

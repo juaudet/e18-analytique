@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProfilCibleService } from '../../services/profil-cible.service';
 import { ProfilCible } from '../../models/profil-cible';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-profils-cible',
@@ -12,7 +13,8 @@ export class ProfilsCibleComponent implements OnInit {
   profilsCible: ProfilCible[];
 
   constructor(
-      private profilCibleService: ProfilCibleService
+      private profilCibleService: ProfilCibleService,
+      private toastr: ToastrService
   ) { }
 
   ngOnInit() {
@@ -36,6 +38,7 @@ export class ProfilsCibleComponent implements OnInit {
       if(index > -1){
 
         this.profilsCible.splice(index, 1);
+        this.toastr.info('Vous avez supprimé un de vos profil !')
       }
     });
   }

@@ -4,10 +4,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
-import { ToastrModule } from 'ngx-toastr';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AdministrateurService } from './services/shared/administrateur.service';
 import { SignInComponent } from './components/sign-in/sign-in.component';
 import { ProfilCibleCreerComponent } from './components/profil-cible-creer/profil-cible-creer.component';
@@ -18,11 +15,19 @@ import { ProfilCibleService } from './services/profil-cible.service';
 import { AdminComponent } from './components/admin/admin.component';
 import { httpInterceptorProviders } from './http-interceptors/index';
 import { CampagnePubComponent } from './components/campagne-pub/campagne-pub.component';
+import { CampagnePubCreerComponent } from './components/campagne-pub-creer/campagne-pub-creer.component';
 import { ChargementComponent } from './components/chargement/chargement.component';
 import { TableauBordPubComponent } from './components/tableau-bord-pub/tableau-bord-pub.component';
 import { ProfilCibleFormulaireComponent } from './components/profil-cible-formulaire/profil-cible-formulaire.component';
 import { ProfilCibleEditerComponent } from './components/profil-cible-editer/profil-cible-editer.component';
 import { AuthGuard } from './auth.guard';
+import { CommonModule } from '@angular/common';
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { CampagnePubFormulaireComponent } from './components/campagne-pub-formulaire/campagne-pub-formulaire.component';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
+
 
 @NgModule({
   declarations: [
@@ -34,10 +39,12 @@ import { AuthGuard } from './auth.guard';
     ProfilsCibleComponent,
     AdminComponent,
     CampagnePubComponent,
+    CampagnePubCreerComponent,
     ChargementComponent,
     TableauBordPubComponent,
     ProfilCibleFormulaireComponent,
     ProfilCibleEditerComponent,
+    CampagnePubFormulaireComponent,
   ],
   imports: [
     BrowserModule,
@@ -46,8 +53,10 @@ import { AuthGuard } from './auth.guard';
     HttpClientModule,
     ToastrModule.forRoot(),
     BrowserAnimationsModule,
+    CommonModule,
     RouterModule.forRoot(appRoutes),
-    NgbModule.forRoot()
+    NgbModule.forRoot(),
+    AngularFontAwesomeModule
   ],
   providers: [AdministrateurService, ProfilCibleService, httpInterceptorProviders, AuthGuard],
   bootstrap: [AppComponent]

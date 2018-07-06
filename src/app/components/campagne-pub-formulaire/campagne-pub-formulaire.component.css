@@ -1,0 +1,11 @@
+.mybtn{
+    margin-right: 25px;
+}
+
+input[type="radio"]{
+    margin-right: 5px;
+}
+
+label[for="active"]{
+    margin-right: 5px;
+}

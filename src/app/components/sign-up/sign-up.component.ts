@@ -49,24 +49,12 @@ export class SignUpComponent implements OnInit {
       (data: any) => {
         this.toastr.success('Enregistrement effectuée avec succès.');
         this.resetForm(form);
-        console.log(data.message);
-        this.router.navigate[('login')];
+        this.router.navigate(['login']);
       },
       (error: any) => {
         this.toastr.error("Vos champs sont invalide !");
       }
     );
-    // ((data: any) => {
-    //   console.log("salut");
-    //   if (data.message === "success") {
-    //     this.resetForm(form);
-    //     this.toastr.success('Enregistrement réussit');
-    //     this.router.navigate[('login')];
-    //   } else {
-    //     //this.toastr.error(data.Errors[0]);
-        
-    //   }
-    // });
   }
 
   public UpdateForm(formName:string){
