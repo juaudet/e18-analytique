@@ -10,7 +10,7 @@ import { CampagnePublicitaire } from '../../models/campagne-publicitaire';
 })
 export class CampagnePubComponent implements OnInit {
 
-  private campagnesPublicitaires: CampagnePublicitaire[];
+  campagnesPublicitaires: CampagnePublicitaire[];
 
   constructor(
   	private campagnePublicitaireService: CampagnePublicitaireService

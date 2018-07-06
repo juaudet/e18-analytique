@@ -9,20 +9,20 @@
   <fieldset>
     <legend>   Créer une campagne de Pub </legend>
     
-    <label for="campagnes_publicitaires">Votre nom:</label>
-    <input class="form-control" placeholder="Nom" type="text" name="nom" [(ngModel)]="campagnes_publicitaires.nom">
+    <label for="campagnePublicitaire">Votre nom:</label>
+    <input class="form-control" placeholder="Nom" type="text" name="nom" [(ngModel)]="campagnePublicitaire.nom">
     <label data-error="Champ requis!"></label>
 
   
     <div class="form-group">
-        <label for="campagnes_publicitaires.budget">Budget en $CAD:</label>
+        <label for="campagnePublicitaire.budget">Budget en $CAD:</label>
       <div class="input-group">
         <span class="input-group-btn">
             <button type="button" class="btn btn-danger btn-number"  data-type="minus" data-field="quant[2]">
               <span class="glyphicon glyphicon-minus"></span>
             </button>
         </span>
-        <input type="text" name="quant[2]" class="form-control input-number"  [(ngModel)]="campagnes_publicitaires.budget" value="0" min="1" max="100">
+        <input type="text" name="quant[2]" class="form-control input-number"  [(ngModel)]="campagnePublicitaire.budget" value="0" min="1" max="100">
         <span class="input-group-btn">
             <button type="button" class="btn btn-success btn-number" data-type="plus" data-field="quant[2]">
                 <span class="glyphicon glyphicon-plus"></span>
@@ -32,21 +32,21 @@
     </div>
 
     
-    <label for="campagnes_publicitaires">Date de début:</label>
-    <input class="form-control" placeholder="Nom" type="date" name="date_debut" [(ngModel)]="campagnes_publicitaires.date_debut">
+    <label for="campagnePublicitaire">Date de début:</label>
+    <input class="form-control" placeholder="Nom" type="date" name="date_debut" [(ngModel)]="campagnePublicitaire.date_debut">
     <label data-error="Champ requis!"></label>
 
 
 
-    <label for="campagnes_publicitaires">Date de fin:</label>
-    <input class="form-control" placeholder="Nom" type="date" name="date_fin" [(ngModel)]="campagnes_publicitaires.date_fin">
+    <label for="campagnePublicitaire">Date de fin:</label>
+    <input class="form-control" placeholder="Nom" type="date" name="date_fin" [(ngModel)]="campagnePublicitaire.date_fin">
     <label data-error="Champ requis!"></label>
 
     
-    <label for="campagnes_publicitaires">État de la campagne:</label>
-    <input type="radio" name="active" value="true" id="oui" checked="checked" [(ngModel)]="campagnes_publicitaires.active" /> 
+    <label for="campagnePublicitaire">État de la campagne:</label>
+    <input type="radio" name="active" value="true" id="oui" checked="checked" [(ngModel)]="campagnePublicitaire.active" /> 
     <label for="oui" class="inline">Activé</label> 
-    <input type="radio" name="active" value="false" id="non" [(ngModel)]="campagnes_publicitaires.active" /> 
+    <input type="radio" name="active" value="false" id="non" [(ngModel)]="campagnePublicitaire.active" /> 
     <label for="non" class="inline">Désactivé</label> 
 
       <div class="form-group">
