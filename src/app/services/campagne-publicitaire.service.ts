@@ -23,7 +23,7 @@ export class CampagnePublicitaireService {
   }
 
   postCampagnesPublicitaires(campagnesPublicitaire: CampagnePublicitaire): Observable <any> {
-    const url = this.rootUrl + '/api/campagnes-Publicitaires';
+    const url = this.rootUrl;
     return this.http.post<CampagnePublicitaire>(url, campagnesPublicitaire);
   }
 
