@@ -26,7 +26,7 @@ export class CampagnePubCreerComponent implements OnInit {
     this.campagnePubService.postCampagnesPublicitaires(campagnePublicitaire).subscribe(
       (data: any) => {
         this.toastr.success("Votre campagne a été créé !")
-        this.router.navigate(['/admin/campagne-pub']);
+        this.router.navigate(['/admin/campagnes']);
         console.log('Submit Campagne Publicitaire');
         console.log(this.campagnePublicitaire.nom);
       },
