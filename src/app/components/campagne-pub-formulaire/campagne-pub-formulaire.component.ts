@@ -54,6 +54,7 @@ export class CampagnePubFormulaireComponent implements OnInit {
       // https://stackoverflow.com/a/36281449
       const fileReader: FileReader = new FileReader();
       fileReader.onloadend = () => {
+        // TODO: Valider le format des images (https://stackoverflow.com/a/7460303)
         this.bannieres[index].image = fileReader.result;
       };
       fileReader.readAsDataURL(file);
