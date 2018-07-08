@@ -9,6 +9,7 @@
 			<thead>
 				<tr>
 					<th>Nom</th>
+					<th>Bannières</th>
 					<th>budget</th>
 					<th>date de début</th>
 					<th>date de fin</th>
@@ -19,6 +20,11 @@
 			<tbody>
 				<tr *ngFor="let campagnePublicitaire of campagnesPublicitaires">
 					<td>{{ campagnePublicitaire.nom }}</td>
+					<td>
+						<div *ngFor="let banniere of campagnePublicitaire.bannieres" class="banniere-thumb">
+							<img src="{{ banniere.image }}" alt=""><br>
+						</div>
+					</td>
 					<td>{{ campagnePublicitaire.budget }}</td>
 					<td>{{ campagnePublicitaire.date_debut }}</td>
 					<td>{{ campagnePublicitaire.date_fin }}</td>

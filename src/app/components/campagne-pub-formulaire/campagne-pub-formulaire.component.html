@@ -16,16 +16,31 @@
 
       <div class="form-group">
         <label for="date_fin">Date de fin:</label>
-        <input class="form-control"  type="date" forControlName="date_fin">
+        <input class="form-control"  type="date" formControlName="date_fin">
+      </div>
+
+      <div class="form-group">
+        <label for="image_horizontale">Image horizontale (728 x 90):</label>
+        <input data-index="0" name="image_horizontale" type="file" (change)="fileChange($event)">
+      </div>
+
+      <div class="form-group">
+        <label for="image_verticale">Image verticale (120 x 600):</label>
+        <input data-index="1" name="image_verticale" type="file" (change)="fileChange($event)">
+      </div>
+
+      <div class="form-group">
+        <label for="image_mobile">Image mobile (320 x 100):</label>
+        <input data-index="2" name="image_mobile" type="file" (change)="fileChange($event)">
       </div>
 
       <div class="form-group">
         <label for="active">État de la campagne: </label>
         <br>
-        <input type="radio" name="CSS" value="true" id="activeTrue" forControlName="active"
+        <input type="radio" name="active" value="true" id="activeTrue" formControlName="active"
               checked="checked" />
         <label for="active" class="inline">oui</label>
-        <input type="radio" name="CSS" value="false" id="activeFalse" forControlName="active" />
+        <input type="radio" name="active" value="false" id="activeFalse" formControlName="active" />
         <label for="active" class="inline">non</label>
       </div>
     
