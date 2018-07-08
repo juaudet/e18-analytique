@@ -15,6 +15,7 @@ export class CampagnePubFormulaireComponent implements OnInit {
   @Output() saveEvent = new EventEmitter<CampagnePublicitaire>();
 
   campagnePublicitaireForm: FormGroup;
+  imageHorizontale: string;
 
   constructor( private formBuilder: FormBuilder, private toastr: ToastrService, private profilCibleService: ProfilCibleService) {
   }
@@ -32,6 +33,20 @@ export class CampagnePubFormulaireComponent implements OnInit {
       active: this.campagnePublicitaire.active,
       profilsCible: this.formBuilder.array([])
     });
+  }
+
+  // https://stackoverflow.com/a/40216616
+  fileChange(event) {
+    let fileList: FileList = event.target.files;
+    if(fileList.length > 0) {
+      let file: File = fileList[0];
+      // https://stackoverflow.com/a/36281449
+      const fileReader: FileReader = new FileReader();
+      fileReader.onloadend = () => {
+        this.imageHorizontale = fileReader.result;
+      };
+      fileReader.readAsDataURL(file);
+    }
   }
 
   OnSubmit() {
