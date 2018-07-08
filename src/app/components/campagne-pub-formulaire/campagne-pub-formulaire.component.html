@@ -20,6 +20,11 @@
       </div>
 
       <div class="form-group">
+        <label for="image_horizontale">Image horizontale (728 x 90):</label>
+        <input name="image_horizontale" type="file" (change)="fileChange($event)">
+      </div>
+
+      <div class="form-group">
         <label for="active">État de la campagne: </label>
         <br>
         <input type="radio" name="active" value="true" id="activeTrue" formControlName="active"
