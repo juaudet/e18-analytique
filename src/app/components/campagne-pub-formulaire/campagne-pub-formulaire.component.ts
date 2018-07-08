@@ -65,6 +65,7 @@ export class CampagnePubFormulaireComponent implements OnInit {
       date_fin: formModel.date_fin as string,
       date_debut: formModel.date_debut as string,
       active: formModel.active as boolean,
+      image_horizontale: this.imageHorizontale,
     };
     return saveCampagnePublicitaire;
   }

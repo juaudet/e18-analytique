@@ -4,4 +4,5 @@ export class CampagnePublicitaire {
     date_debut: string;
     date_fin: string;
     active: boolean;
+    image_horizontale: string;
 }
