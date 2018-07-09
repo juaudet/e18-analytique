@@ -13,35 +13,39 @@ export class CampagnePubComponent implements OnInit {
   campagnesPublicitaires: CampagnePublicitaire[];
 
   constructor(
-  	private campagnePublicitaireService: CampagnePublicitaireService,
+    private campagnePublicitaireService: CampagnePublicitaireService,
     private toastr: ToastrService
-  ) { }
+  ) {
+  }
 
   ngOnInit() {
-  	this.getCampagnesPublicitaires();
+    this.getCampagnesPublicitaires();
   }
 
   getCampagnesPublicitaires(): void {
-  	this.campagnePublicitaireService.getCampagnesPublicitaires().subscribe(
-  		campagnesPublicitaires => {
-  			this.campagnesPublicitaires = campagnesPublicitaires;
-  		},
-  		error => {
-			  console.log(error);
-  		});
+    this.campagnePublicitaireService.getCampagnesPublicitaires().subscribe(
+      campagnesPublicitaires => {
+        this.campagnesPublicitaires = campagnesPublicitaires;
+      },
+      error => {
+        console.log(error);
+      });
   }
 
   deleteCampagnePubblicitaire(campagnePublicitaire: CampagnePublicitaire): void {
-    this.campagnePublicitaireService.deleteCampagnesPublicitaires(campagnePublicitaire).subscribe((ok) => {
 
-      console.log(ok);
-      let index = this.campagnesPublicitaires.indexOf(campagnePublicitaire, 0);
-      if (index > -1) {
+    if (window.confirm("Ëtes-vous sur de vouloir supprimer cette campagne?")) {
+      this.campagnePublicitaireService.deleteCampagnesPublicitaires(campagnePublicitaire).subscribe((ok) => {
 
-        this.campagnesPublicitaires.splice(index, 1);
-        this.toastr.info('Vous avez supprimé une de vos campagnes publicitaire !');
-      }
-    });
+        console.log(ok);
+
+        let index = this.campagnesPublicitaires.indexOf(campagnePublicitaire, 0);
+        if (index > -1) {
+
+          this.campagnesPublicitaires.splice(index, 1);
+          this.toastr.info('Vous avez supprimé une de vos campagnes publicitaire !');
+        }
+      });
+    }
   }
-
 }

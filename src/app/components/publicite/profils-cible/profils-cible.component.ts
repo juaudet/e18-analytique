@@ -13,12 +13,13 @@ export class ProfilsCibleComponent implements OnInit {
   profilsCible: ProfilCible[];
 
   constructor(
-      private profilCibleService: ProfilCibleService,
-      private toastr: ToastrService
-  ) { }
+    private profilCibleService: ProfilCibleService,
+    private toastr: ToastrService
+  ) {
+  }
 
   ngOnInit() {
-      this.getProfilsCible();
+    this.getProfilsCible();
   }
 
   getProfilsCible(): void {
@@ -31,15 +32,18 @@ export class ProfilsCibleComponent implements OnInit {
   }
 
   deleteProfilsCible(profilCible: ProfilCible): void {
-    this.profilCibleService.deleteProfilCible(profilCible).subscribe((ok) => {
+    if (window.confirm("Ëtes-vous sur de vouloir supprimer ce profil cible?")) {
+      this.profilCibleService.deleteProfilCible(profilCible).subscribe((ok) => {
 
-      console.log(ok);
-      let index = this.profilsCible.indexOf(profilCible, 0);
-      if (index > -1) {
+        console.log(ok);
 
-        this.profilsCible.splice(index, 1);
-        this.toastr.info('Vous avez supprimé un de vos profil !');
-      }
-    });
+        let index = this.profilsCible.indexOf(profilCible, 0);
+        if (index > -1) {
+
+          this.profilsCible.splice(index, 1);
+          this.toastr.info('Vous avez supprimé un de vos profil !');
+        }
+      });
+    }
   }
 }
