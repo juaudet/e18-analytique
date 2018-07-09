@@ -7,18 +7,38 @@
         <div class="menu-sidebar__content js-scrollbar1">
             <nav class="navbar-sidebar">
                 <ul class="list-unstyled navbar__list">
-                    <li routerLinkActive="active">
+                    <li routerLinkActive="active" id="profilSideBar">
                         <a class="js-arrow" routerLink="/admin/tableau-bord-pub">
                             <i class="fas fa-tachometer-alt" ></i>Tableau de bord</a>
                     </li>
-                    <li routerLinkActive="active">
+                    <li routerLinkActive="active" id="profilSideBar1">
                         <a class="js-arrow" routerLink="/admin/campagnes">
                             <i class="fas fa-images  "></i>Campagnes publicitaires</a>
                     </li>
-                    <li routerLinkActive="active" id="profilSideBar">
+                    <li routerLinkActive="active" id="profilSideBar2">
                         <a class="js-arrow" routerLink="/admin/profils-cible">
                             <i class="fas fa-user"></i>Profils cibles</a>
                     </li>
+                    <li routerLinkActive="active" id="profilSideBar3">
+                        <a class="js-arrow" routerLink="/admin/tableau-bord-site">
+                            <i class="fas fa-tachometer-alt"></i>Tableau de bord</a>
+                    </li>
+                  <li routerLinkActive="active" id="profilSideBar4">
+                    <a class="js-arrow" routerLink="/admin/instructions" >
+                      <i class="fas fa-file-alt"></i>Instructions</a>
+                  </li>
+                  <li routerLinkActive="active" id="profilSideBar5">
+                    <a class="js-arrow" routerLink="/admin/statistiques">
+                      <i class="fas fa-chart-area"></i>Statistiques</a>
+                  </li>
+                  <li routerLinkActive="active" id="profilSideBar6">
+                    <a class="js-arrow" routerLink="/admin/redevances">
+                      <i class="fas fa-calculator"></i>Redevances</a>
+                  </li>
+                  <li routerLinkActive="active" id="profilSideBar7">
+                    <a class="js-arrow" routerLink="/admin/generateur-code">
+                      <i class="fas fa-code"></i>Générateur de code</a>
+                  </li>
                 </ul>
             </nav>
         </div>
@@ -36,14 +56,14 @@
                                               <button class="dropdown-item">Paramètres</button>
                                               <button class="dropdown-item btn-outline-danger" (click)="logoutAdministrateur()">Déconnection</button>
                                             </div>
-                                    </div>      
+                                    </div>
                             </div>
                         </div>
                     </div>
         </header>
         <!-- HEADER DESKTOP-->
-   
-        
+
+
         <!-- MAIN CONTENT-->
         <div class="main-content">
             <div class="section__content section__content--p30">

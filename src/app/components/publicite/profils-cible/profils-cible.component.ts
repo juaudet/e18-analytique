@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ProfilCibleService } from '../../services/profil-cible.service';
-import { ProfilCible } from '../../models/profil-cible';
+import { ProfilCibleService } from '../../../services/profil-cible.service';
+import { ProfilCible } from '../../../models/profil-cible';
 import { ToastrService } from 'ngx-toastr';
 
 @Component({
@@ -30,15 +30,15 @@ export class ProfilsCibleComponent implements OnInit {
     );
   }
 
-  deleteProfilsCible(profilCible: ProfilCible): void{
-    this.profilCibleService.deleteProfilCible(profilCible).subscribe((ok)=>{
-      
+  deleteProfilsCible(profilCible: ProfilCible): void {
+    this.profilCibleService.deleteProfilCible(profilCible).subscribe((ok) => {
+
       console.log(ok);
-      var index = this.profilsCible.indexOf(profilCible,0);
-      if(index > -1){
+      let index = this.profilsCible.indexOf(profilCible, 0);
+      if (index > -1) {
 
         this.profilsCible.splice(index, 1);
-        this.toastr.info('Vous avez supprimé un de vos profil !')
+        this.toastr.info('Vous avez supprimé un de vos profil !');
       }
     });
   }

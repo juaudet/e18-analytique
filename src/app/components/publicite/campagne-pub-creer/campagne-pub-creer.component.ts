@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { CampagnePublicitaireService} from '../../services/campagne-publicitaire.service';
-import { CampagnePublicitaire } from '../../models/campagne-publicitaire';
+import { CampagnePublicitaireService} from '../../../services/campagne-publicitaire.service';
+import { CampagnePublicitaire } from '../../../models/campagne-publicitaire';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 

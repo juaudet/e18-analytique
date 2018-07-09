@@ -1,9 +1,9 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {FormArray, FormBuilder, FormGroup} from '@angular/forms';
 import {ToastrService} from 'ngx-toastr';
-import {CampagnePublicitaire} from '../../models/campagne-publicitaire';
-import { Banniere } from '../../models/banniere';
-import { ProfilCibleService } from '../../services/profil-cible.service';
+import {CampagnePublicitaire} from '../../../models/campagne-publicitaire';
+import { Banniere } from '../../../models/banniere';
+import { ProfilCibleService } from '../../../services/profil-cible.service';
 
 @Component({
   selector: 'app-campagne-pub-formulaire',
@@ -28,6 +28,7 @@ export class CampagnePubFormulaireComponent implements OnInit {
 
   createForm() {
     this.campagnePublicitaireForm = this.formBuilder.group({
+      id: this.campagnePublicitaire.id,
       nom: this.campagnePublicitaire.nom,
       budget: this.campagnePublicitaire.budget,
       date_debut: this.campagnePublicitaire.date_debut,
@@ -72,6 +73,7 @@ export class CampagnePubFormulaireComponent implements OnInit {
     // return new `campagnePublicitaire` object containing a combination of original
     // campagnePublicitaire value(s) and deep copies of changed form model values
     const saveCampagnePublicitaire: CampagnePublicitaire = {
+      id: formModel.id as number,
       nom: formModel.nom as string,
       budget: formModel.budget as number,
       date_fin: formModel.date_fin as string,
@@ -82,5 +84,5 @@ export class CampagnePubFormulaireComponent implements OnInit {
     return saveCampagnePublicitaire;
   }
 
-  
+
 }

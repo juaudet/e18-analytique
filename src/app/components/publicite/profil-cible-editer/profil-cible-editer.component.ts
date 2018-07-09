@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { ProfilCible } from '../../models/profil-cible';
-import { ProfilCibleService } from '../../services/profil-cible.service';
+import { ProfilCible } from '../../../models/profil-cible';
+import { ProfilCibleService } from '../../../services/profil-cible.service';
 
 @Component({
   selector: 'app-profil-cible-editer',
@@ -31,7 +31,7 @@ export class ProfilCibleEditerComponent implements OnInit {
     }
 
     save(profilCible: ProfilCible) {
-      
+
         this.profilCibleService.patchProfilCible(profilCible).subscribe((data: any)=> {
           this.toastr.success('Profil modifié avec succès.');
           this.router.navigate(['/admin/profils-cible']);

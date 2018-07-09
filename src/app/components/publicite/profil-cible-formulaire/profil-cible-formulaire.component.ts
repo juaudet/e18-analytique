@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
-import { ProfilCible } from '../../models/profil-cible';
-import { SiteWebProfilCible } from '../../models/site-web-profil-cible';
+import { ProfilCible } from '../../../models/profil-cible';
+import { SiteWebProfilCible } from '../../../models/site-web-profil-cible';
 import { FormGroup, FormArray, FormBuilder, Validators, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
