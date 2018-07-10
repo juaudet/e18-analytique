@@ -3,7 +3,7 @@ import {NgForm} from '@angular/forms';
 import {Identification} from '../../models/administrateur.model';
 import { AdministrateurService } from '../../services/shared/administrateur.service';
 import { ToastrService } from 'ngx-toastr';
-import { Router, NavigationEnd } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sign-in',
@@ -12,7 +12,6 @@ import { Router, NavigationEnd } from '@angular/router';
 })
 export class SignInComponent implements OnInit {
   identification: Identification;
-  navigationSubscription;
 
   constructor(
     private administrateurService: AdministrateurService,
@@ -22,14 +21,6 @@ export class SignInComponent implements OnInit {
 
   ngOnInit() {
     this.resetForm();
-
-       // https://medium.com/engineering-on-the-incline/reloading-current-route-on-click-angular-5-1a1bfc740ab2
-   this.navigationSubscription = this.router.events.subscribe((e: any) => {
-    // If it is a NavigationEnd event re-initalise the component
-      if (e instanceof NavigationEnd) {
-        this.ngOnInit();
-      }
-    });
   }
 
 

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AdministrateurService } from '../../services/shared/administrateur.service';
 import { ToastrService } from 'ngx-toastr';
-import { Router, NavigationEnd } from '@angular/router';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -13,7 +13,6 @@ export class AdminComponent implements OnInit {
   nom: string;
   email: string;
   role: string;
-  navigationSubscription;
 
   constructor( private administrateurService: AdministrateurService,
      private _router: Router,
@@ -53,13 +52,6 @@ export class AdminComponent implements OnInit {
       },
     );
 
-    // https://medium.com/engineering-on-the-incline/reloading-current-route-on-click-angular-5-1a1bfc740ab2
-    this.navigationSubscription = this._router.events.subscribe((e: any) => {
-      // If it is a NavigationEnd event re-initalise the component
-      if (e instanceof NavigationEnd) {
-        this.ngOnInit();
-      }
-    });
   }
 
   logoutAdministrateur(){
