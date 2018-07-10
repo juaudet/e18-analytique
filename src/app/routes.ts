@@ -31,6 +31,7 @@ export const appRoutes: Routes = [
   },
   { path: 'admin', component: AdminComponent,
   canActivate: [AuthGuard],
+  runGuardsAndResolvers: 'always',
     children: [{ path: 'tableau-bord-pub', component: TableauBordPubComponent },
                { path: 'profils-cible/create', component: ProfilCibleCreerComponent},
                { path: 'profils-cible/:id', component: ProfilCibleEditerComponent},
