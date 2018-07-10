@@ -24,6 +24,7 @@ export class CampagnePubFormulaireComponent implements OnInit {
   ngOnInit() {
     this.createForm();
     this.setupBannieres();
+    
   }
 
   createForm() {
@@ -50,11 +51,40 @@ export class CampagnePubFormulaireComponent implements OnInit {
   fileChange(event) {
     let fileList: FileList = event.target.files;
     let index: string = event.target.getAttribute('data-index');
+    var toast = this.toastr;
+    var rightWidth = 0;
+    var rightHeight = 0;
+    var nameFile;
+
+    if(index == '0'){
+      rightWidth = 728;
+      rightHeight = 90;
+      nameFile = "image_horizontale";
+    }else if(index == '1'){
+      rightWidth = 120;
+      rightHeight = 600;
+      nameFile = "image_verticale";
+    }else{
+      rightWidth = 320;
+      rightHeight = 100;
+      nameFile = "image_mobile";
+    }
+
     if(fileList.length > 0) {
       let file: File = fileList[0];
       // https://stackoverflow.com/a/36281449
       const fileReader: FileReader = new FileReader();
       fileReader.onloadend = () => {
+        var img = new Image;
+        img.src = fileReader.result;        
+
+        img.onload = function() {
+          if(img.width != rightWidth || img.height != rightHeight){
+          toast.error("Votre image n'est pas de la bonne dimension !");
+            
+          (<HTMLInputElement>document.getElementById(nameFile)).value = "";
+          }
+        };
         // TODO: Valider le format des images (https://stackoverflow.com/a/7460303)
         this.bannieres[index].image = fileReader.result;
       };
