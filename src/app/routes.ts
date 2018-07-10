@@ -23,15 +23,17 @@ export const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
   {
     path: 'signup', component: HomeComponent,
+    runGuardsAndResolvers: 'always',
     children: [{ path: '', component: SignUpComponent }]
   },
   {
     path: 'login', component: HomeComponent,
+    runGuardsAndResolvers: 'always',
     children: [{ path: '', component: SignInComponent }]
   },
   { path: 'admin', component: AdminComponent,
-  canActivate: [AuthGuard],
-  runGuardsAndResolvers: 'always',
+    canActivate: [AuthGuard],
+    runGuardsAndResolvers: 'always',
     children: [{ path: 'tableau-bord-pub', component: TableauBordPubComponent },
                { path: 'profils-cible/create', component: ProfilCibleCreerComponent},
                { path: 'profils-cible/:id', component: ProfilCibleEditerComponent},
