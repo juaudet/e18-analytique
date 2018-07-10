@@ -14,6 +14,7 @@ import { environment } from '../../../environments/environment';
     }
 
     identifierAdministrateur(identification: Identification) {
+      identification.email = identification.email.toLowerCase();
       return this.http.post<Identification>(this.rootUrl + '/api/auth/login', identification);
     }
 
