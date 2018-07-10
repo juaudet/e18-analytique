@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ProfilCible } from '../../models/profil-cible';
-import { ProfilCibleService } from '../../services/profil-cible.service';
+import { ProfilCible } from '../../../models/profil-cible';
+import { ProfilCibleService } from '../../../services/profil-cible.service';
 import { Router } from '@angular/router';
 import {ToastrService} from 'ngx-toastr';
 

@@ -27,4 +27,9 @@ export class CampagnePublicitaireService {
     return this.http.post<CampagnePublicitaire>(url, campagnesPublicitaire);
   }
 
+  deleteCampagnesPublicitaires(campagnePublicitaire: CampagnePublicitaire): Observable<CampagnePublicitaire> {
+    const url = `${this.rootUrl}/${campagnePublicitaire.id}`;
+    return this.http.delete<CampagnePublicitaire>(url);
+  }
+
 }

@@ -1,6 +1,7 @@
 import { Banniere } from './banniere';
 
 export class CampagnePublicitaire {
+    id: number;
     nom: string;
     budget: number;
     date_debut: string;

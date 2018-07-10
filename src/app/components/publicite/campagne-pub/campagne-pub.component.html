@@ -32,7 +32,7 @@
 			        <td>
 			            <div class="btn-group-vertical">
 			              <a routerLink="/admin/campagnes/{{ campagnePublicitaire.id }}" class="btn btn-primary">Modifier</a>
-			              <button type="button" class="btn btn-danger">Supprimer</button>
+			              <button type="button" (click)="deleteCampagnePubblicitaire(campagnePublicitaire)" class="btn btn-danger">Supprimer</button>
 			            </div>
 			        </td>
 				</tr>
@@ -42,7 +42,7 @@
 	</div>
 
 	<ng-template #aucun>
-		Aucune campagne publicitaire 
+		Aucune campagne publicitaire
 		<i class="fas fa-frown"></i>
 	</ng-template>
 

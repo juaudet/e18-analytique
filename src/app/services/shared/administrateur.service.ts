@@ -1,7 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import {  Response } from '@angular/http';
-import {Observable} from 'rxjs';
 
 import { Administrateur, Identification } from '../../models/administrateur.model';
 import { environment } from '../../../environments/environment';
@@ -30,5 +28,4 @@ import { environment } from '../../../environments/environment';
     loggedIn() {
       return !!localStorage.getItem('token');
     }
-    
   }
