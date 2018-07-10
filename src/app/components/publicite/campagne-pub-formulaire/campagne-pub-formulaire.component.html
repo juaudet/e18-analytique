@@ -43,8 +43,8 @@
         <input type="radio" name="active" value="false" id="activeFalse" formControlName="active" />
         <label for="active" class="inline">non</label>
       </div>
-    
-      <!-- <div class="form-group">
+
+      <div class="form-group">
         <label for="url">Liste des profils cibles </label>
         <div formArrayName="profilsCible">
           <div *ngFor="let profilCible of profilsCible.controls; let i=index" [formGroupName]="i">
@@ -56,7 +56,8 @@
             </div>
           </div>
         </div>
-      </div> -->
+      </div>
+    <button type="submit" (click)="ajouterLigneProfil()" class="btn btn-success mybtn">Ajouter un profil cible</button>
     <button type="submit" class="btn btn-primary mybtn">Créer</button>
     <a routerLink="/admin/campagnes">
        <button class="btn btn-danger">Annuler</button>
