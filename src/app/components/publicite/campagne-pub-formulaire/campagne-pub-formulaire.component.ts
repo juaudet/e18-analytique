@@ -78,6 +78,7 @@ export class CampagnePubFormulaireComponent implements OnInit {
         var img = new Image;
         img.src = fileReader.result;        
 
+       // http://makitweb.com/how-to-validate-image-width-and-height-before-upload-using-javascript/
         img.onload = function() {
           if(img.width != rightWidth || img.height != rightHeight){
           toast.error("Votre image n'est pas de la bonne dimension !");
