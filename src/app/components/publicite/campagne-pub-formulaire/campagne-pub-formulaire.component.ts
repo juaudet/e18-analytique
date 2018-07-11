@@ -5,6 +5,7 @@ import {CampagnePublicitaire} from '../../../models/campagne-publicitaire';
 import { Banniere } from '../../../models/banniere';
 import { ProfilCibleService } from '../../../services/profil-cible.service';
 import {SiteWebProfilCible} from '../../../models/site-web-profil-cible';
+import { ProfilCible } from '../../../models/profil-cible';
 
 @Component({
   selector: 'app-campagne-pub-formulaire',
@@ -18,6 +19,8 @@ export class CampagnePubFormulaireComponent implements OnInit {
 
   campagnePublicitaireForm: FormGroup;
   bannieres: Banniere[];
+  profilsCible: ProfilCible[];
+  profilsCibleList: ProfilCible[];
 
   constructor( private formBuilder: FormBuilder, private toastr: ToastrService, private profilCibleService: ProfilCibleService) {
   }
@@ -25,6 +28,7 @@ export class CampagnePubFormulaireComponent implements OnInit {
   ngOnInit() {
     this.createForm();
     this.setupBannieres();
+    this.getProfilsCible();
 
   }
 
@@ -115,15 +119,28 @@ export class CampagnePubFormulaireComponent implements OnInit {
     return saveCampagnePublicitaire;
   }
 
-  ajouterLigneProfil() {
-    this.profilCible.push(this.formBuilder.group(new SiteWebProfilCible()));
+  getProfilsCible(): void {
+    this.profilCibleService.getProfilsCible().subscribe(
+      (data) => {
+        this.profilsCible = data;
+        console.log(this.profilsCible);
+      }
+    );
   }
 
-  retirerLigneProfil(index: number) {
-    this.profilCible.removeAt(index);
+  get profilCible(): FormArray { 
+     return this.campagnePublicitaireForm.get('profilsCible') as FormArray;
+  } 
+
+  deleteProfilsCible(profilCible: ProfilCible): void {
+
+        let index = this.profilsCible.indexOf(profilCible, 0);
+
+        if (index > -1) {
+
+          this.profilsCible.splice(index, 1);
+          this.toastr.info('Vous avez supprimé un de vos profil de la campagne !');
+        }
   }
 
-  get profilCible(): FormArray {
-    return this.profilCibleService.getProfilsCible();
-  }
 }
