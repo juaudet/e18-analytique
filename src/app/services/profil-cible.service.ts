@@ -13,7 +13,7 @@ export class ProfilCibleService {
 
     constructor(private http: HttpClient) { }
 
-    getProfilsCible(): Observable<ProfilCible[]> {
+    getProfilsCible(): Observable<any> {
     	const url = this.rootUrl + '/api/profils';
         return this.http.get<ProfilCible[]>(url);
     }
