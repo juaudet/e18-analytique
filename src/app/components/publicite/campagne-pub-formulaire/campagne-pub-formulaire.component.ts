@@ -4,6 +4,8 @@ import {ToastrService} from 'ngx-toastr';
 import {CampagnePublicitaire} from '../../../models/campagne-publicitaire';
 import { Banniere } from '../../../models/banniere';
 import { ProfilCibleService } from '../../../services/profil-cible.service';
+import {SiteWebProfilCible} from '../../../models/site-web-profil-cible';
+import { ProfilCible } from '../../../models/profil-cible';
 
 @Component({
   selector: 'app-campagne-pub-formulaire',
@@ -17,6 +19,8 @@ export class CampagnePubFormulaireComponent implements OnInit {
 
   campagnePublicitaireForm: FormGroup;
   bannieres: Banniere[];
+  profilsCible: ProfilCible[];
+  profilsCibleList: ProfilCible[];
 
   constructor( private formBuilder: FormBuilder, private toastr: ToastrService, private profilCibleService: ProfilCibleService) {
   }
@@ -24,7 +28,8 @@ export class CampagnePubFormulaireComponent implements OnInit {
   ngOnInit() {
     this.createForm();
     this.setupBannieres();
-    
+    this.getProfilsCible();
+
   }
 
   createForm() {
@@ -49,41 +54,41 @@ export class CampagnePubFormulaireComponent implements OnInit {
 
   // https://stackoverflow.com/a/40216616
   fileChange(event) {
-    let fileList: FileList = event.target.files;
-    let index: string = event.target.getAttribute('data-index');
-    var toast = this.toastr;
-    var rightWidth = 0;
-    var rightHeight = 0;
-    var nameFile;
+    const fileList: FileList = event.target.files;
+    const index: string = event.target.getAttribute('data-index');
+    const toast = this.toastr;
+    let rightWidth = 0;
+    let rightHeight = 0;
+    let nameFile;
 
-    if(index == '0'){
+    if (index == '0') {
       rightWidth = 728;
       rightHeight = 90;
-      nameFile = "image_horizontale";
-    }else if(index == '1'){
+      nameFile = 'image_horizontale';
+    } else if (index == '1') {
       rightWidth = 120;
       rightHeight = 600;
-      nameFile = "image_verticale";
-    }else{
+      nameFile = 'image_verticale';
+    } else {
       rightWidth = 320;
       rightHeight = 100;
-      nameFile = "image_mobile";
+      nameFile = 'image_mobile';
     }
 
-    if(fileList.length > 0) {
-      let file: File = fileList[0];
+    if (fileList.length > 0) {
+      const file: File = fileList[0];
       // https://stackoverflow.com/a/36281449
       const fileReader: FileReader = new FileReader();
       fileReader.onloadend = () => {
-        var img = new Image;
-        img.src = fileReader.result;        
+        const img = new Image;
+        img.src = fileReader.result;
 
        // http://makitweb.com/how-to-validate-image-width-and-height-before-upload-using-javascript/
         img.onload = function() {
-          if(img.width != rightWidth || img.height != rightHeight){
-          toast.error("Votre image n'est pas de la bonne dimension !");
-            
-          (<HTMLInputElement>document.getElementById(nameFile)).value = "";
+          if (img.width != rightWidth || img.height != rightHeight) {
+          toast.error('Votre image n\'est pas de la bonne dimension !');
+
+          (<HTMLInputElement>document.getElementById(nameFile)).value = '';
           }
         };
         // TODO: Valider le format des images (https://stackoverflow.com/a/7460303)
@@ -115,5 +120,28 @@ export class CampagnePubFormulaireComponent implements OnInit {
     return saveCampagnePublicitaire;
   }
 
+  getProfilsCible(): void {
+    this.profilCibleService.getProfilsCible().subscribe(
+      (data) => {
+        this.profilsCible = data;
+        console.log(this.profilsCible);
+      }
+    );
+  }
+
+  get profilCible(): FormArray { 
+     return this.campagnePublicitaireForm.get('profilsCible') as FormArray;
+  } 
+
+  deleteProfilsCible(profilCible: ProfilCible): void {
+
+        let index = this.profilsCible.indexOf(profilCible, 0);
+
+        if (index > -1) {
+
+          this.profilsCible.splice(index, 1);
+          this.toastr.info('Vous avez supprimé un de vos profil de la campagne !');
+        }
+  }
 
 }
