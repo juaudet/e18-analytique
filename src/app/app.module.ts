@@ -33,6 +33,7 @@ import { RedevancesComponent } from './components/siteWeb/redevances/redevances.
 import { GenerateurCodeComponent } from './components/siteWeb/generateur-code/generateur-code.component';
 import { TableauBordSiteComponent } from './components/siteWeb/tableau-bord-site/tableau-bord-site.component';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+import { TableauBordSiteRowComponent } from './components/siteWeb/tableau-bord-site-row/tableau-bord-site-row.component';
 
 @NgModule({
   declarations: [
@@ -55,6 +56,7 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
     RedevancesComponent,
     GenerateurCodeComponent,
     TableauBordSiteComponent,
+    TableauBordSiteRowComponent,
   ],
   imports: [
     BrowserModule,
