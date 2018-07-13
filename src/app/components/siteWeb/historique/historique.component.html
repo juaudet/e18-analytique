@@ -1,0 +1,20 @@
+<div class="table-responsive table--no-card m-b-40">
+  <table class="table table-borderless table-striped table-earning">
+    <thead>
+    <tr>
+      <th>Date</th>
+      <th>Utilisateur</th>
+      <th>Page</th>
+      <th>Fureteur</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let pageWeb of historique">
+      <td>{{ pageWeb.date_visite }}</td>
+      <td><a href="site-stats-suivre.html">{{ pageWeb.utilisateur.token }}</a></td>
+      <td>{{ pageWeb.url }}</td>
+      <td>{{ pageWeb.navigateur }}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>

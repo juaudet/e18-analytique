@@ -30,7 +30,7 @@ export const appRoutes: Routes = [
     children: [{ path: '', component: SignInComponent }]
   },
   { path: 'admin', component: AdminComponent,
-  canActivate: [AuthGuard],
+    canActivate: [AuthGuard],
     children: [{ path: 'tableau-bord-pub', component: TableauBordPubComponent },
                { path: 'profils-cible/create', component: ProfilCibleCreerComponent},
                { path: 'profils-cible/:id', component: ProfilCibleEditerComponent},

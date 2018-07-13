@@ -32,7 +32,8 @@ import { StatistiquesComponent } from './components/siteWeb/statistiques/statist
 import { RedevancesComponent } from './components/siteWeb/redevances/redevances.component';
 import { GenerateurCodeComponent } from './components/siteWeb/generateur-code/generateur-code.component';
 import { TableauBordSiteComponent } from './components/siteWeb/tableau-bord-site/tableau-bord-site.component';
-
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+import { HistoriqueComponent } from './components/siteWeb/historique/historique.component';
 
 @NgModule({
   declarations: [
@@ -55,6 +56,7 @@ import { TableauBordSiteComponent } from './components/siteWeb/tableau-bord-site
     RedevancesComponent,
     GenerateurCodeComponent,
     TableauBordSiteComponent,
+    HistoriqueComponent,
   ],
   imports: [
     BrowserModule,
@@ -68,7 +70,7 @@ import { TableauBordSiteComponent } from './components/siteWeb/tableau-bord-site
     NgbModule.forRoot(),
     AngularFontAwesomeModule
   ],
-  providers: [AdministrateurService, ProfilCibleService, httpInterceptorProviders, AuthGuard],
+  providers: [AdministrateurService, ProfilCibleService, httpInterceptorProviders, AuthGuard, {provide: LocationStrategy, useClass:HashLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

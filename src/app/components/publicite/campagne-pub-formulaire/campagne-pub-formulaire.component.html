@@ -21,17 +21,17 @@
 
       <div class="form-group">
         <label for="image_horizontale">Image horizontale (728 x 90):</label>
-        <input data-index="0" name="image_horizontale" type="file" (change)="fileChange($event)">
+        <input data-index="0" name="image_horizontale" id="image_horizontale" type="file" (change)="fileChange($event)"  accept="image/*">
       </div>
 
       <div class="form-group">
         <label for="image_verticale">Image verticale (120 x 600):</label>
-        <input data-index="1" name="image_verticale" type="file" (change)="fileChange($event)">
+        <input data-index="1" name="image_verticale" id="image_verticale" type="file" (change)="fileChange($event)"  accept="image/*">
       </div>
 
       <div class="form-group">
         <label for="image_mobile">Image mobile (320 x 100):</label>
-        <input data-index="2" name="image_mobile" type="file" (change)="fileChange($event)">
+        <input data-index="2" name="image_mobile" id="image_mobile" type="file" (change)="fileChange($event)" accept="image/*" >
       </div>
 
       <div class="form-group">
@@ -43,20 +43,45 @@
         <input type="radio" name="active" value="false" id="activeFalse" formControlName="active" />
         <label for="active" class="inline">non</label>
       </div>
-    
-      <!-- <div class="form-group">
-        <label for="url">Liste des profils cibles </label>
-        <div formArrayName="profilsCible">
-          <div *ngFor="let profilCible of profilsCible.controls; let i=index" [formGroupName]="i">
-            <div class="form-group">
-              <div class="input-group">
-                <input formControlName="url" class="form-control">
-                <button type="button" (click)="retirerLigneUrl(i)" class="btn btn-danger input-group-append" tabindex="-1"><i class="far fa-trash-alt"></i></button>
-              </div>
-            </div>
+
+      <div class="form-group">
+        <label for="url">Liste des profils cibles de la campagne </label>
+        <ng-container *ngIf="profilsCible">
+          <div *ngIf="(profilsCible.length > 0);else aucun_profil_cible" class="table-responsive table--no-card m-b-40">
+        
+            <table class="table table-borderless table-striped table-earning">
+              <thead>
+                <tr>
+                  <th>Nom</th>
+                  <th>Sites web</th>
+                  <th>Opérations</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let profilCible of profilsCible">
+                  <td>{{ profilCible.nom }}</td>
+                  <td>
+                    <ul>
+                      <li *ngFor="let siteWeb of profilCible.sites_web_profil_cible">{{ siteWeb.url }}</li>
+                    </ul>
+                  </td>
+                  <td>
+                      <div class="btn-group-vertical">
+                        <button type="button"  (click)="deleteProfilsCible(profilCible)" class="btn btn-danger">Supprimer de la campagne</button>
+                      </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+        
           </div>
-        </div>
-      </div> -->
+        
+          <ng-template #aucun_profil_cible>
+            Aucun profil cible
+          </ng-template>
+        
+        </ng-container>
+      </div>
     <button type="submit" class="btn btn-primary mybtn">Créer</button>
     <a routerLink="/admin/campagnes">
        <button class="btn btn-danger">Annuler</button>
