@@ -24,6 +24,7 @@ export class CampagnePublicitaireService {
 
   postCampagnesPublicitaires(campagnesPublicitaire: CampagnePublicitaire): Observable <any> {
     const url = this.rootUrl;
+    console.log(campagnesPublicitaire);
     return this.http.post<CampagnePublicitaire>(url, campagnesPublicitaire);
   }
 

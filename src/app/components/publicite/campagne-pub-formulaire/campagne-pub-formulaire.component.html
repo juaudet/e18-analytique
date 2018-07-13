@@ -46,16 +46,6 @@
 
       <div class="form-group">
         <label for="url">Liste des profils cibles de la campagne </label>
-        <!-- <div formArrayName="profilsCible">
-          <div *ngFor="let profilCible of profilsCible.controls; let i=index" [formGroupName]="i">
-            <div class="form-group">
-              <div class="input-group">
-                <input formControlName="url" class="form-control">
-                <button type="button" (click)="retirerLigneUrl(i)" class="btn btn-danger input-group-append" tabindex="-1"><i class="far fa-trash-alt"></i></button>
-              </div>
-            </div>
-          </div>
-        </div> -->
         <ng-container *ngIf="profilsCible">
           <div *ngIf="(profilsCible.length > 0);else aucun_profil_cible" class="table-responsive table--no-card m-b-40">
         
