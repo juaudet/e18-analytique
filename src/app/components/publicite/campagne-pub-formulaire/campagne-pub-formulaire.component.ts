@@ -116,6 +116,7 @@ export class CampagnePubFormulaireComponent implements OnInit {
       date_debut: formModel.date_debut as string,
       active: formModel.active as boolean,
       bannieres: this.bannieres,
+      profilsCible: this.profilsCible,
     };
     return saveCampagnePublicitaire;
   }
@@ -140,7 +141,7 @@ export class CampagnePubFormulaireComponent implements OnInit {
         if (index > -1) {
 
           this.profilsCible.splice(index, 1);
-          this.toastr.info('Vous avez supprimé un de vos profil de la campagne !');
+          this.toastr.info('Vous avez supprimé un de vos profils de la campagne !');
         }
   }
 
