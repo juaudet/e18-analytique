@@ -1,61 +1,38 @@
-      <div class="row">
-        <div class="col-md-12">
-          <div class="overview-wrap">
-            <h2 class="title-1 m-b-25">Redevances</h2>
-          </div>
-        </div>
-      </div>
+<h2 class="title-1 m-b-25">Redevances</h2>
       <div class="row">
         <div class="col-lg-12">
-          <!-- 34,53$ <button type="button" class="btn btn-primary btn-lg">Réclamer</button> -->
           <div class="card">
             <div class="card-body">
               <h3 class="title-2">Solde courant</h3>
-              <p style="font-size: 3em">34,53 $</p>
-              <footer>
-                <a href="site-redevances-succes.html" class="btn btn-primary btn-lg">Réclamer</a>
-              </footer>
+              <p style="font-size: 3em" *ngFor="let redevance of redevancesLive">{{redevance.montant}}</p>
+                 <button class="btn btn-primary btn-lg" (click)="reclamerRedevances(redevances)">Réclamer</button>
             </div>
           </div>
-          <h3 class="title-2 m-b-25">Historique de vos redevances</h3>
-          <div class="table-responsive table--no-card m-b-40">
-            <table class="table table-borderless table-striped table-earning">
-              <thead>
-              <tr>
-                <th>Date</th>
-                <th>Montant</th>
-              </tr>
-              </thead>
+
+          <ng-container *ngIf="redevances">
+            <div *ngIf="(redevances.length > 0);else aucun" class="table-responsive table--no-card m-b-40">
+              <h3 class="title-2 m-b-25">Historique de vos redevances</h3>
+              <table class="table table-borderless table-striped table-earning">
+                <thead>
+                  <tr>
+                    <th>Date</th>
+                    <th>Montant</th>
+                  </tr>
+                </thead>
               <tbody>
-              <tr>
-                <td>2018-09-29 05:57</td>
-                <td>29,68 $</td>
-              </tr>
-              <tr>
-                <td>2018-09-29 05:57</td>
-                <td>29,68 $</td>
-              </tr>
-              <tr>
-                <td>2018-09-29 05:57</td>
-                <td>29,68 $</td>
-              </tr>
-              <tr>
-                <td>2018-09-29 05:57</td>
-                <td>29,68 $</td>
-              </tr>
-              <tr>
-                <td>2018-09-29 05:57</td>
-                <td>29,68 $</td>
+              <tr *ngFor="let redevance of redevances">
+                <td>{{ redevance.date }}</td>
+                <td>{{ redevance.montant }}</td>
               </tr>
               </tbody>
             </table>
           </div>
-        </div>
-        <div class="row">
-          <div class="col-md-12">
-            <div class="copyright">
-              <p>Copyright © 2018 Colorlib. All rights reserved. Template by <a href="https://google.com">Colorlib</a>.</p>
-            </div>
-          </div>
-        </div>
-      </div>
+
+<ng-template #aucun>
+  Aucun historique
+  <i class="fas fa-frown"></i>
+</ng-template>
+
+</ng-container>
+
+<app-chargement [chargement]="!redevances"></app-chargement>
