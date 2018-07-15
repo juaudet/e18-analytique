@@ -25,7 +25,7 @@ export class StatistiquesComponent implements OnInit {
   getNombreVue(): void{
     this.statistiquesService.getNombreVue().subscribe(
       (data) =>{
-        this.vueTotal = data;
+        this.vueTotal = data['nombreVue'];
         console.log(this.vueTotal);
       });
   }
@@ -33,7 +33,7 @@ export class StatistiquesComponent implements OnInit {
   getProfitTotal(): void{
     this.statistiquesService.getProfitTotaux().subscribe(
       (data) =>{
-        this.profitTotal = data;
+        this.profitTotal = data['profitTotaux'];
         console.log(this.profitTotal);
       });
   }
