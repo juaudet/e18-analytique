@@ -1,3 +1,17 @@
-<p>
-  generateur-code works!
-</p>
+<h2 class="title-1 m-b-25">Votre Jeton administrateur </h2>
+<div class="card">
+  <div class="card-body">
+    <form>
+      <div class="form-row">  
+        <div class="input-group">    
+            <span class="input-group-text" id="tokenInput" >{{tokenSite}}
+                <app-chargement [chargement]="!tokenSite"></app-chargement>
+            </span>
+            <button class="btn btn-primary"  (click)="copyInputMessage()">
+            <i class="fas fa-clipboard"></i>
+            </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

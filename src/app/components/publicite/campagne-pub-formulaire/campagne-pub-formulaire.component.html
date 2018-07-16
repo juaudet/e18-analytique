@@ -20,6 +20,11 @@
       </div>
 
       <div class="form-group">
+        <label for="url">Url pour la campagne</label>
+        <input class="form-control"  type="text" formControlName="url">
+      </div>
+
+      <div class="form-group">
         <label for="image_horizontale">Image horizontale (728 x 90):</label>
         <input data-index="0" name="image_horizontale" id="image_horizontale" type="file" (change)="fileChange($event)"  accept="image/*">
       </div>
@@ -46,19 +51,9 @@
 
       <div class="form-group">
         <label for="url">Liste des profils cibles de la campagne </label>
-        <!-- <div formArrayName="profilsCible">
-          <div *ngFor="let profilCible of profilsCible.controls; let i=index" [formGroupName]="i">
-            <div class="form-group">
-              <div class="input-group">
-                <input formControlName="url" class="form-control">
-                <button type="button" (click)="retirerLigneUrl(i)" class="btn btn-danger input-group-append" tabindex="-1"><i class="far fa-trash-alt"></i></button>
-              </div>
-            </div>
-          </div>
-        </div> -->
         <ng-container *ngIf="profilsCible">
           <div *ngIf="(profilsCible.length > 0);else aucun_profil_cible" class="table-responsive table--no-card m-b-40">
-        
+
             <table class="table table-borderless table-striped table-earning">
               <thead>
                 <tr>
@@ -83,13 +78,13 @@
                 </tr>
               </tbody>
             </table>
-        
+
           </div>
-        
+
           <ng-template #aucun_profil_cible>
             Aucun profil cible
           </ng-template>
-        
+
         </ng-container>
       </div>
     <button type="submit" class="btn btn-primary mybtn">Créer</button>

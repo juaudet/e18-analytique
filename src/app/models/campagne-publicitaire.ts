@@ -1,4 +1,5 @@
 import { Banniere } from './banniere';
+import { ProfilCible} from './profil-cible';
 
 export class CampagnePublicitaire {
     id: number;
@@ -8,4 +9,6 @@ export class CampagnePublicitaire {
     date_fin: string;
     active: boolean;
     bannieres: Banniere[];
+    profilsCible: ProfilCible[];
+    url: string;
 }
