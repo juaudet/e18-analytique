@@ -14,6 +14,9 @@ export class GenerateurCodeComponent implements OnInit {
   }
 
   
+  getToken(): void{
+    
+  }
   /* To copy Text from Textbox
      https://stackoverflow.com/questions/49102724/angular-5-copy-to-clipboard
   */
