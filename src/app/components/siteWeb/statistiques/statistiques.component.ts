@@ -27,7 +27,11 @@ export class StatistiquesComponent implements OnInit {
       (data) =>{
         this.vueTotal = data['nombreVue'];
         console.log(this.vueTotal);
-      });
+      },
+      (error: any) => {
+        this.toastr.error("Nous n'arrivons pas à obtenir votre nombre de visite!");
+      }
+   );
   }
 
   getProfitTotal(): void{
@@ -35,7 +39,11 @@ export class StatistiquesComponent implements OnInit {
       (data) =>{
         this.profitTotal = data['profitTotaux'];
         console.log(this.profitTotal);
-      });
+      },
+      (error: any) => {
+        this.toastr.error("Nous n'arrivons pas à obtenir vos profits totaux !");
+      }
+   );
   }
 
 }
