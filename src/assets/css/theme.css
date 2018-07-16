@@ -203,7 +203,14 @@ strong {
     font-weight: 500;
     color: #fff;
 }
-
+.title-7 {
+  color: black;
+  font-size: 26px;
+  font-family: sans-serif, "Arial Black", Arial, Verdana;
+  font-weight: bold;
+  text-align: center;
+  background-color: #D61624;
+}
 .heading-title {
     font-size: 24px;
     font-weight: 500;
