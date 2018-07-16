@@ -20,7 +20,6 @@ export class CampagnePubFormulaireComponent implements OnInit {
   campagnePublicitaireForm: FormGroup;
   bannieres: Banniere[];
   profilsCible: ProfilCible[];
-  profilsCibleList: ProfilCible[];
 
   constructor( private formBuilder: FormBuilder, private toastr: ToastrService, private profilCibleService: ProfilCibleService) {
   }
@@ -40,7 +39,8 @@ export class CampagnePubFormulaireComponent implements OnInit {
       date_debut: this.campagnePublicitaire.date_debut,
       date_fin: this.campagnePublicitaire.date_fin,
       active: this.campagnePublicitaire.active,
-      profilsCible: this.formBuilder.array([])
+      profilsCible: this.formBuilder.array([]),
+      url: this.campagnePublicitaire.url
     });
   }
 
@@ -117,6 +117,7 @@ export class CampagnePubFormulaireComponent implements OnInit {
       active: formModel.active as boolean,
       bannieres: this.bannieres,
       profilsCible: this.profilsCible,
+      url: formModel.url as string
     };
     return saveCampagnePublicitaire;
   }
@@ -130,9 +131,9 @@ export class CampagnePubFormulaireComponent implements OnInit {
     );
   }
 
-  get profilCible(): FormArray { 
+  get profilCible(): FormArray {
      return this.campagnePublicitaireForm.get('profilsCible') as FormArray;
-  } 
+  }
 
   deleteProfilsCible(profilCible: ProfilCible): void {
 

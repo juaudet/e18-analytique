@@ -10,4 +10,5 @@ export class CampagnePublicitaire {
     active: boolean;
     bannieres: Banniere[];
     profilsCible: ProfilCible[];
+    url: string;
 }
