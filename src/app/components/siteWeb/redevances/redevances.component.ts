@@ -16,26 +16,23 @@ export class RedevancesComponent implements OnInit {
   constructor(private redevancesService: RedevancesService, private toastr: ToastrService) { }
 
   ngOnInit() {
-    this.getRedevances();
+    // this.getRedevances();
   }
 
-  getRedevances(): void {
-    this.redevancesService.getRedevances().subscribe(
-      (data) => {
-        this.redevancesLive = data;
-        console.log(this.redevancesLive);
-      }
-    );
-  }
+  // getRedevances(): void {
+  //   this.redevancesService.getRedevances().subscribe(
+  //     (data) => {
+  //       this.redevancesLive = data;
+  //       console.log(this.redevancesLive);
+  //     }
+  //   );}
 
-  reclamerRedevances(redevances: Redevances): void {
-    this.redevancesService.postRedevances(redevances).subscribe(
-      (data) => {
-        this.toastr.success("Votre argent à été déposé dans votre compte");
+  // reclamerRedevances(redevances: Redevances): void {
+  //   this.redevancesService.postRedevances(redevances).subscribe(
+  //     (data) => {
+  //       this.toastr.success("Votre argent à été déposé dans votre compte");
 
-      }
-    );
-
-  }
+  //     }
+  //   );}
 }
 
