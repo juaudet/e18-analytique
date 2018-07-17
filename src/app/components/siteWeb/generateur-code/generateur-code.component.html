@@ -1,5 +1,5 @@
 <h2 class="title-1 m-b-25">Votre Jeton administrateur </h2>
-<div class="card">
+<!-- <div class="card">
   <div class="card-body">
     <form>
       <div class="form-row">  
@@ -14,4 +14,25 @@
       </div>
     </form>
   </div>
-</div>
+</div> -->
+<div class="overview-item overview-item--c3 alignCenter">
+    <div class="overview__inner">
+      <div class="overview-box clearfix">
+        <div class="icon">
+            <i class="zmdi zmdi-code"></i>
+        
+        <div class="input-group">    
+            <span class="input-group-text" id="tokenInput" >{{tokenSite}}
+                <app-chargement [chargement]="!tokenSite"></app-chargement>
+            </span>
+            <button class="btn btn-primary"  (click)="copyInputMessage()">
+            <i class="fas fa-clipboard"></i>
+            </button>
+        </div>
+      </div>
+      </div>
+      <div class="overview-chart">
+        <canvas id="widgetChart3"></canvas>
+      </div>
+    </div>
+  </div>
