@@ -259,8 +259,14 @@ h8 {
   font-weight: bold;
 }
 
-
-
+#p01 {
+  color: black;
+  font-weight: 450;
+}
+#p02 {
+  color: black;
+  font-weight: 800;
+}
 
 
 /* ----- Links ----- */
