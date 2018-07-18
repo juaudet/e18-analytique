@@ -239,6 +239,30 @@ strong {
     margin-bottom: 10px;
 }
 
+.userContent h8 code {
+  font-size: .938rem;
+  line-height: 1.563rem;
+}
+
+.userContent h8 {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  font-weight: 700;
+}
+
+h8 {
+  display: block;
+  -webkit-margin-before: 1.33em;
+  -webkit-margin-after: 1.33em;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;
+  font-weight: bold;
+}
+
+
+
+
+
 /* ----- Links ----- */
 a {
     display: inline-block;
