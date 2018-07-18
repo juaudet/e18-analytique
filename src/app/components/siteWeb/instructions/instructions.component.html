@@ -1,33 +1,82 @@
+<h1 class="title-7"> Instructions pour afficher des publicités dans les sites web</h1>
 
 
-  <h1 class="title-7"> Instructions pour afficher des publicités dans les sites web</h1>
+Cette operation se fait en plusieurs etapes:
 
 
- Cette operation se fait en plusieurs etapes:
+<ol>
+
+  <li>Mettre ce script dans le</li>&#x3C;head&#x3E;
+  <body>
+  &#x3C;script&#x3E;(function(g,t,i)&#123;&#095;var&#061;i&#059;&#095;dom&#061;g&#059;document&#046;write(&#039;&#x3C;script src&#061;&#034;&#039;&#043;g&#043;&#039;/&#039;&#043;t&#043;&#039;&#034;&#x3E;&#x3C;\/script&#x3E;&#039;)&#059;&#125;)(&#039;https&#058;//e18&#045;analytique&#045;backend&#046;herokuapp&#046;com&#039;&#044;&#039;analytique&#045;gti525 &#046;js&#039;,&#039;gti&#039;)&#059;&#x3C;/script&#x3E;
+  </body>
+  <p>
+    Ce script crée une variable JS `gti`. Si ce nom ne vous convient pas, vous pouvez la renommer en définissant un nouveau nom de variable dans le script ci-haut (dernier paramètre passé à la fonction);
+  </p>
+
+  <li>Créer des containers vides pour les publicités. Ceux-ci doivent posséder un ID afin d'être référencées au chargement des publicités.</li>
+  <body>
+  &#x3C;div id&#061;&#034;banniere&#045;1&#034;&#x3E;&#x3C;/div&#x3E;
+  </body>
 
 
-  <ol>
-    <li>Mettre ce script dans le head </li>
-    <div>
-
-    </div>
+  <li>Créer des styles pour définir les dimensions du container en attendant que la bannière soit chargée. Cette étape est optionnelle mais fortement recommandée pour éviter le déplacement des éléments de la page lorsque la bannière est chargée.</li>
+  <body>
 
 
-    <li>Créer des containers vides pour les publicités. Ceux-ci doivent posséder un ID afin d'être référencées au chargement des publicités.</li>
-    <div>
+  /*&#032;&#032;CSS&#032;&#032;*/
+  <br/>&#035;banniere&#045;1 &#123;
+  <br/>&#032;&#032;&#032;  width: 728px;
+  <br/>&#032;&#032;&#032;  height: 90px;<br/>
+  &#125;
+  </body>
 
-    </div>
+  <li>Ajouter ce script juste avant la fermeture du &#x3C;body&#x3E;, ou dans toute fonction exécutée lorsque le DOM est prêt.</li>
+  <p>
+    Exemple dans le &#x3C;body&#x3E;
+  </p>
+  <body>
+    &#x3C;script&#x3E;gti&#046;banniere(&#034;#banniere-1&#034;&#044; &#034;horizontal&#034;)&#059;&#x3C;/style&#x3E;
+  </body>
+  <p>
+    Exemple dans jQuery&#058;
+  </p>
+  <body>
+  &#036;(function () &#123; <br/>
+  gti&#046;banniere(&#034;&#035;banniere&#045;1&#034;, &#034;horizontal&#034;);<br/>
+  &#125;);
+  </body>
+  <p>
+    Syntaxe: gti&#046;banniere(selecteurCSS&#044;&#032;&#032;&#032;format)<br/>
+
+    Formats acceptés&#058;<br/>
+    &#045;&#032;horizontal&#058;&#032;&#032;728&#032;&#120;&#032;90<br/>
+    &#045;&#032;vertical&#058;&#032;&#032;120&#032;&#120;&#032;600<br/>
+    &#045;&#032;mobile&#058;&#032;&#032;320&#032;&#120;&#032;100
+  </p>
 
 
-    <li>Créer des styles pour définir les dimensions du container en attendant que la bannière soit chargée. Cette étape est optionnelle mais fortement recommandée pour éviter le déplacement des éléments de la page lorsque la bannière est chargée.</li>
-    <div>
-    </div>
+  <li>Créer des containers vides pour les publicités. Ceux-ci doivent posséder un ID afin d'être référencées au chargement des publicités.</li>
+  <div>
 
-    <li>Ajouter ce script juste avant la fermeture du body`, ou dans toute fonction exécutée lorsque le DOM est prêt.</li>
+  </div>
 
-    <div>
-    </div>
 
-  </ol>
+  <li>Créer des styles pour définir les dimensions du container en attendant que la bannière soit chargée. Cette étape est optionnelle mais fortement recommandée pour éviter le déplacement des éléments de la page lorsque la bannière est chargée.</li>
+  <div>
+  </div>
+
+  <li>Ajouter ce script juste avant la fermeture du body`, ou dans toute fonction exécutée lorsque le DOM est prêt.</li>
+
+  <div>
+  </div>
+
+</ol>
+
+
+
+
+
+
 
 

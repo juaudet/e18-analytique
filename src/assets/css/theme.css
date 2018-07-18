@@ -211,6 +211,26 @@ strong {
   text-align: center;
   background-color: #D61624;
 }
+
+.code-block {
+  box-sizing: border-box;
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  resize: none;
+  border-radius: 2px;
+  background-clip: padding-box;
+  padding: 5px 5px 5px 29px;
+  margin: 0;
+  outline: 0;
+  border: 1px solid #000;
+  font-family: Monaco,Menlo,'Ubuntu Mono',Consolas,source-code-pro,'Droid Sans Mono',monospace;
+  font-size: .625rem;
+  line-height: 1.5;
+}
 .heading-title {
     font-size: 24px;
     font-weight: 500;
