@@ -97,5 +97,39 @@
 
   <p>Voyez vos statistiques ici: <a href="https://e18-analytique-frontend.herokuapp.com/index.html#/admin/statistiques">https://e18-analytique-frontend.herokuapp.com/index.html#/admin/statistiques</a></p>
 
+<div class="mb-4">
+  <h2>API</h2>
+<p>Si votre page web ne se carge qu'une seule fois, comme c'est le cas pour les Single Page Application, vous pouvez utiliser directement notre API.</p>
 
+URL de base de l'API: <a href="https://e18-analytique-backend.herokuapp.com/api">https://e18-analytique-backend.herokuapp.com/api</a>
 
+<h3>Obtenir la bannière</h3>
+<p>
+  <code>GET /banniere</code>
+</p>
+
+<h4>Paramètres: </h4>
+<ul>
+  <li><b>format</b>: le format de la publicité (horizontal, vertical ou mobile)</li>
+  <li><b>token</b>: votre jeton d'API que vous trouvez à la page https://e18-analytique-frontend.herokuapp.com/index.html#/admin/generateur-code</li>
+  <li><b>struct</b>: la structure des données retournées. Par défaut retourne un HTML, vous pouvez spécifier json si vous désirez plus de contrôle sur l'affichage.</li>
+</ul>
+
+<h4>Structure de la donnée retournée:</h4>
+<ul>
+  <li><b>url</b>: l'URL du lien de la publicité</li>
+  <li><b>image</b>: l'image de la publicité</li>
+  <li><b>format</b>: le format de la publicité (horizontal, vertical ou mobile)</li>
+</ul>
+
+<h3>Enregistrer une page vue</h3>
+<p>
+  <code>POST /page</code>
+</p>
+
+<h4>Body:</h4>
+<ul>
+  <li><b>url</b>: l'URL de la page visitée</li>
+  <li><b>token</b>: votre jeton d'API que vous trouvez à la page https://e18-analytique-frontend.herokuapp.com/index.html#/admin/generateur-code</li>
+</ul>
+Important: vous devez envoyer le cookie avec votre requête.
