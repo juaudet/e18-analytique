@@ -1,8 +1,9 @@
 <div class="row" xmlns="">
 
-      <form class="col s12 white" #enregistrement="ngForm" (ngSubmit)="OnSubmit(enregistrement)">
+      <form class="col s12 white" #enregistrement="ngForm" (ngSubmit)="OnSubmit(enregistrement)" >
             <input class="form-control" placeholder="Courriel" type="text" name="email" [(ngModel)]="administrateur.email" required>
             <label data-error="Champ requis!"></label>
+
 
             <input class="form-control" placeholder="Mot de passe" type="password" name="password"  #password="ngModel" [(ngModel)]="administrateur.password" required  minlength="3">
             <label [attr.data-error]="password.errors!=null?(!password.errors.required?'Minimum 3 charactères requis':'Champ requis!'):''"> </label>
@@ -15,7 +16,7 @@
 
             <input class="form-control" placeholder="Ville" type="text" name="ville" [(ngModel)]="administrateur.ville">
             <label data-error="Champ requis!"></label>
-            
+
             <input class="form-control" placeholder="Rue" type="text" name="rue" [(ngModel)]="administrateur.rue">
             <label data-error="Champ requis!"></label>
 

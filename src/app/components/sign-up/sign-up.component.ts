@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import {Administrateur} from '../../models/administrateur.model';
-import { NgForm } from '@angular/forms';
+import { Administrateur } from '../../models/administrateur.model';
+import {  NgForm } from '@angular/forms';
 import { AdministrateurService } from '../../services/shared/administrateur.service';
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-sign-up',
@@ -14,9 +15,9 @@ export class SignUpComponent implements OnInit {
   administrateur: Administrateur;
   paternDuCourriel = '^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$';
 
-  constructor(private administrateurService: AdministrateurService, 
-    private toastr: ToastrService,
-    private router: Router) { }
+  constructor(private administrateurService: AdministrateurService,
+              private toastr: ToastrService,
+              private router: Router, ) {}
 
   ngOnInit() {
     this.resetForm();
@@ -44,33 +45,37 @@ export class SignUpComponent implements OnInit {
   }
 
   OnSubmit (form: NgForm) {
-    
-    this.administrateurService.enregistrerAdministrateur(form.value).subscribe(
-      (data: any) => {
-        this.toastr.success('Enregistrement effectuée avec succès.');
-        this.resetForm(form);
-        this.router.navigate(['login']);
-      },
-      (error: any) => {
-        this.toastr.error("Vos champs sont invalide !");
-      }
-    );
+
+    if (this.administrateur.password !== this.administrateur.confirmationPassword) {
+      this.toastr.error('Les mots de passe ne sont pas identiques');
+    } else {
+      this.administrateurService.enregistrerAdministrateur(form.value).subscribe(
+        (data: any) => {
+          this.toastr.success('Enregistrement effectuée avec succès.');
+          this.resetForm(form);
+          this.router.navigate(['login']);
+        },
+        (error: any) => {
+          this.toastr.error('Vos champs sont invalide !');
+        }
+      );
+    }
   }
 
-  public UpdateForm(formName:string){
+  public UpdateForm(formName: string) {
 
-    if(formName == "publicite"){
+    if (formName == 'publicite') {
 
-      document.getElementById("noCompte").hidden = true;
-      (<HTMLInputElement>document.getElementById("noCompte")).value = "";
+      document.getElementById('noCompte').hidden = true;
+      (<HTMLInputElement>document.getElementById('noCompte')).value = '';
 
-     document.getElementById("urlSite").hidden = true;
-     (<HTMLInputElement>document.getElementById("urlSite")).value = "";
+     document.getElementById('urlSite').hidden = true;
+     (<HTMLInputElement>document.getElementById('urlSite')).value = '';
 
-    }else if(formName == "site"){
+    } else if (formName == 'site') {
 
-      document.getElementById("noCompte").hidden = false;
-      document.getElementById("urlSite").hidden = false;
+      document.getElementById('noCompte').hidden = false;
+      document.getElementById('urlSite').hidden = false;
 
     }
 
