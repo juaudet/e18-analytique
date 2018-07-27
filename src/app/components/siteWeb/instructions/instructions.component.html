@@ -78,6 +78,7 @@
     <code>
         Syntaxe: gti&#046;banniere(selecteurCSS&#044;&#032;&#032;&#032;format)<br/>
     </code>
+    <br>
       <h5>Formats acceptés</h5>
       <ul>
         <li>horizontal&#058;&#032;&#032;728&#032;&#120;&#032;90</li>
@@ -96,37 +97,38 @@
   </div>
 
   <p>Voyez vos statistiques ici: <a href="https://e18-analytique-frontend.herokuapp.com/index.html#/admin/statistiques">https://e18-analytique-frontend.herokuapp.com/index.html#/admin/statistiques</a></p>
-
+<br>
 <div class="mb-4">
   <h2>API</h2>
-<p>Si votre page web ne se carge qu'une seule fois, comme c'est le cas pour les Single Page Application, vous pouvez utiliser directement notre API.</p>
+<p>Si votre page web ne se charge qu'une seule fois, comme c'est le cas pour les Single Page Application, vous pouvez utiliser directement notre API.</p>
 
 URL de base de l'API: <a href="https://e18-analytique-backend.herokuapp.com/api">https://e18-analytique-backend.herokuapp.com/api</a>
-
+<br>
+<br>
 <h3>Obtenir la bannière</h3>
 <p>
   <code>GET /banniere</code>
 </p>
-
+<br>
 <h4>Paramètres: </h4>
 <ul>
   <li><b>format</b>: le format de la publicité (horizontal, vertical ou mobile)</li>
   <li><b>token</b>: votre jeton d'API que vous trouvez à la page https://e18-analytique-frontend.herokuapp.com/index.html#/admin/generateur-code</li>
   <li><b>struct</b>: la structure des données retournées. Par défaut retourne un HTML, vous pouvez spécifier json si vous désirez plus de contrôle sur l'affichage.</li>
 </ul>
-
+<br>
 <h4>Structure de la donnée retournée:</h4>
 <ul>
   <li><b>url</b>: l'URL du lien de la publicité</li>
   <li><b>image</b>: l'image de la publicité</li>
   <li><b>format</b>: le format de la publicité (horizontal, vertical ou mobile)</li>
 </ul>
-
+<br>
 <h3>Enregistrer une page vue</h3>
 <p>
   <code>POST /page</code>
 </p>
-
+<br>
 <h4>Body:</h4>
 <ul>
   <li><b>url</b>: l'URL de la page visitée</li>
