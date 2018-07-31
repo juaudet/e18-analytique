@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { Redevances} from '../models/redevances';
 import { environment } from '../../environments/environment';
 import {ProfilCible} from '../models/profil-cible';
+import {CompteBancaire} from '../models/compteBancaire';
 
 @Injectable({
   providedIn: 'root'
@@ -27,5 +28,9 @@ export class RedevancesService {
   postRedevances(redevances: Redevances): Observable<any> {
     const url = this.rootUrl + '/api/redevances';
     return this.http.post<Redevances>(url, redevances);
+  }
+  postCompteBancaire(noCompte: CompteBancaire): Observable<any> {
+    const url = this.rootUrl + '/api/redevances';
+    return this.http.post<Redevances>(url, noCompte);
   }
 }

@@ -66,8 +66,8 @@ export class SignUpComponent implements OnInit {
 
     if (formName == 'publicite') {
 
-      document.getElementById('noCompte').hidden = true;
-      (<HTMLInputElement>document.getElementById('noCompte')).value = '';
+    document.getElementById('noCompte').hidden = true;
+    (<HTMLInputElement>document.getElementById('noCompte')).value = '';
 
      document.getElementById('urlSite').hidden = true;
      (<HTMLInputElement>document.getElementById('urlSite')).value = '';
