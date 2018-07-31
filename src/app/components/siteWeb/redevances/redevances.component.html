@@ -10,9 +10,8 @@
             <i class="zmdi zmdi-money-box"></i>
           </div>
           <div class="text">
-            <h4><app-chargement [chargement]="!redevances.redevance_to_pay && redevances.redevance_to_pay != 0"></app-chargement></h4>
-            <h2>{{redevances.redevance_to_pay}}
-            </h2>
+            <h2><app-chargement [chargement]="!redevance_to_pay && redevance_to_pay != 0"></app-chargement></h2>
+            <h2>{{redevance_to_pay}}</h2>
             <span>Solde Courant</span>
           </div>
         </div>
