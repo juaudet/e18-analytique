@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Redevances} from '../../../models/redevances';
 import { RedevancesService } from '../../../services/redevances.service';
 import { ToastrService} from 'ngx-toastr';
+import {CompteBancaire} from '../../../models/compteBancaire';
 
 @Component({
   selector: 'app-redevances',
@@ -11,7 +12,9 @@ import { ToastrService} from 'ngx-toastr';
 export class RedevancesComponent implements OnInit {
 
   redevances: Redevances;
-  redevancesLive: Redevances;
+  compteBancaire: CompteBancaire;
+  noCompte: string;
+
 
   constructor(private redevancesService: RedevancesService, private toastr: ToastrService) { }
 
@@ -24,7 +27,7 @@ export class RedevancesComponent implements OnInit {
       (data) => {
         this.redevances = data;
          console.log(this.redevances);
-       }
+       },
      ); }
 
    reclamerRedevances(redevances: Redevances): void {
@@ -34,5 +37,12 @@ export class RedevancesComponent implements OnInit {
 
        }
      ); }
+
+   noCompteBancaire(): void {
+    this.noCompte = this.compteBancaire.noCompte;
+    this.redevancesService.postCompteBancaire(this.compteBancaire).subscribe(
+      (data) => {}
+      );
+    }
 }
 
