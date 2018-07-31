@@ -10,8 +10,9 @@ import { ToastrService} from 'ngx-toastr';
 })
 export class RedevancesComponent implements OnInit {
 
-  redevances: Redevances;
+
   redevance_to_pay: number;
+  no_compte_bancaire: string;
 
   constructor(private redevancesService: RedevancesService, private toastr: ToastrService) { }
 
@@ -29,8 +30,8 @@ export class RedevancesComponent implements OnInit {
      );
   }
 
-   reclamerRedevances(redevances: Redevances): void {
-    this.redevancesService.patchRedevances(redevances).subscribe(
+   reclamerRedevances(no_compte_bancaire: string): void {
+    this.redevancesService.patchRedevances(no_compte_bancaire).subscribe(
        (data) => {
          this.toastr.success('Votre argent à été déposé dans votre compte');
        },
@@ -38,7 +39,7 @@ export class RedevancesComponent implements OnInit {
         this.toastr.error('Vous n\'avez aucune redevances à réclamer!');
       }
      );
-     console.log(this.redevances);
+     console.log(this.no_compte_bancaire);
   }
 }
 
