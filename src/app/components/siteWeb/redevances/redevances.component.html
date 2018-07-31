@@ -20,8 +20,8 @@
     </div>
 
       <div class="form-group">
-        <input id="noCompte" class="form-control" type="text" placeholder="Numéro de compte bancaire" [(ngModel)]="noCompte">
-        <button class="btn btn-primary btn-lg" (click)="reclamerRedevances(redevances)" (click)="noCompteBancaire(compteBancaire)">Réclamer les redevances</button>
+        <input class="form-control" type="text" placeholder="Numéro de compte bancaire" name="no_compte_bancaire" [(ngModel)]="redevances.no_compte_bancaire">
+        <button class="btn btn-primary btn-lg" (click)="reclamerRedevances(redevances)" (click)="getRedevances()">Réclamer les redevances</button>
       </div>
 
   </div>

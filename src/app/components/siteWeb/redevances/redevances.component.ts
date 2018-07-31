@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Redevances} from '../../../models/redevances';
 import { RedevancesService } from '../../../services/redevances.service';
 import { ToastrService} from 'ngx-toastr';
-import {CompteBancaire} from '../../../models/compteBancaire';
 
 @Component({
   selector: 'app-redevances',
@@ -12,9 +11,6 @@ import {CompteBancaire} from '../../../models/compteBancaire';
 export class RedevancesComponent implements OnInit {
 
   redevances: Redevances;
-  compteBancaire: CompteBancaire;
-  noCompte: string;
-
 
   constructor(private redevancesService: RedevancesService, private toastr: ToastrService) { }
 
@@ -31,18 +27,12 @@ export class RedevancesComponent implements OnInit {
      ); }
 
    reclamerRedevances(redevances: Redevances): void {
-     this.redevancesService.postRedevances(redevances).subscribe(
+    this.redevancesService.patchRedevances(redevances).subscribe(
        (data) => {
          this.toastr.success('Votre argent à été déposé dans votre compte');
-
        }
-     ); }
-
-   noCompteBancaire(): void {
-    this.noCompte = this.compteBancaire.noCompte;
-    this.redevancesService.postCompteBancaire(this.compteBancaire).subscribe(
-      (data) => {}
-      );
-    }
+     );
+     console.log(this.redevances);
+  }
 }
 

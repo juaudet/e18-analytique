@@ -25,12 +25,13 @@ export class RedevancesService {
     return this.http.get<Redevances>(url);
   }
 
-  postRedevances(redevances: Redevances): Observable<any> {
-    const url = this.rootUrl + '/api/redevances';
-    return this.http.post<Redevances>(url, redevances);
-  }
   postCompteBancaire(noCompte: CompteBancaire): Observable<any> {
     const url = this.rootUrl + '/api/redevances';
     return this.http.post<Redevances>(url, noCompte);
+  }
+
+  patchRedevances(redevances: Redevances): Observable<any> {
+    const url = this.rootUrl + '/api/redevances';
+    return this.http.patch<Redevances>(url, redevances);
   }
 }
