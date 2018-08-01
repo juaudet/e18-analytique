@@ -1,32 +1,33 @@
 
 <h2 class="title-1 m-b-25">Redevances</h2>
 
-<div class="row m-t-25">
-  <div class="col-sm-6 col-lg-4">
-    <div class="overview-item overview-item--c1">
-      <div class="overview__inner">
-        <div class="overview-box clearfix">
-          <div class="icon">
-            <i class="zmdi zmdi-money-box"></i>
-          </div>
-          <div class="text">
-            <h2><app-chargement [chargement]="!redevance_to_pay && redevance_to_pay != 0"></app-chargement></h2>
-            <h2>{{redevance_to_pay}}</h2>
-            <span>Solde Courant</span>
+<ng-container *ngIf="redevance">
+  <div class="row m-t-25">
+    <div class="col-sm-6 col-lg-4">
+      <div class="overview-item overview-item--c1">
+        <div class="overview__inner">
+          <div class="overview-box clearfix">
+            <div class="icon">
+              <i class="zmdi zmdi-money-box"></i>
+            </div>
+            <div class="text">
+              <h2><app-chargement [chargement]="!redevance.redevance_to_pay && redevance.redevance_to_pay != 0"></app-chargement></h2>
+              <h2>{{redevance.redevance_to_pay}}</h2>
+              <span>Solde Courant</span>
+            </div>
           </div>
         </div>
       </div>
+
+        <div class="form-group">
+          <input class="form-control" type="text" placeholder="Numéro de compte bancaire" name="no_compte_bancaire" [(ngModel)]="no_compte_bancaire">
+          <button class="btn btn-primary btn-lg" (click)="reclamerRedevances(no_compte_bancaire)">Réclamer les redevances</button>
+        </div>
+
     </div>
-
-      <div class="form-group">
-        <input class="form-control" type="text" placeholder="Numéro de compte bancaire" name="no_compte_bancaire" [(ngModel)]="no_compte_bancaire">
-        <button class="btn btn-primary btn-lg" (click)="reclamerRedevances(redevances)" (click)="getRedevances()">Réclamer les redevances</button>
-      </div>
-
   </div>
-</div>
 
-
+</ng-container>
 
 
 
@@ -57,4 +58,3 @@
 
 </ng-container> -->
 
-<app-chargement [chargement]="!redevances"></app-chargement>
