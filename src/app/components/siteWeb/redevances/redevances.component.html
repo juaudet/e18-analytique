@@ -1,5 +1,5 @@
 <h2 class="title-1 m-b-25">Redevances</h2>
- 
+
 <ng-container *ngIf="redevance">
   <div class="row m-t-25">
     <div class="col-sm-6 col-lg-4">
@@ -16,14 +16,14 @@
           </div>
         </div>
       </div>
- 
+
         <div class="form-group">
           <input class="form-control" type="text" placeholder="Numéro de compte bancaire" name="no_compte_bancaire" [(ngModel)]="no_compte_bancaire">
           <button class="btn btn-primary btn-lg" (click)="reclamerRedevances(no_compte_bancaire)">Réclamer les redevances</button>
         </div>
- 
+
     </div>
-    <div class="col-sm-6 col-lg-4">
+    <div class="col-sm-6 col-lg-5">
         <div class="overview-item overview-item--c3">
           <div class="overview__inner">
             <div class="overview-box clearfix">
@@ -40,7 +40,7 @@
                   3 ¢ par publicité vue (visiteur ciblé)
                   <br/>
                   10 ¢ par publicité cliquée (visiteur ciblé)
-   
+
                 </span>
               </div>
             </div>
@@ -50,5 +50,5 @@
         </div>
       </div>
   </div>
- 
+
 </ng-container>
