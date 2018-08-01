@@ -37,7 +37,7 @@ export class RedevancesComponent implements OnInit {
          this.toastr.success('Votre argent à été déposé dans votre compte');
        },
      );
-     console.log(no_compte_bancaire);
+     console.log({no_compte_bancaire: no_compte_bancaire});
   }
 }
 
