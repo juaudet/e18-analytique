@@ -1,7 +1,4 @@
 export class Redevances {
-
-  id: number;
-  date: string;
-  montant: number;
   redevance_to_pay: number;
+  no_compte_bancaire: string;
 }

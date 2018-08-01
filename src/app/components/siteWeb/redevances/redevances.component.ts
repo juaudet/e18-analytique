@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Redevances} from '../../../models/redevances';
 import { RedevancesService } from '../../../services/redevances.service';
 import { ToastrService} from 'ngx-toastr';
-import {CompteBancaire} from '../../../models/compteBancaire';
+import { CompteBancaire } from '../../../models/compte-bancaire';
+
 
 @Component({
   selector: 'app-redevances',
@@ -11,38 +12,50 @@ import {CompteBancaire} from '../../../models/compteBancaire';
 })
 export class RedevancesComponent implements OnInit {
 
-  redevances: Redevances;
-  compteBancaire: CompteBancaire;
-  noCompte: string;
+
+  redevance: string;
+  no_compte_bancaire: CompteBancaire;
+
 
 
   constructor(private redevancesService: RedevancesService, private toastr: ToastrService) { }
 
   ngOnInit() {
-     this.getRedevances();
+    this.getRedevances();
   }
 
    getRedevances(): void {
      this.redevancesService.getRedevances().subscribe(
       (data) => {
-        this.redevances = data;
-         console.log(this.redevances);
+        this.redevance = data;
        },
-     ); }
+     );
+  }
 
-   reclamerRedevances(redevances: Redevances): void {
-     this.redevancesService.postRedevances(redevances).subscribe(
-       (data) => {
+   reclamerRedevances(no_compte_bancaire: CompteBancaire): void {
+     
+    if(no_compte_bancaire != null){
+    this.redevancesService.postRedevances(no_compte_bancaire).subscribe(
+       (data: any) => {
          this.toastr.success('Votre argent à été déposé dans votre compte');
-
-       }
-     ); }
-
-   noCompteBancaire(): void {
-    this.noCompte = this.compteBancaire.noCompte;
-    this.redevancesService.postCompteBancaire(this.compteBancaire).subscribe(
-      (data) => {}
-      );
+         console.log(data);
+       },
+      (error: any) => {
+        if(error.status == 400){
+          this.toastr.error('Vous avez inscrit un faux numéro de compte ! Fraudeur !');
+          console.log(error.status);
+        }else{
+          this.toastr.error('Problème serveur, revenez plus-tard ! ');
+          console.log(error.status);
+        }
+      }
+     );
+    }else{
+      this.toastr.error("Vous n'avez inscrit aucun numéro de banque !")
     }
+  }
+
+
+
 }
 

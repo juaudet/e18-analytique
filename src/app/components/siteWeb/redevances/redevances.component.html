@@ -1,61 +1,54 @@
-
 <h2 class="title-1 m-b-25">Redevances</h2>
-
-<div class="row m-t-25">
-  <div class="col-sm-6 col-lg-4">
-    <div class="overview-item overview-item--c1">
-      <div class="overview__inner">
-        <div class="overview-box clearfix">
-          <div class="icon">
-            <i class="zmdi zmdi-money-box"></i>
-          </div>
-          <div class="text">
-            <h4><app-chargement [chargement]="!redevances.redevance_to_pay && redevances.redevance_to_pay != 0"></app-chargement></h4>
-            <h2>{{redevances.redevance_to_pay}}
-            </h2>
-            <span>Solde Courant</span>
+ 
+<ng-container *ngIf="redevance">
+  <div class="row m-t-25">
+    <div class="col-sm-6 col-lg-4">
+      <div class="overview-item overview-item--c1">
+        <div class="overview__inner">
+          <div class="overview-box clearfix">
+            <div class="icon">
+              <i class="zmdi zmdi-money-box"></i>
+            </div>
+            <div class="text">
+                <h2>{{redevance.redevance_to_pay}}</h2>
+              <span>Solde Courant</span>
+            </div>
           </div>
         </div>
       </div>
+ 
+        <div class="form-group">
+          <input class="form-control" type="text" placeholder="Numéro de compte bancaire" name="no_compte_bancaire" [(ngModel)]="no_compte_bancaire">
+          <button class="btn btn-primary btn-lg" (click)="reclamerRedevances(no_compte_bancaire)">Réclamer les redevances</button>
+        </div>
+ 
     </div>
-
-      <div class="form-group">
-        <input id="noCompte" class="form-control" type="text" placeholder="Numéro de compte bancaire" [(ngModel)]="noCompte">
-        <button class="btn btn-primary btn-lg" (click)="reclamerRedevances(redevances)" (click)="noCompteBancaire(compteBancaire)">Réclamer les redevances</button>
-      </div>
-
-  </div>
-</div>
-
-
-
-
-
-
-          <!--<ng-container *ngIf="redevances">
-            <div *ngIf="(redevances.length > 0);else aucun" class="table-responsive table--no-card m-b-40">
-              <h3 class="title-2 m-b-25">Historique de vos redevances</h3>
-              <table class="table table-borderless table-striped table-earning">
-                <thead>
-                  <tr>
-                    <th>Date</th>
-                    <th>Montant</th>
-                  </tr>
-                </thead>
-              <tbody>
-              <tr *ngFor="let redevance of redevances">
-                <td>{{ redevance.date }}</td>
-                <td>{{ redevance.montant }}</td>
-              </tr>
-              </tbody>
-            </table>
+    <div class="col-sm-6 col-lg-4">
+        <div class="overview-item overview-item--c3">
+          <div class="overview__inner">
+            <div class="overview-box clearfix">
+              <div class="icon">
+                <i class="zmdi zmdi-info"></i>
+              </div>
+              <div class="text">
+                <h2>Grille de paiement</h2>
+                <span>
+                  1 ¢ par publicité vue (visiteur régulier)
+                  <br/>
+                  5 ¢ par publicité cliquée (visiteur régulier)
+                  <br/>
+                  3 ¢ par publicité vue (visiteur ciblé)
+                  <br/>
+                  10 ¢ par publicité cliquée (visiteur ciblé)
+   
+                </span>
+              </div>
+            </div>
+            <div class="overview-chart">
+            </div>
           </div>
-
-<ng-template *ngIf="aucun">
-  Aucun historique
-  <i class="fas fa-frown"></i>
-</ng-template>
-
-</ng-container> -->
-
-<app-chargement [chargement]="!redevances"></app-chargement>
+        </div>
+      </div>
+  </div>
+ 
+</ng-container>
