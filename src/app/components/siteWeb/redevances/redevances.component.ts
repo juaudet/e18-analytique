@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Redevances} from '../../../models/redevances';
 import { RedevancesService } from '../../../services/redevances.service';
 import { ToastrService} from 'ngx-toastr';
-import {FormArray, FormBuilder, FormGroup} from '@angular/forms';
+import { CompteBancaire } from '../../../models/compte-bancaire';
+
 
 @Component({
   selector: 'app-redevances',
@@ -12,8 +13,9 @@ import {FormArray, FormBuilder, FormGroup} from '@angular/forms';
 export class RedevancesComponent implements OnInit {
 
 
-  redevance: number;
-  no_compte_bancaire: string;
+  redevance: string;
+  no_compte_bancaire: CompteBancaire;
+
 
 
   constructor(private redevancesService: RedevancesService, private toastr: ToastrService) { }
@@ -26,15 +28,14 @@ export class RedevancesComponent implements OnInit {
      this.redevancesService.getRedevances().subscribe(
       (data) => {
         this.redevance = data;
-        console.log(this.redevance);
        },
      );
   }
 
-   reclamerRedevances(no_compte_bancaire: string): void {
+   reclamerRedevances(no_compte_bancaire: CompteBancaire): void {
      
     if(no_compte_bancaire != null){
-    this.redevancesService.patchRedevances(no_compte_bancaire).subscribe(
+    this.redevancesService.postRedevances(no_compte_bancaire).subscribe(
        (data: any) => {
          this.toastr.success('Votre argent à été déposé dans votre compte');
          console.log(data);
@@ -49,7 +50,6 @@ export class RedevancesComponent implements OnInit {
         }
       }
      );
-     console.log(this.no_compte_bancaire);
     }else{
       this.toastr.error("Vous n'avez inscrit aucun numéro de banque !")
     }
