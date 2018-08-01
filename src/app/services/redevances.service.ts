@@ -25,7 +25,7 @@ export class RedevancesService {
     return this.http.get<Redevances>(url);
   }
 
-  patchRedevances(no_compte_bancaire: CompteBancaire): Observable<any> {
+  patchRedevances(no_compte_bancaire: string): Observable<any> {
     const url = this.rootUrl + '/api/redevances';
     return this.http.patch(url, no_compte_bancaire);
   }
