@@ -15,9 +15,8 @@ export class RedevancesComponent implements OnInit {
   redevance: number;
   no_compte_bancaire: string;
 
-  constructor(private redevancesService: RedevancesService, private toastr: ToastrService) { 
-   
-  }
+
+  constructor(private redevancesService: RedevancesService, private toastr: ToastrService) { }
 
   ngOnInit() {
     this.getRedevances();
