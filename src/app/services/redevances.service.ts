@@ -3,7 +3,6 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Redevances} from '../models/redevances';
 import { environment } from '../../environments/environment';
-import {CompteBancaire} from '../models/compte-bancaire';
 
 
 @Injectable({
