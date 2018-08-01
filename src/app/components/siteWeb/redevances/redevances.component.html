@@ -20,16 +20,11 @@
 
       <div class="form-group">
         <input class="form-control" type="text" placeholder="Numéro de compte bancaire" name="no_compte_bancaire" [(ngModel)]="no_compte_bancaire">
-        <button class="btn btn-primary btn-lg" (click)="reclamerRedevances(redevances)" (click)="getRedevances()">Réclamer les redevances</button>
+        <button class="btn btn-primary btn-lg" (click)="reclamerRedevances(no_compte_bancaire)">Réclamer les redevances</button>
       </div>
 
   </div>
 </div>
-
-
-
-
-
 
           <!--<ng-container *ngIf="redevances">
             <div *ngIf="(redevances.length > 0);else aucun" class="table-responsive table--no-card m-b-40">
@@ -55,6 +50,6 @@
   <i class="fas fa-frown"></i>
 </ng-template>
 
-</ng-container> -->
+</ng-container>
 
-<app-chargement [chargement]="!redevances"></app-chargement>
+<app-chargement [chargement]="!redevances"></app-chargement> -->

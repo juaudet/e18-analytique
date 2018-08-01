@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Redevances} from '../../../models/redevances';
 import { RedevancesService } from '../../../services/redevances.service';
-import { ToastrService} from 'ngx-toastr';
+import { ToastrService } from 'ngx-toastr';
+import { CompteBancaire } from '../../../models/compte-bancaire';
 
 @Component({
   selector: 'app-redevances',
@@ -12,7 +13,8 @@ export class RedevancesComponent implements OnInit {
 
 
   redevance_to_pay: number;
-  no_compte_bancaire: string;
+  no_compte_bancaire: CompteBancaire;
+
 
   constructor(private redevancesService: RedevancesService, private toastr: ToastrService) { }
 
@@ -23,23 +25,19 @@ export class RedevancesComponent implements OnInit {
    getRedevances(): void {
      this.redevancesService.getRedevances().subscribe(
       (data) => {
-        this.redevance_to_pay = data['redevances_to_pay'];
+        this.redevance_to_pay = data['redevance_to_pay'];
         console.log(this.redevance_to_pay);
-
        },
      );
   }
 
-   reclamerRedevances(no_compte_bancaire: string): void {
+   reclamerRedevances(no_compte_bancaire: CompteBancaire): void {
     this.redevancesService.patchRedevances(no_compte_bancaire).subscribe(
        (data) => {
          this.toastr.success('Votre argent à été déposé dans votre compte');
        },
-      (error: any) => {
-        this.toastr.error('Vous n\'avez aucune redevances à réclamer!');
-      }
      );
-     console.log(this.no_compte_bancaire);
+     console.log(no_compte_bancaire);
   }
 }
 
